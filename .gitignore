@@ -1,0 +1,20 @@
+# Ignore All
+*
+!*/
+
+# Git
+!*.gitignore
+!*.gitattributes
+!*.gitkeep
+!*.md
+
+# VScode
+!/.vscode/*
+
+# Vivado
+!*.xpr
+
+# Verilog
+!/include/**/*.vh
+!/src/**/*.v
+!/test/**/*.v
