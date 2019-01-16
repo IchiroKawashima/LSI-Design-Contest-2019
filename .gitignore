@@ -11,6 +11,9 @@
 # VScode
 !/.vscode/*
 
+# Docment
+!/docs/*.svg
+
 # Vivado
 !*.xpr
 
