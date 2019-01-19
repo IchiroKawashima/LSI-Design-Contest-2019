@@ -41,7 +41,8 @@ end
 // logic
 localparam MAX_YC = 2 ** (WD - 1) - 1;
 wire signed [($clog2(NP)+1+WD)-1:0] w_vc[0:NC-1];
-wire signed                [WD-1:0] w_yc[0:NC-1];
+wire signed [($clog2(NP)+1+WD)-1:0] w_yc_pos[0:NC-1];
+wire signed                [WD-1:0] w_yc_clp[0:NC-1];
 
 genvar gi;
 generate
@@ -51,15 +52,17 @@ generate
 
     // ReLU
     for (gi = 0; gi < NC; gi = gi + 1) begin : relu
-        if (HIDDEN == "yes")
-            assign w_yc[gi] = ((w_vc[gi] >= 0) ? w_vc[gi] : 0) <= MAX_YC[WD-1:0] ? w_vc[gi] : MAX_YC[WD-1:0];
+        if (HIDDEN == "yes") begin
+            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+1+WD)-1] ? 0: w_vc[gi];
+            assign w_yc_clp[gi] = (w_yc_pos[gi] <= MAX_YC[WD:0]) ? w_yc_pos[gi][WD-1:0] : MAX_YC[WD:0];
+        end
         else
-            assign w_yc[gi] = w_vc[gi];
+            assign w_yc_clp[gi] = w_vc[gi][WD-1:0];
     end
 
     // out
     for (gi = 0; gi < NC; gi = gi + 1) begin : out
-        assign w_lgc[gi*WD +: WD] = w_yc[gi];
+        assign w_lgc[gi*((HIDDEN=="yes")?WD:$clog2(NP)+1+WD) +: (HIDDEN=="yes")?WD:$clog2(NP)+1+WD] = w_yc_clp[gi];
     end
 endgenerate
 
