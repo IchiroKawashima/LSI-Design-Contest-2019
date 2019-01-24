@@ -19,4 +19,8 @@
     localparam SYNAPSE_BITWIDTH  = `PARAM_SYNAPSE_BITWIDTH; \
     localparam NEURON_BITWIDTH   = `PARAM_NEURON_BITWIDTH;
 
+`define DECLARE_MODE_PARAMETERS \
+    localparam TRAIN = 1'b1, \
+               TEST  = 1'b0;
+
 `endif
