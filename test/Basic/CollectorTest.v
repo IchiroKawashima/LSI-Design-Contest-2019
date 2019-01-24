@@ -2,7 +2,7 @@
 
 module CollectorTest #
 ( parameter BURST    = "no"
-, parameter PRIORITY = 2
+, parameter PRIORITY = 0
 );
 
 ClockDomain c();
@@ -18,24 +18,58 @@ reg        iReady_BM;
 wire       oSelect_BM;
 wire [7:0] oData_BM;
 
+wire       wvld0;
+wire       wrdy0;
+wire [3:0] wdata0;
+wire       wvld1;
+wire       wrdy1;
+wire [3:0] wdata1;
+
+//Register
+Register #
+( .WIDTH(4)
+, .BURST(BURST)
+) rg0
+( .iValid_AM(iValid_AM0)
+, .oReady_AM(oReady_AM0)
+, .iData_AM(iData_AM0)
+, .oValid_BM(wvld0)
+, .iReady_BM(wrdy0)
+, .oData_BM(wdata0)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
+//Register
+Register #
+( .WIDTH(4)
+, .BURST(BURST)
+) rg1
+( .iValid_AM(iValid_AM1)
+, .oReady_AM(oReady_AM1)
+, .iData_AM(iData_AM1)
+, .oValid_BM(wvld1)
+, .iReady_BM(wrdy1)
+, .oData_BM(wdata1)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
 Collector #
 ( .WIDTH0(4)
 , .WIDTH1(4)
-, .BURST(BURST)
 , .PRIORITY(PRIORITY)
 ) collector
-( .iValid_AM0(iValid_AM0)
-, .oReady_AM0(oReady_AM0)
-, .iData_AM0(iData_AM0)
-, .iValid_AM1(iValid_AM1)
-, .oReady_AM1(oReady_AM1)
-, .iData_AM1(iData_AM1)
+( .iValid_AS0(wvld0)
+, .oReady_AS0(wrdy0)
+, .iData_AS0(wdata0)
+, .iValid_AS1(wvld1)
+, .oReady_AS1(wrdy1)
+, .iData_AS1(wdata1)
 , .oValid_BM(oValid_BM)
 , .iReady_BM(iReady_BM)
 , .oSelect_BM(oSelect_BM)
 , .oData_BM(oData_BM)
-, .iRST(c.RST)
-, .iCLK(c.CLK)
 );
 
 `DUMP_ALL("cl.vcd")

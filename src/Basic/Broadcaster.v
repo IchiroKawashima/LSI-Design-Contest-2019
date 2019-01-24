@@ -24,7 +24,7 @@ wire [WIDTH0-1:0] wdata0;
 wire [WIDTH1-1:0] wdata1;
 
 assign oReady_AM        = wrdy;
-assign {wdata0, wdata1} = iData_AM;
+assign {wdata1, wdata0} = iData_AM;
 
 //Valid
 assign wvld = iValid_AM && wrdy;
