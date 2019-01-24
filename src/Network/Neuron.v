@@ -18,6 +18,57 @@ module Neuron #
 , input                          iCLK
 );
 
-localparam WN = (HIDDEN == "yes") ? $clog2(NP) + WF : WF;
+localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + WF;
+
+// pipeline register
+wire [NC*WN-1:0] w_lgc;
+reg  [NC*WN-1:0] r_stl;
+reg  r_vld;
+wire w_rdy;
+
+assign oData_BS = r_stl;
+assign oValid_BS = r_vld;
+assign oReady_AS_Accum0 = w_rdy;
+assign w_rdy = (r_vld) ? iReady_BS : 1;
+
+always @(posedge iCLK) begin
+    if (iRST) begin
+        r_stl <= 0;
+        r_vld <= 0;
+    end
+    else begin
+        r_stl <= (iValid_AS_Accum0 && w_rdy) ? w_lgc : r_stl;
+        r_vld <= (r_vld) ? !((!iValid_AS_Accum0) && w_rdy) : iValid_AS_Accum0;
+    end
+end
+
+
+// logic
+localparam MAX_YC = 2 ** (WF - 1) - 1;
+wire signed [($clog2(NP)+WF)-1:0] w_vc[0:NC-1];
+wire signed [($clog2(NP)+WF)-1:0] w_yc_pos[0:NC-1];
+wire signed              [WF-1:0] w_yc_clp[0:NC-1];
+
+genvar gi;
+generate
+    for (gi = 0; gi < NC; gi = gi + 1) begin : in
+        assign w_vc[gi] = iData_AS_Accum0[gi*($clog2(NP)+WF) +: ($clog2(NP)+WF)];
+    end
+
+    // ReLU
+    for (gi = 0; gi < NC; gi = gi + 1) begin : relu
+        if (HIDDEN == "yes") begin
+            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+WF)-1] ? 0: w_vc[gi];
+            assign w_yc_clp[gi] = (w_yc_pos[gi] <= MAX_YC[WF:0]) ? w_yc_pos[gi][WF-1:0] : MAX_YC[WF:0];
+        end
+        else
+            assign w_yc_clp[gi] = w_vc[gi][WF-1:0];
+    end
+
+    // out
+    for (gi = 0; gi < NC; gi = gi + 1) begin : out
+        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WF:$clog2(NP)+WF] = w_yc_clp[gi];
+    end
+endgenerate
 
 endmodule
