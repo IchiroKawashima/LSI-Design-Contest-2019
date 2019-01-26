@@ -1,7 +1,7 @@
 module Maccum #
-( parameter NP    = 4
-, parameter NC    = 4
-, parameter WF    = 4
+( parameter NP    = 7
+, parameter NC    = 11
+, parameter WF    = 5
 , parameter BURST = "yes"
 )
 ( input                           iValid_AM_WeightBias
@@ -20,29 +20,26 @@ module Maccum #
 , input                           iCLK
 );
 
-genvar gi, gj;
+genvar gi;
 
-wire                          wvld_b;
-wire                          wrdy_b;
-wire              [NC*WF-1:0] wdata_b;
-wire                          wvld_w;
-wire                          wrdy_w;
-wire           [NC*NP*WF-1:0] wdata_w;
-wire                 [NC-1:0] wvld_bn;
-wire                 [NC-1:0] wrdy_bn;
-wire              [NC*WF-1:0] wdata_bn;
-wire              [NC*NP-1:0] wvld_wn;
-wire              [NC*NP-1:0] wrdy_wn;
-wire           [NC*NP*WF-1:0] wdata_wn;
-wire              [NC*NP-1:0] wvld_sn;
-wire              [NC*NP-1:0] wrdy_sn;
-wire           [NC*NP*WF-1:0] wdata_sn;
-wire                 [NC-1:0] wvld_accn;
-wire                 [NC-1:0] wrdy_accn;
-wire [NC*($clog2(NP)+WF)-1:0] wdata_accn;
-wire                          wvld_acc;
-wire                          wrdy_acc;
-wire [NC*($clog2(NP)+WF)-1:0] wdata_acc;
+wire                            wvld_b;
+wire                            wrdy_b;
+wire                [NC*WF-1:0] wdata_b;
+wire                   [NC-1:0] wvld_bn;
+wire                   [NC-1:0] wrdy_bn;
+wire                [NC*WF-1:0] wdata_bn;
+wire                            wvld_w;
+wire                            wrdy_w;
+wire             [NC*NP*WF-1:0] wdata_w;
+wire                   [NC-1:0] wvld_ws;
+wire                   [NC-1:0] wrdy_ws;
+wire [NC*($clog2(NP)-1+WF)-1:0] wdata_ws;
+wire                   [NC-1:0] wvld_accn;
+wire                   [NC-1:0] wrdy_accn;
+wire   [NC*($clog2(NP)+WF)-1:0] wdata_accn;
+wire                            wvld_acc;
+wire                            wrdy_acc;
+wire   [NC*($clog2(NP)+WF)-1:0] wdata_acc;
 
 Broadcaster #
 ( .WIDTH0(NC*WF)
@@ -77,72 +74,39 @@ BroadcasterN #
 , .iCLK(iCLK)
 );
 
-BroadcasterN #
-( .SIZE(NC*NP)
+Mac #
+( .SIZE_A(NP)
+, .SIZE_B(NC)
 , .WIDTH(WF)
 , .BURST(BURST)
-) broadcasterNW
-( .iValid_AM(wvld_w)
-, .oReady_AM(wrdy_w)
-, .iData_AM(wdata_w)
-, .oValid_BM(wvld_wn)
-, .iReady_BM(wrdy_wn)
-, .oData_BM(wdata_wn)
-, .iRST(iRST)
-, .iCLK(iCLK)
-);
-
-BroadcasterN #
-( .SIZE(NC*NP)
-, .WIDTH(WF)
-, .BURST(BURST)
-) broadcasterNS
-( .iValid_AM(iValid_AM_State0)
-, .oReady_AM(oReady_AM_State0)
-, .iData_AM({NC{iData_AM_State0}})
-, .oValid_BM(wvld_sn)
-, .iReady_BM(wrdy_sn)
-, .oData_BM(wdata_sn)
+) mac
+( .iValid_AM_W(wvld_w)
+, .oReady_AM_W(wrdy_w)
+, .iData_AM_W(wdata_w)
+, .iValid_AM_S(iValid_AM_State0)
+, .oReady_AM_S(oReady_AM_State0)
+, .iData_AM_S(iData_AM_State0)
+, .oValid_BM_WS(wvld_ws)
+, .iReady_BM_WS(wrdy_ws)
+, .oData_BM_WS(wdata_ws)
 , .iRST(iRST)
 , .iCLK(iCLK)
 );
 
 generate
     for (gi = 0; gi < NC; gi = gi + 1) begin
-        wire                          wvld_wsn;
-        wire                          wryd_wsn;
-        wire [$clog2(NP)-1+WF+WF-1:0] wdata_wsn;
         wire                          wvld_wsbn;
         wire                          wrdy_wsbn;
         wire [WF+$clog2(NP)-1+WF-1:0] wdata_wsbn_a;
         wire      [$clog2(NP)+WF-1:0] wdata_wsbn_b;
 
-        MulSum #
-        ( .WIDTH0(WF)
-        , .WIDTH1(WF)
-        , .SIZE(NP)
-        , .BURST(BURST)
-        ) mulSum
-        ( .iValid_AS0(wvld_wn[gi*NP+:NP])
-        , .oReady_AS0(wrdy_wn[gi*NP+:NP])
-        , .iData_AS0(wdata_wn[gi*NP*WF+:NP*WF])
-        , .iValid_AS1(wvld_sn[gi*NP+:NP])
-        , .oReady_AS1(wrdy_sn[gi*NP+:NP])
-        , .iData_AS1(wdata_sn[gi*NP*WF+:NP*WF])
-        , .oValid_BM(wvld_wsn)
-        , .iReady_BM(wryd_wsn)
-        , .oData_BM(wdata_wsn)
-        , .iRST(iRST)
-        , .iCLK(iCLK)
-        );
-
         Combiner #
         ( .WIDTH0($clog2(NP)-1+WF)
         , .WIDTH1(WF)
         ) combiner
-        ( .iValid_AS0(wvld_wsn)
-        , .oReady_AS0(wryd_wsn)
-        , .iData_AS0(wdata_wsn[WF+:$clog2(NP)-1+WF])
+        ( .iValid_AS0(wvld_ws[gi])
+        , .oReady_AS0(wrdy_ws[gi])
+        , .iData_AS0(wdata_ws[gi*($clog2(NP)-1+WF)+:$clog2(NP)-1+WF])
         , .iValid_AS1(wvld_bn[gi])
         , .oReady_AS1(wrdy_bn[gi])
         , .iData_AS1(wdata_bn[gi*WF+:WF])
