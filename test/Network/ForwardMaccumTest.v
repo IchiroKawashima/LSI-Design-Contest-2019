@@ -1,6 +1,6 @@
 `include "Test.vh"
 
-module MaccumTest #
+module ForwardMaccumTest #
 ( parameter NP    = 3
 , parameter NC    = 2
 , parameter WF    = 8
@@ -25,16 +25,20 @@ wire                          oValid_BM_Accum1;
 reg                           iReady_BM_Accum1;
 wire [NC*($clog2(NP)+WF)-1:0] oData_BM_Accum1;
 
-wire [WF-1:0] wweit[0:NP*NC-1];
-wire [WF-1:0] wbias[0:NC-1];
-wire [WF-1:0] wstat[0:NP-1];
+wire              [WF-1:0] wweit[0:NP*NC-1];
+wire              [WF-1:0] wstat[0:NP-1];
+wire              [WF-1:0] wbias[0:NC-1];
+wire [$clog2(NP)-1+WF-1:0] wws[0:NC-1];
+wire              [WF-1:0] wb[0:NC-1];
+wire   [$clog2(NP)+WF-1:0] wwsb[0:NC-1];
+wire   [$clog2(NP)+WF-1:0] wacm [0:NC-1];
 
-Maccum #
+ForwardMaccum #
 ( .NP(NP)
 , .NC(NC)
 , .WF(WF)
 , .BURST(BURST)
-) ma
+) fm
 ( .iValid_AM_WeightBias(iValid_AM_WeightBias)
 , .oReady_AM_WeightBias(oReady_AM_WeightBias)
 , .iData_AM_WeightBias(iData_AM_WeightBias)
@@ -55,14 +59,25 @@ generate
     for (gi = 0; gi < NP; gi = gi + 1)
         for (gj = 0; gj < NC; gj = gj + 1)
             assign wweit[gi*NC+gj]
-                = iData_AM_WeightBias[(gi*NC+gj)*WF+NC*WF+:WF];
+                = fm.iData_AM_WeightBias[(gi*NC+gj)*WF+NC*WF+:WF];
+
     for (gi = 0; gi < NC; gi = gi + 1)
-        assign wbias[gi] = iData_AM_WeightBias[gi*WF+:WF];
+        assign wbias[gi] = fm.iData_AM_WeightBias[gi*WF+:WF];
+
     for (gi = 0; gi < NP; gi = gi + 1)
-        assign wstat[gi] = iData_AM_State0[gi*WF+:WF];
+        assign wstat[gi] = fm.iData_AM_State0[gi*WF+:WF];
+
+    for (gi = 0; gi < NC; gi = gi + 1) begin
+        assign wws[gi]  = fm.genblk1[gi].wdata_wsbn_a[0+:$clog2(NP)-1+WF];
+        assign wb[gi]   = fm.genblk1[gi].wdata_wsbn_a[$clog2(NP)-1+WF+:WF];
+        assign wwsb[gi] = fm.genblk1[gi].wdata_wsbn_b;
+    end
+
+    for (gi = 0; gi < NC; gi = gi + 1)
+        assign wacm[gi] = fm.oData_BM_Accum0[gi*($clog2(NP)+WF)+:$clog2(NP)+WF];
 endgenerate
 
-`DUMP_ALL("ma.vcd")
+`DUMP_ALL("fm.vcd")
 `SET_LIMIT(c, 100)
 
 initial begin
