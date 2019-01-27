@@ -12,7 +12,9 @@
 !/.vscode/*
 
 # Vivado
-!*.xpr
+!/project/*.xpr
+!/resource/wave/**/*.wcfg
+!/resource/mem/**/*.mem
 
 # Verilog
 !/include/**/*.vh

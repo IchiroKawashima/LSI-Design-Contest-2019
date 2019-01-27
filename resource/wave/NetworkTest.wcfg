@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="NetworkTest_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="NetworkTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="875597676fs"></ZoomEndTime>
+      <Cursor1Time time="311701000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="255"></NameColumnWidth>
+      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="divider133" type="divider">
+      <obj_property name="label">c</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/c/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/c/RST">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/c/EN">
+      <obj_property name="ElementShortName">EN</obj_property>
+      <obj_property name="ObjectShortName">EN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/NetworkTest/c/CNT">
+      <obj_property name="ElementShortName">CNT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CNT[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider138" type="divider">
+      <obj_property name="label">test</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wvldi">
+      <obj_property name="ElementShortName">wvldi</obj_property>
+      <obj_property name="ObjectShortName">wvldi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wrdyi">
+      <obj_property name="ElementShortName">wrdyi</obj_property>
+      <obj_property name="ObjectShortName">wrdyi</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/NetworkTest/wdatai">
+      <obj_property name="ElementShortName">wdatai[11:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatai[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wvldt">
+      <obj_property name="ElementShortName">wvldt</obj_property>
+      <obj_property name="ObjectShortName">wvldt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wrdyt">
+      <obj_property name="ElementShortName">wrdyt</obj_property>
+      <obj_property name="ObjectShortName">wrdyt</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/NetworkTest/wdatat">
+      <obj_property name="ElementShortName">wdatat[11:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatat[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wvldo">
+      <obj_property name="ElementShortName">wvldo</obj_property>
+      <obj_property name="ObjectShortName">wvldo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/NetworkTest/wrdyo">
+      <obj_property name="ElementShortName">wrdyo</obj_property>
+      <obj_property name="ObjectShortName">wrdyo</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/NetworkTest/wdatao">
+      <obj_property name="ElementShortName">wdatao[11:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatao[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group237">
+      <obj_property name="label">Network</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="divider148" type="divider">
+         <obj_property name="label">il</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iMode">
+         <obj_property name="ElementShortName">iMode</obj_property>
+         <obj_property name="ObjectShortName">iMode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AM_Input">
+         <obj_property name="ElementShortName">iValid_AM_Input</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_Input</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oReady_AM_Input">
+         <obj_property name="ElementShortName">oReady_AM_Input</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_Input</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AM_Input">
+         <obj_property name="ElementShortName">iData_AM_Input[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Input[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State0">
+         <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iReady_BM_State0">
+         <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/il/oData_BM_State0">
+         <obj_property name="ElementShortName">oData_BM_State0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State1">
+         <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iReady_BM_State1">
+         <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/il/oData_BM_State1">
+         <obj_property name="ElementShortName">oData_BM_State1[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Weight">
+         <obj_property name="ElementShortName">iValid_AS_Weight</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oReady_AS_Weight">
+         <obj_property name="ElementShortName">oReady_AS_Weight</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AS_Weight">
+         <obj_property name="ElementShortName">iData_AS_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Delta0">
+         <obj_property name="ElementShortName">iValid_AS_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oReady_AS_Delta0">
+         <obj_property name="ElementShortName">oReady_AS_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AS_Delta0">
+         <obj_property name="ElementShortName">iData_AS_Delta0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Delta0[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider165" type="divider">
+         <obj_property name="label">hl0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iMode">
+         <obj_property name="ElementShortName">iMode</obj_property>
+         <obj_property name="ObjectShortName">iMode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AM_State0">
+         <obj_property name="ElementShortName">iValid_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oReady_AM_State0">
+         <obj_property name="ElementShortName">oReady_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_State0">
+         <obj_property name="ElementShortName">iData_AM_State0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AS_State1">
+         <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oReady_AS_State1">
+         <obj_property name="ElementShortName">oReady_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AS_State1">
+         <obj_property name="ElementShortName">iData_AS_State1[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_State0">
+         <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iReady_BM_State0">
+         <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_State0">
+         <obj_property name="ElementShortName">oData_BM_State0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_State1">
+         <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iReady_BM_State1">
+         <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_State1">
+         <obj_property name="ElementShortName">oData_BM_State1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AM_Weight">
+         <obj_property name="ElementShortName">iValid_AM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oReady_AM_Weight">
+         <obj_property name="ElementShortName">oReady_AM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_Weight">
+         <obj_property name="ElementShortName">iData_AM_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_Weight">
+         <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iReady_BM_Weight">
+         <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_Weight">
+         <obj_property name="ElementShortName">oData_BM_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AM_Delta0">
+         <obj_property name="ElementShortName">iValid_AM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oReady_AM_Delta0">
+         <obj_property name="ElementShortName">oReady_AM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_Delta0">
+         <obj_property name="ElementShortName">iData_AM_Delta0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Delta0[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_Delta0">
+         <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iReady_BM_Delta0">
+         <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_Delta0">
+         <obj_property name="ElementShortName">oData_BM_Delta0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider191" type="divider">
+         <obj_property name="label">hl1</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iMode">
+         <obj_property name="ElementShortName">iMode</obj_property>
+         <obj_property name="ObjectShortName">iMode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AM_State0">
+         <obj_property name="ElementShortName">iValid_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oReady_AM_State0">
+         <obj_property name="ElementShortName">oReady_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_State0">
+         <obj_property name="ElementShortName">iData_AM_State0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AS_State1">
+         <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oReady_AS_State1">
+         <obj_property name="ElementShortName">oReady_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AS_State1">
+         <obj_property name="ElementShortName">iData_AS_State1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_State0">
+         <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iReady_BM_State0">
+         <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_State0">
+         <obj_property name="ElementShortName">oData_BM_State0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_State1">
+         <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iReady_BM_State1">
+         <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_State1">
+         <obj_property name="ElementShortName">oData_BM_State1[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AM_Weight">
+         <obj_property name="ElementShortName">iValid_AM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oReady_AM_Weight">
+         <obj_property name="ElementShortName">oReady_AM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_Weight">
+         <obj_property name="ElementShortName">iData_AM_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_Weight">
+         <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iReady_BM_Weight">
+         <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_Weight">
+         <obj_property name="ElementShortName">oData_BM_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AM_Delta0">
+         <obj_property name="ElementShortName">iValid_AM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oReady_AM_Delta0">
+         <obj_property name="ElementShortName">oReady_AM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_Delta0">
+         <obj_property name="ElementShortName">iData_AM_Delta0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Delta0[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_Delta0">
+         <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iReady_BM_Delta0">
+         <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_Delta0">
+         <obj_property name="ElementShortName">oData_BM_Delta0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider217" type="divider">
+         <obj_property name="label">ol</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iMode">
+         <obj_property name="ElementShortName">iMode</obj_property>
+         <obj_property name="ObjectShortName">iMode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iValid_AM_State0">
+         <obj_property name="ElementShortName">iValid_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oReady_AM_State0">
+         <obj_property name="ElementShortName">oReady_AM_State0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AM_State0">
+         <obj_property name="ElementShortName">iData_AM_State0[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iValid_AS_State1">
+         <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oReady_AS_State1">
+         <obj_property name="ElementShortName">oReady_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AS_State1">
+         <obj_property name="ElementShortName">iData_AS_State1[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Output">
+         <obj_property name="ElementShortName">oValid_BM_Output</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Output</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iReady_BM_Output">
+         <obj_property name="ElementShortName">iReady_BM_Output</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Output</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Output">
+         <obj_property name="ElementShortName">oData_BM_Output[11:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Output[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Weight">
+         <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iReady_BM_Weight">
+         <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Weight">
+         <obj_property name="ElementShortName">oData_BM_Weight[23:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Delta0">
+         <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iReady_BM_Delta0">
+         <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Delta0">
+         <obj_property name="ElementShortName">oData_BM_Delta0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iValid_AS_Teacher">
+         <obj_property name="ElementShortName">iValid_AS_Teacher</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Teacher</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oReady_AS_Teacher">
+         <obj_property name="ElementShortName">oReady_AS_Teacher</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Teacher</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AS_Teacher">
+         <obj_property name="ElementShortName">iData_AS_Teacher[11:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Teacher[11:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group245">
+      <obj_property name="label">il_br0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/iValid_AM">
+         <obj_property name="ElementShortName">iValid_AM</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/oReady_AM">
+         <obj_property name="ElementShortName">oReady_AM</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/oValid_BM0">
+         <obj_property name="ElementShortName">oValid_BM0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/iReady_BM0">
+         <obj_property name="ElementShortName">iReady_BM0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/oValid_BM1">
+         <obj_property name="ElementShortName">oValid_BM1</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster0/iReady_BM1">
+         <obj_property name="ElementShortName">iReady_BM1</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group252">
+      <obj_property name="label">il_br1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/iValid_AM">
+         <obj_property name="ElementShortName">iValid_AM</obj_property>
+         <obj_property name="ObjectShortName">iValid_AM</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/oReady_AM">
+         <obj_property name="ElementShortName">oReady_AM</obj_property>
+         <obj_property name="ObjectShortName">oReady_AM</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/oValid_BM0">
+         <obj_property name="ElementShortName">oValid_BM0</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/iReady_BM0">
+         <obj_property name="ElementShortName">iReady_BM0</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/oValid_BM1">
+         <obj_property name="ElementShortName">oValid_BM1</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/broadcaster1/iReady_BM1">
+         <obj_property name="ElementShortName">iReady_BM1</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group260">
+      <obj_property name="label">il_si</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/wvld_s1">
+         <obj_property name="ElementShortName">wvld_s1</obj_property>
+         <obj_property name="ObjectShortName">wvld_s1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/wrdy_s1">
+         <obj_property name="ElementShortName">wrdy_s1</obj_property>
+         <obj_property name="ObjectShortName">wrdy_s1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Weight">
+         <obj_property name="ElementShortName">iValid_AS_Weight</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oReady_AS_Weight">
+         <obj_property name="ElementShortName">oReady_AS_Weight</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Delta0">
+         <obj_property name="ElementShortName">iValid_AS_Delta0</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Delta0</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/il/oReady_AS_Delta0">
+         <obj_property name="ElementShortName">oReady_AS_Delta0</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Delta0</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group273">
+      <obj_property name="label">hl0_bw</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iValid_AS_State1">
+         <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oReady_AS_State1">
+         <obj_property name="ElementShortName">oReady_AS_State1</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iValid_AS_Delta1">
+         <obj_property name="ElementShortName">iValid_AS_Delta1</obj_property>
+         <obj_property name="ObjectShortName">iValid_AS_Delta1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oReady_AS_Delta1">
+         <obj_property name="ElementShortName">oReady_AS_Delta1</obj_property>
+         <obj_property name="ObjectShortName">oReady_AS_Delta1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oValid_BM_WeightBias">
+         <obj_property name="ElementShortName">oValid_BM_WeightBias</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_WeightBias</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iReady_BM_WeightBias">
+         <obj_property name="ElementShortName">iReady_BM_WeightBias</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_WeightBias</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oValid_BM_Weight">
+         <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iReady_BM_Weight">
+         <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+         <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group313">
+         <obj_property name="label">internal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bm_comb0">
+            <obj_property name="ElementShortName">w_vld_bm_comb0</obj_property>
+            <obj_property name="ObjectShortName">w_vld_bm_comb0</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_bm_comb0">
+            <obj_property name="ElementShortName">w_rdy_bm_comb0</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_bm_comb0</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm_comb0">
+            <obj_property name="ElementShortName">w_dat_bm_comb0[19:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm_comb0[19:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dc0">
+            <obj_property name="ElementShortName">w_dc0[0:1][3:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dc0[0:1][3:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc0_tmp">
+            <obj_property name="ElementShortName">w_adc0_tmp[0:1][7:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc0_tmp[0:1][7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc0">
+            <obj_property name="ElementShortName">w_adc0[0:1][3:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc0[0:1][3:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_as_pipe0">
+            <obj_property name="ElementShortName">w_vld_as_pipe0</obj_property>
+            <obj_property name="ObjectShortName">w_vld_as_pipe0</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_as_pipe0">
+            <obj_property name="ElementShortName">w_rdy_as_pipe0</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_as_pipe0</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_as_pipe0">
+            <obj_property name="ElementShortName">w_dat_as_pipe0[19:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_as_pipe0[19:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bs_pipe0">
+            <obj_property name="ElementShortName">w_vld_bs_pipe0</obj_property>
+            <obj_property name="ObjectShortName">w_vld_bs_pipe0</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_bs_pipe0">
+            <obj_property name="ElementShortName">w_rdy_bs_pipe0</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_bs_pipe0</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bs_pipe0">
+            <obj_property name="ElementShortName">w_dat_bs_pipe0[19:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bs_pipe0[19:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc1">
+            <obj_property name="ElementShortName">w_adc1[0:1][3:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc1[0:1][3:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_yc1">
+            <obj_property name="ElementShortName">w_yc1[0:2][3:0]</obj_property>
+            <obj_property name="ObjectShortName">w_yc1[0:2][3:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc1_tmp">
+            <obj_property name="ElementShortName">w_adyc1_tmp[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc1_tmp[0:2][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc1">
+            <obj_property name="ElementShortName">w_adyc1[0:2][7:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc1[0:2][7:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_as_pipe1">
+            <obj_property name="ElementShortName">w_vld_as_pipe1</obj_property>
+            <obj_property name="ObjectShortName">w_vld_as_pipe1</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_as_pipe1">
+            <obj_property name="ElementShortName">w_rdy_as_pipe1</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_as_pipe1</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_as_pipe1">
+            <obj_property name="ElementShortName">w_dat_as_pipe1[31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_as_pipe1[31:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bs_pipe1">
+            <obj_property name="ElementShortName">w_vld_bs_pipe1</obj_property>
+            <obj_property name="ObjectShortName">w_vld_bs_pipe1</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_bs_pipe1">
+            <obj_property name="ElementShortName">w_rdy_bs_pipe1</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_bs_pipe1</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bs_pipe1">
+            <obj_property name="ElementShortName">w_dat_bs_pipe1[31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bs_pipe1[31:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc2">
+            <obj_property name="ElementShortName">w_adc2[0:1][3:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc2[0:1][3:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc2">
+            <obj_property name="ElementShortName">w_adyc2[0:2][7:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc2[0:2][7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_bias">
+            <obj_property name="ElementShortName">w_bias[7:0]</obj_property>
+            <obj_property name="ObjectShortName">w_bias[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_weight">
+            <obj_property name="ElementShortName">w_weight[23:0]</obj_property>
+            <obj_property name="ObjectShortName">w_weight[23:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_bias">
+            <obj_property name="ElementShortName">r_bias[7:0]</obj_property>
+            <obj_property name="ObjectShortName">r_bias[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_weight">
+            <obj_property name="ElementShortName">r_weight[23:0]</obj_property>
+            <obj_property name="ObjectShortName">r_weight[23:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/r_vld_bias_weight">
+            <obj_property name="ElementShortName">r_vld_bias_weight</obj_property>
+            <obj_property name="ObjectShortName">r_vld_bias_weight</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_weight_t">
+            <obj_property name="ElementShortName">w_weight_t[23:0]</obj_property>
+            <obj_property name="ObjectShortName">w_weight_t[23:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_am_broad2">
+            <obj_property name="ElementShortName">w_vld_am_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_vld_am_broad2</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_am_broad2">
+            <obj_property name="ElementShortName">w_rdy_am_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_am_broad2</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bm0_broad2">
+            <obj_property name="ElementShortName">w_vld_bm0_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_vld_bm0_broad2</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_bm0_broad2">
+            <obj_property name="ElementShortName">w_rdy_bm0_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_bm0_broad2</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm0_broad2">
+            <obj_property name="ElementShortName">w_dat_bm0_broad2[31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm0_broad2[31:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bm1_broad2">
+            <obj_property name="ElementShortName">w_vld_bm1_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_vld_bm1_broad2</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_rdy_bm1_broad2">
+            <obj_property name="ElementShortName">w_rdy_bm1_broad2</obj_property>
+            <obj_property name="ObjectShortName">w_rdy_bm1_broad2</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm1_broad2">
+            <obj_property name="ElementShortName">w_dat_bm1_broad2[23:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm1_broad2[23:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_stt">
+            <obj_property name="ElementShortName">r_stt[1:0]</obj_property>
+            <obj_property name="ObjectShortName">r_stt[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>
