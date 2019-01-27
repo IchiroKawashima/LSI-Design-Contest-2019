@@ -6,39 +6,41 @@ module Delta #
 , parameter WF     = 4
 , parameter BURST  = "yes"
 )
-( input                             iValid_AS_Accum1
-, output                            oReady_AS_Accum1
-, input  [NC*($clog2(NP)-1+WF)-1:0] iData_AS_Accum1
-, input                             iValid_AS_Accum2
-, output                            oReady_AS_Accum2
-, input  [NC*($clog2(NN)-1+WF)-1:0] iData_AS_Accum2
-, output                            oValid_BM_Delta0
-, input                             iReady_BM_Delta0
-, output                [NC*WF-1:0] oData_BM_Delta0
-, output                            oValid_BM_Delta1
-, input                             iReady_BM_Delta1
-, output                [NC*WF-1:0] oData_BM_Delta1
-, input                             iRST
-, input                             iCLK
+( input                           iValid_AS_Accum1
+, output                          oReady_AS_Accum1
+, input  [NC*($clog2(NP)+WF)-1:0] iData_AS_Accum1
+, input                           iValid_AS_Accum2
+, output                          oReady_AS_Accum2
+, input               [NC*WA-1:0] iData_AS_Accum2
+, output                          oValid_BM_Delta0
+, input                           iReady_BM_Delta0
+, output              [NC*WF-1:0] oData_BM_Delta0
+, output                          oValid_BM_Delta1
+, input                           iReady_BM_Delta1
+, output              [NC*WF-1:0] oData_BM_Delta1
+, input                           iRST
+, input                           iCLK
 );
 
 genvar gi;
 
-localparam ONE  = {{$clog2(NP)-1{1'b0}}, 1'b0, {WF-1{1'b1}}},
-           ZERO = {{$clog2(NP)-1{1'b0}}, 1'b0, {WF-1{1'b0}}},
-           MAX  = {{$clog2(NN)-1{1'b0}}, 1'b0, {WF-1{1'b1}}},
-           MIN  = {{$clog2(NN)-1{1'b0}}, 1'b1, {WF-1{1'b0}}};
+localparam WA = (HIDDEN == "yes") ? ($clog2(NN) - 1 + WF) : ($clog2(NP) + WF);
 
-wire                            wvld_a12;
-wire                            wrdy_a12;
-wire [NC*($clog2(NP)-1+WF)-1:0] wdata_a1;
-wire [NC*($clog2(NN)-1+WF)-1:0] wdata_a2;
-wire [NC*($clog2(NN)-1+WF)-1:0] wdata_a12;
-wire                [NC*WF-1:0] wdata_sat;
+localparam ONE  = {{$clog2(NP){1'b0}}, 1'b0, {WF-1{1'b1}}},
+           ZERO = {{$clog2(NP){1'b0}}, 1'b0, {WF-1{1'b0}}},
+           MAX  = {{WA-WF{1'b0}}, 1'b0, {WF-1{1'b1}}},
+           MIN  = {{WA-WF{1'b0}}, 1'b1, {WF-1{1'b0}}};
+
+wire                          wvld_a12;
+wire                          wrdy_a12;
+wire [NC*($clog2(NP)+WF)-1:0] wdata_a1;
+wire              [NC*WA-1:0] wdata_a2;
+wire              [NC*WA-1:0] wdata_a12;
+wire              [NC*WF-1:0] wdata_sat;
 
 Combiner #
-( .WIDTH0(NC*($clog2(NP)-1+WF))
-, .WIDTH1(NC*($clog2(NN)-1+WF))
+( .WIDTH0(NC*($clog2(NP)+WF))
+, .WIDTH1(NC*WA)
 ) combiner
 ( .iValid_AS0(iValid_AS_Accum1)
 , .oReady_AS0(oReady_AS_Accum1)
@@ -54,25 +56,21 @@ Combiner #
 generate
     for (gi = 0; gi < NC; gi = gi + 1) begin
         if (HIDDEN == "yes")
-            assign wdata_a12[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF]
-                =  ( $signed(wdata_a1[gi*($clog2(NP)-1+WF)+:$clog2(NP)-1+WF])
+            assign wdata_a12[gi*WA+:WA]
+                =  ( $signed(wdata_a1[gi*($clog2(NP)+WF)+:$clog2(NP)+WF])
                    > $signed(ONE)
-                  || $signed(wdata_a1[gi*($clog2(NP)-1+WF)+:$clog2(NP)-1+WF])
+                  || $signed(wdata_a1[gi*($clog2(NP)+WF)+:$clog2(NP)+WF])
                    < $signed(ZERO)
-                   ) ? {$clog2(NN)-1+WF{1'b0}}
-                     : wdata_a2[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF];
+                   ) ? {WA{1'b0}} : wdata_a2[gi*WA+:WA];
         else
-            assign wdata_a12[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF]
-                = $signed(wdata_a1[gi*($clog2(NP)-1+WF)+:$clog2(NP)-1+WF])
-                - $signed(wdata_a2[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF]);
+            assign wdata_a12[gi*WA+:WA]
+                = $signed(wdata_a1[gi*($clog2(NP)+WF)+:$clog2(NP)+WF])
+                - $signed(wdata_a2[gi*WA+:WA]);
 
         assign wdata_sat[gi*WF+:WF]
-            =   ( $signed(wdata_a12[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF])
-                > $signed(MAX)
-                ) ? MAX[0+:WF] :
-                ( $signed(wdata_a12[gi*($clog2(NN)-1+WF)+:$clog2(NN)-1+WF])
-                < $signed(MIN)
-                ) ? MIN[0+:WF] : wdata_a12[gi*($clog2(NN)-1+WF)+:WF];
+            = ($signed(wdata_a12[gi*WA+:WA]) > $signed(MAX)) ? MAX[0+:WF] :
+              ($signed(wdata_a12[gi*WA+:WA]) < $signed(MIN)) ? MIN[0+:WF] :
+              wdata_a12[gi*WA+:WF];
     end
 endgenerate
 
