@@ -1,10 +1,13 @@
+`include "Parameter.vh"
+
 module ForwardMaccum #
 ( parameter NP    = 7
 , parameter NC    = 11
 , parameter WF    = 5
 , parameter BURST = "yes"
 )
-( input                           iValid_AM_WeightBias
+( input                           iMode
+, input                           iValid_AM_WeightBias
 , output                          oReady_AM_WeightBias
 , input      [NC*NP*WF+NC*WF-1:0] iData_AM_WeightBias
 , input                           iValid_AM_State0
@@ -19,6 +22,8 @@ module ForwardMaccum #
 , input                           iRST
 , input                           iCLK
 );
+
+`DECLARE_MODE_PARAMETERS
 
 genvar gi;
 
@@ -40,6 +45,8 @@ wire   [NC*($clog2(NP)+WF)-1:0] wdata_accn;
 wire                            wvld_acc;
 wire                            wrdy_acc;
 wire   [NC*($clog2(NP)+WF)-1:0] wdata_acc;
+wire                            wvld_bc1;
+wire                            wrdy_bc1;
 
 Broadcaster #
 ( .WIDTH0(NC*WF)
@@ -147,6 +154,10 @@ CombinerN #
 , .oData_BM(wdata_acc)
 );
 
+assign {wrdy_bc1, oValid_BM_Accum1} =
+    (iMode == TRAIN) ? {iReady_BM_Accum1, wvld_bc1} :
+    (iMode == TEST ) ? {wvld_bc1        , 1'b0    } : 2'bxx;
+
 Broadcaster #
 ( .WIDTH0(NC*($clog2(NP)+WF))
 , .WIDTH1(NC*($clog2(NP)+WF))
@@ -158,8 +169,8 @@ Broadcaster #
 , .oValid_BM0(oValid_BM_Accum0)
 , .iReady_BM0(iReady_BM_Accum0)
 , .oData_BM0(oData_BM_Accum0)
-, .oValid_BM1(oValid_BM_Accum1)
-, .iReady_BM1(iReady_BM_Accum1)
+, .oValid_BM1(wvld_bc1)
+, .iReady_BM1(wrdy_bc1)
 , .oData_BM1(oData_BM_Accum1)
 , .iRST(iRST)
 , .iCLK(iCLK)
