@@ -9,11 +9,11 @@ module PipelineRegister #
 , output   [WD-1:0] oData_BS
 , input             iRST
 , input             iCLK
-)
+);
 
 reg  [WD-1:0] r_stl;
 reg  r_vld;
-wire w_rdy
+wire w_rdy;
 
 assign oData_BS = r_stl;
 assign oValid_BS = r_vld;
