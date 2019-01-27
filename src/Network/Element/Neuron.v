@@ -7,21 +7,21 @@ module Neuron #
 , parameter WF     = 4
 , parameter BURST  = "yes"
 )
-( input                           iMode
-, input                           iValid_AM_Accum0
-, output                          oReady_AM_Accum0
-, input  [NC*($clog2(NP)+WF)-1:0] iData_AM_Accum0
-, output                          oValid_BM_State0
-, input                           iReady_BM_State0
-, output              [NC*WN-1:0] oData_BM_State0
-, output                          oValid_BM_State1
-, input                           iReady_BM_State1
-, output              [NC*WN-1:0] oData_BM_State1
-, input                           iRST
-, input                           iCLK
+( input                             iMode
+, input                             iValid_AM_Accum0
+, output                            oReady_AM_Accum0
+, input  [NC*($clog2(NP)+1+WF)-1:0] iData_AM_Accum0
+, output                            oValid_BM_State0
+, input                             iReady_BM_State0
+, output                [NC*WN-1:0] oData_BM_State0
+, output                            oValid_BM_State1
+, input                             iReady_BM_State1
+, output                [NC*WN-1:0] oData_BM_State1
+, input                             iRST
+, input                             iCLK
 );
 
-localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + WF;
+localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + 1 + WF;
 `DECLARE_MODE_PARAMETERS
 
 // pipeline register
@@ -50,20 +50,20 @@ end
 
 // logic
 localparam MAX_YC = 2 ** (WF - 1) - 1;
-wire signed [($clog2(NP)+WF)-1:0] w_vc[0:NC-1];
-wire signed [($clog2(NP)+WF)-1:0] w_yc_pos[0:NC-1];
+wire signed [($clog2(NP)+1+WF)-1:0] w_vc[0:NC-1];
+wire signed [($clog2(NP)+1+WF)-1:0] w_yc_pos[0:NC-1];
 wire signed              [WF-1:0] w_yc_clp[0:NC-1];
 
 genvar gi;
 generate
     for (gi = 0; gi < NC; gi = gi + 1) begin : in
-        assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+WF) +: ($clog2(NP)+WF)];
+        assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+1+WF) +: ($clog2(NP)+1+WF)];
     end
 
     // ReLU
     for (gi = 0; gi < NC; gi = gi + 1) begin : relu
         if (HIDDEN == "yes") begin
-            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+WF)-1] ? 0: w_vc[gi];
+            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+1+WF)-1] ? 0: w_vc[gi];
             assign w_yc_clp[gi] = (w_yc_pos[gi] <= MAX_YC[WF:0]) ? w_yc_pos[gi][WF-1:0] : MAX_YC[WF:0];
         end
         else
@@ -72,7 +72,7 @@ generate
 
     // out
     for (gi = 0; gi < NC; gi = gi + 1) begin : out
-        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WF:$clog2(NP)+WF] = w_yc_clp[gi];
+        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WF:$clog2(NP)+1+WF] = w_yc_clp[gi];
     end
 endgenerate
 

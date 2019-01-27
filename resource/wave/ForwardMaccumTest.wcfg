@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ForwardMaccumTest_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ForwardMaccumTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="70167666fs"></ZoomStartTime>
+      <ZoomEndTime time="183967667fs"></ZoomEndTime>
+      <Cursor1Time time="165001000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="237"></NameColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="36" />
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">c</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/c/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/c/RST">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/c/EN">
+      <obj_property name="ElementShortName">EN</obj_property>
+      <obj_property name="ObjectShortName">EN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/c/CNT">
+      <obj_property name="ElementShortName">CNT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CNT[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider20" type="divider">
+      <obj_property name="label">test</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/iValid_AM_State0">
+      <obj_property name="ElementShortName">iValid_AM_State0</obj_property>
+      <obj_property name="ObjectShortName">iValid_AM_State0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/oReady_AM_State0">
+      <obj_property name="ElementShortName">oReady_AM_State0</obj_property>
+      <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/iData_AM_State0">
+      <obj_property name="ElementShortName">iData_AM_State0[23:0]</obj_property>
+      <obj_property name="ObjectShortName">iData_AM_State0[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/oValid_BM_Accum0">
+      <obj_property name="ElementShortName">oValid_BM_Accum0</obj_property>
+      <obj_property name="ObjectShortName">oValid_BM_Accum0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/iReady_BM_Accum0">
+      <obj_property name="ElementShortName">iReady_BM_Accum0</obj_property>
+      <obj_property name="ObjectShortName">iReady_BM_Accum0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/oData_BM_Accum0">
+      <obj_property name="ElementShortName">oData_BM_Accum0[19:0]</obj_property>
+      <obj_property name="ObjectShortName">oData_BM_Accum0[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/oValid_BM_Accum1">
+      <obj_property name="ElementShortName">oValid_BM_Accum1</obj_property>
+      <obj_property name="ObjectShortName">oValid_BM_Accum1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/iReady_BM_Accum1">
+      <obj_property name="ElementShortName">iReady_BM_Accum1</obj_property>
+      <obj_property name="ObjectShortName">iReady_BM_Accum1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/oData_BM_Accum1">
+      <obj_property name="ElementShortName">oData_BM_Accum1[19:0]</obj_property>
+      <obj_property name="ObjectShortName">oData_BM_Accum1[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wweit">
+      <obj_property name="ElementShortName">wweit[0:5][7:0]</obj_property>
+      <obj_property name="ObjectShortName">wweit[0:5][7:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[0]">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[1]">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[2]">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[3]">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[4]">
+         <obj_property name="ElementShortName">[4][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wweit[5]">
+         <obj_property name="ElementShortName">[5][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wstat">
+      <obj_property name="ElementShortName">wstat[0:2][7:0]</obj_property>
+      <obj_property name="ObjectShortName">wstat[0:2][7:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wstat[0]">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wstat[1]">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wstat[2]">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wbias">
+      <obj_property name="ElementShortName">wbias[0:1][7:0]</obj_property>
+      <obj_property name="ObjectShortName">wbias[0:1][7:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wbias[0]">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wbias[1]">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wws">
+      <obj_property name="ElementShortName">wws[0:1][8:0]</obj_property>
+      <obj_property name="ObjectShortName">wws[0:1][8:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">UNSIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wws[0]">
+         <obj_property name="ElementShortName">[0][8:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][8:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wws[1]">
+         <obj_property name="ElementShortName">[1][8:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][8:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wb">
+      <obj_property name="ElementShortName">wb[0:1][7:0]</obj_property>
+      <obj_property name="ObjectShortName">wb[0:1][7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">UNSIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wb[0]">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wb[1]">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wwsb">
+      <obj_property name="ElementShortName">wwsb[0:1][9:0]</obj_property>
+      <obj_property name="ObjectShortName">wwsb[0:1][9:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">UNSIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wwsb[0]">
+         <obj_property name="ElementShortName">[0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][9:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wwsb[1]">
+         <obj_property name="ElementShortName">[1][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][9:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/wacm">
+      <obj_property name="ElementShortName">wacm[0:1][9:0]</obj_property>
+      <obj_property name="ObjectShortName">wacm[0:1][9:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">8</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wacm[0]">
+         <obj_property name="ElementShortName">[0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][9:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/wacm[1]">
+         <obj_property name="ElementShortName">[1][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][9:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">8</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider30" type="divider">
+      <obj_property name="label">fm</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/iValid_AM_WeightBias">
+      <obj_property name="ElementShortName">iValid_AM_WeightBias</obj_property>
+      <obj_property name="ObjectShortName">iValid_AM_WeightBias</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/oReady_AM_WeightBias">
+      <obj_property name="ElementShortName">oReady_AM_WeightBias</obj_property>
+      <obj_property name="ObjectShortName">oReady_AM_WeightBias</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/fm/iData_AM_WeightBias">
+      <obj_property name="ElementShortName">iData_AM_WeightBias[63:0]</obj_property>
+      <obj_property name="ObjectShortName">iData_AM_WeightBias[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/iValid_AM_State0">
+      <obj_property name="ElementShortName">iValid_AM_State0</obj_property>
+      <obj_property name="ObjectShortName">iValid_AM_State0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/oReady_AM_State0">
+      <obj_property name="ElementShortName">oReady_AM_State0</obj_property>
+      <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/fm/iData_AM_State0">
+      <obj_property name="ElementShortName">iData_AM_State0[23:0]</obj_property>
+      <obj_property name="ObjectShortName">iData_AM_State0[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/oValid_BM_Accum0">
+      <obj_property name="ElementShortName">oValid_BM_Accum0</obj_property>
+      <obj_property name="ObjectShortName">oValid_BM_Accum0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/iReady_BM_Accum0">
+      <obj_property name="ElementShortName">iReady_BM_Accum0</obj_property>
+      <obj_property name="ObjectShortName">iReady_BM_Accum0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/fm/oData_BM_Accum0">
+      <obj_property name="ElementShortName">oData_BM_Accum0[19:0]</obj_property>
+      <obj_property name="ObjectShortName">oData_BM_Accum0[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/oValid_BM_Accum1">
+      <obj_property name="ElementShortName">oValid_BM_Accum1</obj_property>
+      <obj_property name="ObjectShortName">oValid_BM_Accum1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/iReady_BM_Accum1">
+      <obj_property name="ElementShortName">iReady_BM_Accum1</obj_property>
+      <obj_property name="ObjectShortName">iReady_BM_Accum1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ForwardMaccumTest/fm/oData_BM_Accum1">
+      <obj_property name="ElementShortName">oData_BM_Accum1[19:0]</obj_property>
+      <obj_property name="ObjectShortName">oData_BM_Accum1[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group285">
+      <obj_property name="label">internal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wvld_b">
+         <obj_property name="ElementShortName">wvld_b</obj_property>
+         <obj_property name="ObjectShortName">wvld_b</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wrdy_b">
+         <obj_property name="ElementShortName">wrdy_b</obj_property>
+         <obj_property name="ObjectShortName">wrdy_b</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wdata_b">
+         <obj_property name="ElementShortName">wdata_b[15:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata_b[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wvld_w">
+         <obj_property name="ElementShortName">wvld_w</obj_property>
+         <obj_property name="ObjectShortName">wvld_w</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wrdy_w">
+         <obj_property name="ElementShortName">wrdy_w</obj_property>
+         <obj_property name="ObjectShortName">wrdy_w</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wdata_w">
+         <obj_property name="ElementShortName">wdata_w[47:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata_w[47:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wvld_bn">
+         <obj_property name="ElementShortName">wvld_bn[1:0]</obj_property>
+         <obj_property name="ObjectShortName">wvld_bn[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wrdy_bn">
+         <obj_property name="ElementShortName">wrdy_bn[1:0]</obj_property>
+         <obj_property name="ObjectShortName">wrdy_bn[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wdata_bn">
+         <obj_property name="ElementShortName">wdata_bn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata_bn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wvld_acc">
+         <obj_property name="ElementShortName">wvld_acc</obj_property>
+         <obj_property name="ObjectShortName">wvld_acc</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/ForwardMaccumTest/fm/wrdy_acc">
+         <obj_property name="ElementShortName">wrdy_acc</obj_property>
+         <obj_property name="ObjectShortName">wrdy_acc</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/ForwardMaccumTest/fm/wdata_acc">
+         <obj_property name="ElementShortName">wdata_acc[19:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata_acc[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider366" type="divider">
+         <obj_property name="label">mulsum</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group384">
+         <obj_property name="label">internal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="vbus" fp_name="vbus478">
+            <obj_property name="label">wdata_a0[23:16]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="vbus" fp_name="vbus469">
+            <obj_property name="label">wdata_a0[15:8]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="vbus" fp_name="vbus460">
+            <obj_property name="label">wdata_a0[7:0]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="vbus" fp_name="vbus451">
+            <obj_property name="label">wdata_a1[23:17]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="vbus" fp_name="vbus442">
+            <obj_property name="label">wdata_a1[15:8]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="vbus" fp_name="vbus433">
+            <obj_property name="label">wdata_a1[7:0]</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>
