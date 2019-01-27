@@ -1,168 +1,90 @@
 module Maccum #
-( parameter NP    = 7
-, parameter NC    = 11
-, parameter WF    = 5
-, parameter BURST = "yes"
+( parameter SIZE_A = 32
+, parameter SIZE_B = 32
+, parameter WIDTH  = 4
+, parameter BURST  = "yes"
 )
-( input                           iValid_AM_WeightBias
-, output                          oReady_AM_WeightBias
-, input      [NC*NP*WF+NC*WF-1:0] iData_AM_WeightBias
-, input                           iValid_AM_State0
-, output                          oReady_AM_State0
-, input               [NP*WF-1:0] iData_AM_State0
-, output                          oValid_BM_Accum0
-, input                           iReady_BM_Accum0
-, output [NC*($clog2(NP)+WF)-1:0] oData_BM_Accum0
-, output                          oValid_BM_Accum1
-, input                           iReady_BM_Accum1
-, output [NC*($clog2(NP)+WF)-1:0] oData_BM_Accum1
-, input                           iRST
-, input                           iCLK
+( input                                        iValid_AM_W
+, output                                       oReady_AM_W
+, input              [SIZE_B*SIZE_A*WIDTH-1:0] iData_AM_W
+, input                                        iValid_AM_S
+, output                                       oReady_AM_S
+, input                     [SIZE_A*WIDTH-1:0] iData_AM_S
+, output                          [SIZE_B-1:0] oValid_BM_WS
+, input                           [SIZE_B-1:0] iReady_BM_WS
+, output [SIZE_B*($clog2(SIZE_A)-1+WIDTH)-1:0] oData_BM_WS
+, input                                        iRST
+, input                                        iCLK
 );
 
-genvar gi;
+genvar gi, gj;
 
-wire                            wvld_b;
-wire                            wrdy_b;
-wire                [NC*WF-1:0] wdata_b;
-wire                   [NC-1:0] wvld_bn;
-wire                   [NC-1:0] wrdy_bn;
-wire                [NC*WF-1:0] wdata_bn;
-wire                            wvld_w;
-wire                            wrdy_w;
-wire             [NC*NP*WF-1:0] wdata_w;
-wire                   [NC-1:0] wvld_ws;
-wire                   [NC-1:0] wrdy_ws;
-wire [NC*($clog2(NP)-1+WF)-1:0] wdata_ws;
-wire                   [NC-1:0] wvld_accn;
-wire                   [NC-1:0] wrdy_accn;
-wire   [NC*($clog2(NP)+WF)-1:0] wdata_accn;
-wire                            wvld_acc;
-wire                            wrdy_acc;
-wire   [NC*($clog2(NP)+WF)-1:0] wdata_acc;
+wire                   [SIZE_B*SIZE_A-1:0] wvld_wn;
+wire                   [SIZE_B*SIZE_A-1:0] wrdy_wn;
+wire             [SIZE_B*SIZE_A*WIDTH-1:0] wdata_wn;
+wire                   [SIZE_B*SIZE_A-1:0] wvld_sn;
+wire                   [SIZE_B*SIZE_A-1:0] wrdy_sn;
+wire             [SIZE_B*SIZE_A*WIDTH-1:0] wdata_sn;
+wire                          [SIZE_B-1:0] wvld_wsn;
+wire                          [SIZE_B-1:0] wrdy_wsn;
+wire [SIZE_B*($clog2(SIZE_A)-1+WIDTH)-1:0] wdata_wsn;
 
-Broadcaster #
-( .WIDTH0(NC*WF)
-, .WIDTH1(NC*NP*WF)
+BroadcasterN #
+( .SIZE(SIZE_B*SIZE_A)
+, .WIDTH(WIDTH)
 , .BURST(BURST)
-) broadcaster0
-( .iValid_AM(iValid_AM_WeightBias)
-, .oReady_AM(oReady_AM_WeightBias)
-, .iData_AM(iData_AM_WeightBias)
-, .oValid_BM0(wvld_b)
-, .iReady_BM0(wrdy_b)
-, .oData_BM0(wdata_b)
-, .oValid_BM1(wvld_w)
-, .iReady_BM1(wrdy_w)
-, .oData_BM1(wdata_w)
+) broadcasterNW
+( .iValid_AM(iValid_AM_W)
+, .oReady_AM(oReady_AM_W)
+, .iData_AM(iData_AM_W)
+, .oValid_BM(wvld_wn)
+, .iReady_BM(wrdy_wn)
+, .oData_BM(wdata_wn)
 , .iRST(iRST)
 , .iCLK(iCLK)
 );
 
 BroadcasterN #
-( .SIZE(NC)
-, .WIDTH(WF)
+( .SIZE(SIZE_B*SIZE_A)
+, .WIDTH(WIDTH)
 , .BURST(BURST)
-) broadcasterNB
-( .iValid_AM(wvld_b)
-, .oReady_AM(wrdy_b)
-, .iData_AM(wdata_b)
-, .oValid_BM(wvld_bn)
-, .iReady_BM(wrdy_bn)
-, .oData_BM(wdata_bn)
-, .iRST(iRST)
-, .iCLK(iCLK)
-);
-
-Mac #
-( .SIZE_A(NP)
-, .SIZE_B(NC)
-, .WIDTH(WF)
-, .BURST(BURST)
-) mac
-( .iValid_AM_W(wvld_w)
-, .oReady_AM_W(wrdy_w)
-, .iData_AM_W(wdata_w)
-, .iValid_AM_S(iValid_AM_State0)
-, .oReady_AM_S(oReady_AM_State0)
-, .iData_AM_S(iData_AM_State0)
-, .oValid_BM_WS(wvld_ws)
-, .iReady_BM_WS(wrdy_ws)
-, .oData_BM_WS(wdata_ws)
+) broadcasterNS
+( .iValid_AM(iValid_AM_S)
+, .oReady_AM(oReady_AM_S)
+, .iData_AM({SIZE_B{iData_AM_S}})
+, .oValid_BM(wvld_sn)
+, .iReady_BM(wrdy_sn)
+, .oData_BM(wdata_sn)
 , .iRST(iRST)
 , .iCLK(iCLK)
 );
 
 generate
-    for (gi = 0; gi < NC; gi = gi + 1) begin
-        wire                          wvld_wsbn;
-        wire                          wrdy_wsbn;
-        wire [WF+$clog2(NP)-1+WF-1:0] wdata_wsbn_a;
-        wire      [$clog2(NP)+WF-1:0] wdata_wsbn_b;
+    for (gi = 0; gi < SIZE_B; gi = gi + 1) begin
+        wire [$clog2(SIZE_A)-1+WIDTH+WIDTH-1:0] wdata_ws;
 
-        Combiner #
-        ( .WIDTH0($clog2(NP)-1+WF)
-        , .WIDTH1(WF)
-        ) combiner
-        ( .iValid_AS0(wvld_ws[gi])
-        , .oReady_AS0(wrdy_ws[gi])
-        , .iData_AS0(wdata_ws[gi*($clog2(NP)-1+WF)+:$clog2(NP)-1+WF])
-        , .iValid_AS1(wvld_bn[gi])
-        , .oReady_AS1(wrdy_bn[gi])
-        , .iData_AS1(wdata_bn[gi*WF+:WF])
-        , .oValid_BM(wvld_wsbn)
-        , .iReady_BM(wrdy_wsbn)
-        , .oData_BM(wdata_wsbn_a)
-        );
-
-        assign wdata_wsbn_b
-            = $signed(wdata_wsbn_a[$clog2(NP)-1+WF+:WF])
-            + $signed(wdata_wsbn_a[0+:$clog2(NP)-1+WF]);
-
-        Register #
-        ( .WIDTH($clog2(NP)+WF)
+        MulSum #
+        ( .WIDTH0(WIDTH)
+        , .WIDTH1(WIDTH)
+        , .SIZE(SIZE_A)
         , .BURST(BURST)
-        ) register
-        ( .iValid_AM(wvld_wsbn)
-        , .oReady_AM(wrdy_wsbn)
-        , .iData_AM(wdata_wsbn_b)
-        , .oValid_BM(wvld_accn[gi])
-        , .iReady_BM(wrdy_accn[gi])
-        , .oData_BM(wdata_accn[gi*($clog2(NP)+WF)+:$clog2(NP)+WF])
+        ) mulSum
+        ( .iValid_AS0(wvld_wn[gi*SIZE_A+:SIZE_A])
+        , .oReady_AS0(wrdy_wn[gi*SIZE_A+:SIZE_A])
+        , .iData_AS0(wdata_wn[gi*SIZE_A*WIDTH+:SIZE_A*WIDTH])
+        , .iValid_AS1(wvld_sn[gi*SIZE_A+:SIZE_A])
+        , .oReady_AS1(wrdy_sn[gi*SIZE_A+:SIZE_A])
+        , .iData_AS1(wdata_sn[gi*SIZE_A*WIDTH+:SIZE_A*WIDTH])
+        , .oValid_BM(oValid_BM_WS[gi])
+        , .iReady_BM(iReady_BM_WS[gi])
+        , .oData_BM(wdata_ws)
         , .iRST(iRST)
         , .iCLK(iCLK)
         );
+
+        assign oData_BM_WS[gi*($clog2(SIZE_A)-1+WIDTH)+:$clog2(SIZE_A)-1+WIDTH]
+            = wdata_ws[WIDTH+:$clog2(SIZE_A)-1+WIDTH];
     end
 endgenerate
-
-CombinerN #
-( .SIZE(NC)
-, .WIDTH($clog2(NP)+WF)
-) combinerNA
-( .iValid_AS(wvld_accn)
-, .oReady_AS(wrdy_accn)
-, .iData_AS(wdata_accn)
-, .oValid_BM(wvld_acc)
-, .iReady_BM(wrdy_acc)
-, .oData_BM(wdata_acc)
-);
-
-Broadcaster #
-( .WIDTH0(NC*($clog2(NP)+WF))
-, .WIDTH1(NC*($clog2(NP)+WF))
-, .BURST(BURST)
-) broadcaster1
-( .iValid_AM(wvld_acc)
-, .oReady_AM(wrdy_acc)
-, .iData_AM({wdata_acc, wdata_acc})
-, .oValid_BM0(oValid_BM_Accum0)
-, .iReady_BM0(iReady_BM_Accum0)
-, .oData_BM0(oData_BM_Accum0)
-, .oValid_BM1(oValid_BM_Accum1)
-, .iReady_BM1(iReady_BM_Accum1)
-, .oData_BM1(oData_BM_Accum1)
-, .iRST(iRST)
-, .iCLK(iCLK)
-);
 
 endmodule
