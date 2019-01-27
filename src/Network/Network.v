@@ -63,7 +63,8 @@ InputLayer #
 , .WF(WF)
 , .BURST(BURST)
 ) il
-( .iValid_AM_Input(iValid_AM_Input)
+( .iMode(iMode)
+, .iValid_AM_Input(iValid_AM_Input)
 , .oReady_AM_Input(oReady_AM_Input)
 , .iData_AM_Input(iData_AM_Input)
 , .oValid_BM_State0(wvld_y_i0)

@@ -1,10 +1,13 @@
+`include "Parameter.vh"
+
 module InputLayer #
 ( parameter NC    = 7
 , parameter NN    = 6
 , parameter WF    = 5
 , parameter BURST = "yes"
 )
-( input                 iValid_AM_Input
+( input                 iMode
+, input                 iValid_AM_Input
 , output                oReady_AM_Input
 , input     [NC*WF-1:0] iData_AM_Input
 , output                oValid_BM_State0
@@ -23,8 +26,12 @@ module InputLayer #
 , input                 iCLK
 );
 
-wire             wvld_s0;
-wire             wrdy_s0;
+`DECLARE_MODE_PARAMETERS
+
+wire             wvld_s0a;
+wire             wrdy_s0a;
+wire             wvld_s0b;
+wire             wrdy_s0b;
 wire [NC*WF-1:0] wdata_s0;
 wire             wvld_s1;
 wire             wrdy_s1;
@@ -42,20 +49,24 @@ Broadcaster #
 , .oValid_BM0(oValid_BM_State0)
 , .iReady_BM0(iReady_BM_State0)
 , .oData_BM0(oData_BM_State0)
-, .oValid_BM1(wvld_s0)
-, .iReady_BM1(wrdy_s0)
+, .oValid_BM1(wvld_s0a)
+, .iReady_BM1(wrdy_s0a)
 , .oData_BM1(wdata_s0)
 , .iRST(iRST)
 , .iCLK(iCLK)
 );
+
+assign {wrdy_s0a, wvld_s0b} =
+    (iMode == TRAIN) ? {wrdy_s0b, wvld_s0a} :
+    (iMode == TEST ) ? {wvld_s0a, 1'b0    } : 2'bxx;
 
 Broadcaster #
 ( .WIDTH0(NC*WF)
 , .WIDTH1(NC*WF)
 , .BURST(BURST)
 ) broadcaster1
-( .iValid_AM(wvld_s0)
-, .oReady_AM(wrdy_s0)
+( .iValid_AM(wvld_s0b)
+, .oReady_AM(wrdy_s0b)
 , .iData_AM({wdata_s0, wdata_s0})
 , .oValid_BM0(oValid_BM_State1)
 , .iReady_BM0(iReady_BM_State1)
