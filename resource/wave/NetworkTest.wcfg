@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1073000001fs"></ZoomEndTime>
-      <Cursor1Time time="326000000fs"></Cursor1Time>
+      <ZoomEndTime time="1205001001fs"></ZoomEndTime>
+      <Cursor1Time time="1205001000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="225"></NameColumnWidth>
       <ValueColumnWidth column_width="154"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="divider133" type="divider">
       <obj_property name="label">c</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -48,38 +48,56 @@
    <wvobject type="logic" fp_name="/NetworkTest/wvldi">
       <obj_property name="ElementShortName">wvldi</obj_property>
       <obj_property name="ObjectShortName">wvldi</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/wrdyi">
       <obj_property name="ElementShortName">wrdyi</obj_property>
       <obj_property name="ObjectShortName">wrdyi</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatai">
       <obj_property name="ElementShortName">wdatai[23:0]</obj_property>
       <obj_property name="ObjectShortName">wdatai[23:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/wvldt">
       <obj_property name="ElementShortName">wvldt</obj_property>
       <obj_property name="ObjectShortName">wvldt</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/wrdyt">
       <obj_property name="ElementShortName">wrdyt</obj_property>
       <obj_property name="ObjectShortName">wrdyt</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatat">
       <obj_property name="ElementShortName">wdatat[15:0]</obj_property>
       <obj_property name="ObjectShortName">wdatat[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/wvldo">
       <obj_property name="ElementShortName">wvldo</obj_property>
       <obj_property name="ObjectShortName">wvldo</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/wrdyo">
       <obj_property name="ElementShortName">wrdyo</obj_property>
       <obj_property name="ObjectShortName">wrdyo</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatao">
       <obj_property name="ElementShortName">wdatao[21:0]</obj_property>
       <obj_property name="ObjectShortName">wdatao[21:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="group" fp_name="group237">
       <obj_property name="label">Network</obj_property>
@@ -724,7 +742,6 @@
    <wvobject type="group" fp_name="group213">
       <obj_property name="label">calc</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/NetworkTest/wstat_h0">
          <obj_property name="ElementShortName">wstat_h0[0:2][7:0]</obj_property>
          <obj_property name="ObjectShortName">wstat_h0[0:2][7:0]</obj_property>
@@ -1778,7 +1795,6 @@
    <wvobject type="group" fp_name="group803">
       <obj_property name="label">bw</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_adc0">
          <obj_property name="ElementShortName">w_adc0[0:1][7:0]</obj_property>
          <obj_property name="ObjectShortName">w_adc0[0:1][7:0]</obj_property>
@@ -2055,6 +2071,367 @@
          <obj_property name="ElementShortName">w_adyc2[0:2][15:0]</obj_property>
          <obj_property name="ObjectShortName">w_adyc2[0:2][15:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group1128">
+      <obj_property name="label">vr</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group1133">
+         <obj_property name="label">il</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State0">
+            <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/il/iReady_BM_State0">
+            <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State1">
+            <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/il/iReady_BM_State1">
+            <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group1154">
+         <obj_property name="label">hl0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/fm/oValid_BM_Accum0">
+            <obj_property name="ElementShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/fm/iReady_BM_Accum0">
+            <obj_property name="ElementShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/fm/oValid_BM_Accum1">
+            <obj_property name="ElementShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/fm/iReady_BM_Accum1">
+            <obj_property name="ElementShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/ne/oValid_BM_State0">
+            <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/ne/iReady_BM_State0">
+            <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/ne/oValid_BM_State1">
+            <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/ne/iReady_BM_State1">
+            <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oValid_BM_WeightBias">
+            <obj_property name="ElementShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iReady_BM_WeightBias">
+            <obj_property name="ElementShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/oValid_BM_Weight">
+            <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/iReady_BM_Weight">
+            <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/de/oValid_BM_Delta0">
+            <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/de/iReady_BM_Delta0">
+            <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/de/oValid_BM_Delta1">
+            <obj_property name="ElementShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/de/iReady_BM_Delta1">
+            <obj_property name="ElementShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bm/oValid_BM_Accum2">
+            <obj_property name="ElementShortName">oValid_BM_Accum2</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum2</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bm/iReady_BM_Accum2">
+            <obj_property name="ElementShortName">iReady_BM_Accum2</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum2</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group1155">
+         <obj_property name="label">hl1</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/fm/oValid_BM_Accum0">
+            <obj_property name="ElementShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/fm/iReady_BM_Accum0">
+            <obj_property name="ElementShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/fm/oValid_BM_Accum1">
+            <obj_property name="ElementShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/fm/iReady_BM_Accum1">
+            <obj_property name="ElementShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/ne/oValid_BM_State0">
+            <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/ne/iReady_BM_State0">
+            <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/ne/oValid_BM_State1">
+            <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/ne/iReady_BM_State1">
+            <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bw/oValid_BM_WeightBias">
+            <obj_property name="ElementShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bw/iReady_BM_WeightBias">
+            <obj_property name="ElementShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bw/oValid_BM_Weight">
+            <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bw/iReady_BM_Weight">
+            <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/de/oValid_BM_Delta0">
+            <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/de/iReady_BM_Delta0">
+            <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/de/oValid_BM_Delta1">
+            <obj_property name="ElementShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/de/iReady_BM_Delta1">
+            <obj_property name="ElementShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bm/oValid_BM_Accum2">
+            <obj_property name="ElementShortName">oValid_BM_Accum2</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum2</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/bm/iReady_BM_Accum2">
+            <obj_property name="ElementShortName">iReady_BM_Accum2</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum2</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="vbus" fp_name="vbus1174">
+         <obj_property name="label">ol</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/fm/oValid_BM_Accum0">
+            <obj_property name="ElementShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/fm/iReady_BM_Accum0">
+            <obj_property name="ElementShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/fm/oValid_BM_Accum1">
+            <obj_property name="ElementShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/fm/iReady_BM_Accum1">
+            <obj_property name="ElementShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Accum1</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/ne/oValid_BM_State0">
+            <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/ne/iReady_BM_State0">
+            <obj_property name="ElementShortName">iReady_BM_State0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/ne/oValid_BM_State1">
+            <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/ne/iReady_BM_State1">
+            <obj_property name="ElementShortName">iReady_BM_State1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/bw/oValid_BM_WeightBias">
+            <obj_property name="ElementShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/bw/iReady_BM_WeightBias">
+            <obj_property name="ElementShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_WeightBias</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/bw/oValid_BM_Weight">
+            <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/bw/iReady_BM_Weight">
+            <obj_property name="ElementShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
+            <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/de/oValid_BM_Delta0">
+            <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/de/iReady_BM_Delta0">
+            <obj_property name="ElementShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/de/oValid_BM_Delta1">
+            <obj_property name="ElementShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">oValid_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/NetworkTest/ne/ol/de/iReady_BM_Delta1">
+            <obj_property name="ElementShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="ObjectShortName">iReady_BM_Delta1</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
       </wvobject>
    </wvobject>
 </wave_config>

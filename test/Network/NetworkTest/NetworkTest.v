@@ -2,7 +2,7 @@
 `include "Test.vh"
 
 module NetworkTest #
-( parameter SIZE         = 1
+( parameter SIZE         = 3
 , parameter INPUT_FILE   = ""
 , parameter TEACHER_FILE = ""
 , parameter OUTPUT_FILE  = ""
@@ -12,7 +12,7 @@ module NetworkTest #
 , parameter NH1           = 3
 , parameter NO            = 2
 , parameter WF            = 8
-, parameter BURST         = "no"
+, parameter BURST         = "yes"
 );
 
 ClockDomain c();
@@ -33,23 +33,23 @@ wire                             wrdyo;
 wire [NO*($clog2(NH1)+1+WF)-1:0] wdatao;
 
 
-wire              [WF-1:0] wstat_h0[0:NI-1];
-wire              [WF-1:0] wweit_h0[0:NI*NH0-1];
-wire              [WF-1:0] wbias_h0[0:NH0-1];
-wire              [WF-1:0] wdelta_h0[0:NH0-1];
+wire [WF-1:0] wstat_h0[0:NI-1];
+wire [WF-1:0] wweit_h0[0:NI*NH0-1];
+wire [WF-1:0] wbias_h0[0:NH0-1];
+wire [WF-1:0] wdelta_h0[0:NH0-1];
 
-wire              [WF-1:0] wstat_h1[0:NH0-1];
-wire              [WF-1:0] wweit_h1[0:NH0*NH1-1];
-wire              [WF-1:0] wbias_h1[0:NH1-1];
-wire              [WF-1:0] wdelta_h1[0:NH1-1];
+wire [WF-1:0] wstat_h1[0:NH0-1];
+wire [WF-1:0] wweit_h1[0:NH0*NH1-1];
+wire [WF-1:0] wbias_h1[0:NH1-1];
+wire [WF-1:0] wdelta_h1[0:NH1-1];
 
-wire              [WF-1:0] wstat_o[0:NH1-1];
-wire              [WF-1:0] wweit_o[0:NH1*NO-1];
-wire              [WF-1:0] wbias_o[0:NO-1];
-wire              [WF-1:0] wdelta_o[0:NO-1];
+wire [WF-1:0] wstat_o[0:NH1-1];
+wire [WF-1:0] wweit_o[0:NH1*NO-1];
+wire [WF-1:0] wbias_o[0:NO-1];
+wire [WF-1:0] wdelta_o[0:NO-1];
 
-wire  [$clog2(NH1)+1+WF-1:0] woutput[0:NO-1];
-wire  [$clog2(NH1)+1+WF-1:0] wteacher[0:NO-1];
+wire [$clog2(NH1)+1+WF-1:0] woutput[0:NO-1];
+wire [$clog2(NH1)+1+WF-1:0] wteacher[0:NO-1];
 
 generate
     for (gi = 0; gi < NI; gi = gi + 1)
@@ -65,9 +65,7 @@ generate
 
     for (gi = 0; gi < NH0; gi = gi + 1)
         assign wdelta_h0[gi] = ne.hl0.de.oData_BM_Delta0[gi*WF+:WF];
-endgenerate
 
-generate
     for (gi = 0; gi < NH0; gi = gi + 1)
         for (gj = 0; gj < NH1; gj = gj + 1)
             assign wweit_h1[gi*NH1+gj]
@@ -81,9 +79,7 @@ generate
 
     for (gi = 0; gi < NH1; gi = gi + 1)
         assign wdelta_h1[gi] = ne.hl1.de.oData_BM_Delta0[gi*WF+:WF];
-endgenerate
 
-generate
     for (gi = 0; gi < NH1; gi = gi + 1)
         for (gj = 0; gj < NO; gj = gj + 1)
             assign wweit_o[gi*NO+gj]
@@ -100,8 +96,10 @@ generate
 
 
     for (gi = 0; gi < NO; gi = gi + 1) begin
-        assign woutput[gi]  = ne.ol.oData_BM_Output[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
-        assign wteacher[gi] = ne.ol.iData_AS_Teacher[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
+        assign woutput[gi]
+            = ne.ol.oData_BM_Output[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
+        assign wteacher[gi]
+            = ne.ol.iData_AS_Teacher[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
     end
 endgenerate
 
@@ -173,6 +171,6 @@ StreamSink #
 );
 
 `DUMP_ALL("ne.vcd")
-`SET_LIMIT(c, 100)
+`SET_LIMIT(c, 120)
 
 endmodule
