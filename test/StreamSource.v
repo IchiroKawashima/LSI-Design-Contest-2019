@@ -12,7 +12,7 @@ module StreamSource #
 , input              iCLK
 );
 
-genvar gi;
+integer i;
 
 wire                   wrdy;
 wire                   wvld;
@@ -22,11 +22,16 @@ reg        [WIDTH-1:0] rmem[0:SIZE-1];
 reg                    ren;
 
 generate
-    if (INPUT_FILE == "")
-        for (gi = 0; gi < SIZE; gi = gi + 1)
-            initial
-                rmem[gi] = $random;
-    else
+    if (INPUT_FILE == "") begin
+        integer bf;
+
+        initial begin
+            bf = 123456789;
+
+            for (i = 0; i < SIZE; i = i + 1)
+                rmem[i] = $random(bf);
+        end
+    end else
         initial
             $readmemb(INPUT_FILE, rmem, 0, SIZE - 1);
 endgenerate

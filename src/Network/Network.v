@@ -5,7 +5,7 @@ module Network #
 , parameter NO      = 7
 , parameter WV      = 8
 , parameter SEED_H0 = 0032352685
-, parameter SEED_H1 = 6628063272
+, parameter SEED_H1 = 1628063272
 , parameter SEED_O  = 3496660372
 , parameter BURST   = "yes"
 )
