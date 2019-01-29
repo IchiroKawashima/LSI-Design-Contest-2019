@@ -5,6 +5,7 @@ module OutputLayer #
 , parameter BURST = "yes"
 )
 ( input                             iMode
+, input                             iLR
 , input                             iValid_AM_State0
 , output                            oReady_AM_State0
 , input                 [NP*WF-1:0] iData_AM_State0
@@ -91,7 +92,7 @@ BiasWeight #
 , .BURST(BURST)
 ) bw
 ( .iMode(iMode)
-, .iLR(8'b1000_0000)
+, .iLR(iLR)
 , .iValid_AS_State1(iValid_AS_State1)
 , .oReady_AS_State1(oReady_AS_State1)
 , .iData_AS_State1(iData_AS_State1)

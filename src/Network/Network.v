@@ -7,6 +7,7 @@ module Network #
 , parameter BURST = "yes"
 )
 ( input                              iMode
+, input                              iLR
 , input                              iValid_AM_Input
 , output                             oReady_AM_Input
 , input                  [NI*WF-1:0] iData_AM_Input
@@ -91,6 +92,7 @@ HiddenLayer #
 , .BURST(BURST)
 ) hl0
 ( .iMode(iMode)
+, .iLR(iLR)
 , .iValid_AM_State0(wvld_y_i0)
 , .oReady_AM_State0(wrdy_y_i0)
 , .iData_AM_State0(wdata_y_i0)
@@ -127,6 +129,7 @@ HiddenLayer #
 , .BURST(BURST)
 ) hl1
 ( .iMode(iMode)
+, .iLR(iLR)
 , .iValid_AM_State0(wvld_y_h00)
 , .oReady_AM_State0(wrdy_y_h00)
 , .iData_AM_State0(wdata_y_h00)
@@ -162,6 +165,7 @@ OutputLayer #
 , .BURST(BURST)
 ) ol
 ( .iMode(iMode)
+, .iLR(iLR)
 , .iValid_AM_State0(wvld_y_h10)
 , .oReady_AM_State0(wrdy_y_h10)
 , .iData_AM_State0(wdata_y_h10)

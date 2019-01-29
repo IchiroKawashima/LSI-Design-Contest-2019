@@ -7,12 +7,13 @@ module NetworkTest #
 , parameter TEACHER_FILE = ""
 , parameter OUTPUT_FILE  = ""
 , parameter MODE         = TRAIN
-, parameter NI            = 3
-, parameter NH0           = 2
-, parameter NH1           = 3
-, parameter NO            = 2
-, parameter WF            = 8
-, parameter BURST         = "yes"
+, parameter LR           = 64
+, parameter NI           = 3
+, parameter NH0          = 2
+, parameter NH1          = 3
+, parameter NO           = 2
+, parameter WF           = 8
+, parameter BURST        = "yes"
 );
 
 ClockDomain c();
@@ -156,6 +157,7 @@ Network #
 , .BURST(BURST)
 ) ne
 ( .iMode(MODE)
+, .iLR(iLR)
 , .iValid_AM_Input(wvldi)
 , .oReady_AM_Input(wrdyi)
 , .iData_AM_Input(wdatai)
