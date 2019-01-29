@@ -4,22 +4,22 @@ module BackwardMaccum #
 , parameter WF    = 5
 , parameter BURST = "yes"
 )
-( input                             iValid_AM_Weight
-, output                            oReady_AM_Weight
-, input              [NC*NN*WF-1:0] iData_AM_Weight
-, input                             iValid_AM_Delta0
-, output                            oReady_AM_Delta0
-, input                 [NN*WF-1:0] iData_AM_Delta0
-, output                            oValid_BM_Accum2
-, input                             iReady_BM_Accum2
-, output [NC*($clog2(NN)-1+WF)-1:0] oData_BM_Accum2
-, input                             iRST
-, input                             iCLK
+( input                           iValid_AM_Weight
+, output                          oReady_AM_Weight
+, input            [NC*NN*WF-1:0] iData_AM_Weight
+, input                           iValid_AM_Delta0
+, output                          oReady_AM_Delta0
+, input               [NN*WF-1:0] iData_AM_Delta0
+, output                          oValid_BM_Accum2
+, input                           iReady_BM_Accum2
+, output [NC*($clog2(NN)+WF)-1:0] oData_BM_Accum2
+, input                           iRST
+, input                           iCLK
 );
 
-wire                   [NC-1:0] wvld_wsn;
-wire                   [NC-1:0] wrdy_wsn;
-wire [NC*($clog2(NN)-1+WF)-1:0] wdata_wsn;
+wire                 [NC-1:0] wvld_wsn;
+wire                 [NC-1:0] wrdy_wsn;
+wire [NC*($clog2(NN)+WF)-1:0] wdata_wsn;
 
 Maccum #
 ( .SIZE_A(NN)
@@ -42,7 +42,7 @@ Maccum #
 
 CombinerN #
 ( .SIZE(NC)
-, .WIDTH($clog2(NN)-1+WF)
+, .WIDTH($clog2(NN)+WF)
 ) combinerNA
 ( .iValid_AS(wvld_wsn)
 , .oReady_AS(wrdy_wsn)

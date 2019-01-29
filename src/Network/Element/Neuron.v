@@ -7,21 +7,21 @@ module Neuron #
 , parameter WF     = 4
 , parameter BURST  = "yes"
 )
-( input                           iMode
-, input                           iValid_AM_Accum0
-, output                          oReady_AM_Accum0
-, input  [NC*($clog2(NP)+WF)-1:0] iData_AM_Accum0
-, output                          oValid_BM_State0
-, input                           iReady_BM_State0
-, output              [NC*WN-1:0] oData_BM_State0
-, output                          oValid_BM_State1
-, input                           iReady_BM_State1
-, output              [NC*WN-1:0] oData_BM_State1
-, input                           iRST
-, input                           iCLK
+( input                             iMode
+, input                             iValid_AM_Accum0
+, output                            oReady_AM_Accum0
+, input  [NC*($clog2(NP)+1+WF)-1:0] iData_AM_Accum0
+, output                            oValid_BM_State0
+, input                             iReady_BM_State0
+, output                [NC*WN-1:0] oData_BM_State0
+, output                            oValid_BM_State1
+, input                             iReady_BM_State1
+, output                [NC*WN-1:0] oData_BM_State1
+, input                             iRST
+, input                             iCLK
 );
 
-localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + WF;
+localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + 1 + WF;
 `DECLARE_MODE_PARAMETERS
 
 // pipeline register
@@ -50,20 +50,20 @@ end
 
 // logic
 localparam MAX_YC = 2 ** (WF - 1) - 1;
-wire signed [($clog2(NP)+WF)-1:0] w_vc[0:NC-1];
-wire signed [($clog2(NP)+WF)-1:0] w_yc_pos[0:NC-1];
+wire signed [($clog2(NP)+1+WF)-1:0] w_vc[0:NC-1];
+wire signed [($clog2(NP)+1+WF)-1:0] w_yc_pos[0:NC-1];
 wire signed              [WF-1:0] w_yc_clp[0:NC-1];
 
 genvar gi;
 generate
     for (gi = 0; gi < NC; gi = gi + 1) begin : in
-        assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+WF) +: ($clog2(NP)+WF)];
+        assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+1+WF) +: ($clog2(NP)+1+WF)];
     end
 
     // ReLU
     for (gi = 0; gi < NC; gi = gi + 1) begin : relu
         if (HIDDEN == "yes") begin
-            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+WF)-1] ? 0: w_vc[gi];
+            assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+1+WF)-1] ? 0: w_vc[gi];
             assign w_yc_clp[gi] = (w_yc_pos[gi] <= MAX_YC[WF:0]) ? w_yc_pos[gi][WF-1:0] : MAX_YC[WF:0];
         end
         else
@@ -72,32 +72,54 @@ generate
 
     // out
     for (gi = 0; gi < NC; gi = gi + 1) begin : out
-        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WF:$clog2(NP)+WF] = w_yc_clp[gi];
+        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WF:$clog2(NP)+1+WF] = w_yc_clp[gi];
     end
 endgenerate
 
-wire w_vld_bm1;
-wire w_rdy_bm1;
-assign {w_rdy_bm1, oValid_BM_State1} = (iMode == TRAIN)
-    ? {iReady_BM_State1, w_vld_bm1}
-    : {w_vld_bm1, 1'b0};
+generate
+    if (HIDDEN == "yes") begin
+        wire w_vld_bm1;
+        wire w_rdy_bm1;
 
-Broadcaster #
-( .WIDTH0(NC*WN)
-, .WIDTH1(NC*WN)
-, .BURST(BURST)
-) broadcaster1
-( .iValid_AM(iValid_AM_Accum0)
-, .oReady_AM(oReady_AM_Accum0)
-, .iData_AM({w_lgc, w_lgc})
-, .oValid_BM0(oValid_BM_State0)
-, .iReady_BM0(iReady_BM_State0)
-, .oData_BM0(oData_BM_State0)
-, .oValid_BM1(w_vld_bm1)
-, .iReady_BM1(w_rdy_bm1)
-, .oData_BM1(oData_BM_State1)
-, .iRST(iRST)
-, .iCLK(iCLK)
-);
+        assign {w_rdy_bm1, oValid_BM_State1} = (iMode == TRAIN)
+            ? {iReady_BM_State1, w_vld_bm1}
+            : {w_vld_bm1, 1'b0};
+
+        Broadcaster #
+        ( .WIDTH0(NC*WN)
+        , .WIDTH1(NC*WN)
+        , .BURST(BURST)
+        ) broadcaster1
+        ( .iValid_AM(iValid_AM_Accum0)
+        , .oReady_AM(oReady_AM_Accum0)
+        , .iData_AM({w_lgc, w_lgc})
+        , .oValid_BM0(oValid_BM_State0)
+        , .iReady_BM0(iReady_BM_State0)
+        , .oData_BM0(oData_BM_State0)
+        , .oValid_BM1(w_vld_bm1)
+        , .iReady_BM1(w_rdy_bm1)
+        , .oData_BM1(oData_BM_State1)
+        , .iRST(iRST)
+        , .iCLK(iCLK)
+        );
+    end else begin
+        Register #
+        ( .WIDTH(NC*WN)
+        , .BURST(BURST)
+        ) register1
+        ( .iValid_AM(iValid_AM_Accum0)
+        , .oReady_AM(oReady_AM_Accum0)
+        , .iData_AM(w_lgc)
+        , .oValid_BM(oValid_BM_State0)
+        , .iReady_BM(iReady_BM_State0)
+        , .oData_BM(oData_BM_State0)
+        , .iRST(iRST)
+        , .iCLK(iCLK)
+        );
+
+        assign oValid_BM_State1 = 1'b0;
+        assign oData_BM_State1  = {NC*WN{1'b0}};
+    end
+endgenerate
 
 endmodule

@@ -4,17 +4,17 @@ module Maccum #
 , parameter WIDTH  = 4
 , parameter BURST  = "yes"
 )
-( input                                        iValid_AM_W
-, output                                       oReady_AM_W
-, input              [SIZE_B*SIZE_A*WIDTH-1:0] iData_AM_W
-, input                                        iValid_AM_S
-, output                                       oReady_AM_S
-, input                     [SIZE_A*WIDTH-1:0] iData_AM_S
-, output                          [SIZE_B-1:0] oValid_BM_WS
-, input                           [SIZE_B-1:0] iReady_BM_WS
-, output [SIZE_B*($clog2(SIZE_A)-1+WIDTH)-1:0] oData_BM_WS
-, input                                        iRST
-, input                                        iCLK
+( input                                      iValid_AM_W
+, output                                     oReady_AM_W
+, input            [SIZE_B*SIZE_A*WIDTH-1:0] iData_AM_W
+, input                                      iValid_AM_S
+, output                                     oReady_AM_S
+, input                   [SIZE_A*WIDTH-1:0] iData_AM_S
+, output                        [SIZE_B-1:0] oValid_BM_WS
+, input                         [SIZE_B-1:0] iReady_BM_WS
+, output [SIZE_B*($clog2(SIZE_A)+WIDTH)-1:0] oData_BM_WS
+, input                                      iRST
+, input                                      iCLK
 );
 
 genvar gi, gj;
@@ -25,9 +25,6 @@ wire             [SIZE_B*SIZE_A*WIDTH-1:0] wdata_wn;
 wire                   [SIZE_B*SIZE_A-1:0] wvld_sn;
 wire                   [SIZE_B*SIZE_A-1:0] wrdy_sn;
 wire             [SIZE_B*SIZE_A*WIDTH-1:0] wdata_sn;
-wire                          [SIZE_B-1:0] wvld_wsn;
-wire                          [SIZE_B-1:0] wrdy_wsn;
-wire [SIZE_B*($clog2(SIZE_A)-1+WIDTH)-1:0] wdata_wsn;
 
 BroadcasterN #
 ( .SIZE(SIZE_B*SIZE_A)
@@ -82,8 +79,8 @@ generate
         , .iCLK(iCLK)
         );
 
-        assign oData_BM_WS[gi*($clog2(SIZE_A)-1+WIDTH)+:$clog2(SIZE_A)-1+WIDTH]
-            = wdata_ws[WIDTH+:$clog2(SIZE_A)-1+WIDTH];
+        assign oData_BM_WS[gi*($clog2(SIZE_A)+WIDTH)+:$clog2(SIZE_A)+WIDTH]
+            = wdata_ws[WIDTH-1+:$clog2(SIZE_A)+WIDTH];
     end
 endgenerate
 

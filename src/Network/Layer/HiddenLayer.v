@@ -36,13 +36,13 @@ module HiddenLayer #
 
 wire                            wvld_Accum0;
 wire                            wrdy_Accum0;
-wire   [NC*($clog2(NP)+WF)-1:0] wdata_Accum0;
+wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum0;
 wire                            wvld_Accum1;
 wire                            wrdy_Accum1;
-wire   [NC*($clog2(NP)+WF)-1:0] wdata_Accum1;
+wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum1;
 wire                            wvld_Accum2;
 wire                            wrdy_Accum2;
-wire [NC*($clog2(NN)-1+WF)-1:0] wdata_Accum2;
+wire   [NC*($clog2(NN)+WF)-1:0] wdata_Accum2;
 wire                            wvld_WeightBias;
 wire                            wrdy_WeightBias;
 wire       [NC*NP*WF+NC*WF-1:0] wdata_WeightBias;
@@ -101,6 +101,7 @@ BiasWeight #
 , .BURST(BURST)
 ) bw
 ( .iMode(iMode)
+, .iLR(8'b1000_0000)
 , .iValid_AS_State1(iValid_AS_State1)
 , .oReady_AS_State1(oReady_AS_State1)
 , .iData_AS_State1(iData_AS_State1)

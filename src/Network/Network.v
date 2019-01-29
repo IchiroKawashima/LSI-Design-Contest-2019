@@ -1,23 +1,23 @@
 module Network #
-( parameter NI    = 8
-, parameter NH0   = 7
+( parameter NI    = 4
+, parameter NH0   = 5
 , parameter NH1   = 6
-, parameter NO    = 5
-, parameter WF    = 4
+, parameter NO    = 7
+, parameter WF    = 8
 , parameter BURST = "yes"
 )
-( input                            iMode
-, input                            iValid_AM_Input
-, output                           oReady_AM_Input
-, input                [NI*WF-1:0] iData_AM_Input
-, output                           oValid_BM_Output
-, input                            iReady_BM_Output
-, output  [NO*($clog2(NH1)+WF)-1:0] oData_BM_Output
-, input                            iValid_AS_Teacher
-, output                           oReady_AS_Teacher
-, input  [NO*($clog2(NH1)+WF)-1:0] iData_AS_Teacher
-, input                            iRST
-, input                            iCLK
+( input                              iMode
+, input                              iValid_AM_Input
+, output                             oReady_AM_Input
+, input                  [NI*WF-1:0] iData_AM_Input
+, output                             oValid_BM_Output
+, input                              iReady_BM_Output
+, output  [NO*($clog2(NH1)+1+WF)-1:0] oData_BM_Output
+, input                              iValid_AS_Teacher
+, output                             oReady_AS_Teacher
+, input  [NO*($clog2(NH1)+1+WF)-1:0] iData_AS_Teacher
+, input                              iRST
+, input                              iCLK
 );
 
 wire                  wvld_y_i0;

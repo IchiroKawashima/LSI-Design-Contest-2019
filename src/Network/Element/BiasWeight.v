@@ -3,13 +3,9 @@
 module BiasWeight #
 ( parameter NP     = 4
 , parameter NC     = 4
-<<<<<<< HEAD
-, parameter WI     = 4
-, parameter WF     = 4
-=======
 , parameter WF     = 4
 , parameter BURST  = "yes"
->>>>>>> finish describing bias weight
+, parameter INIT_FILE = ""
 )
 ( input                       iMode
 , input              [WF-1:0] iLR
@@ -33,6 +29,7 @@ module BiasWeight #
 
 genvar gi, gj;
 
+
 // combiner 0
 wire                   w_vld_bm_comb0;
 wire                   w_rdy_bm_comb0;
@@ -53,10 +50,12 @@ Combiner #
 , .oData_BM     (w_dat_bm_comb0)
 );
 
+
+
 // pipeline 0
-wire signed   [WF-1:0] w_dc0  [0:NC-1];
-wire signed [WF*2-1:0] w_adc0_tmp [0:NC-1];
-wire signed   [WF-1:0] w_adc0 [0:NC-1];
+wire signed     [WF-1:0] w_dc0  [0:NC-1];
+wire signed [WF*2-1-1:0] w_adc0_tmp [0:NC-1];
+wire signed     [WF-1:0] w_adc0 [0:NC-1];
 
 wire                   w_vld_as_pipe0;
 wire                   w_rdy_as_pipe0;
@@ -68,7 +67,7 @@ generate
 for (gi = 0; gi < NC; gi = gi + 1) begin : gen_w_adc0
     assign w_dc0[gi] = w_dat_bm_comb0[NP*WF + gi*WF +: WF];
     assign w_adc0_tmp[gi] = $signed(iLR) * w_dc0[gi];
-    assign w_adc0[gi] = w_adc0_tmp[gi][WF*2-1 : WF];
+    assign w_adc0[gi] = w_adc0_tmp[gi][WF-1 +: WF];
     
     assign w_dat_as_pipe0[NP*WF + gi*WF +: WF] = w_adc0[gi];
 end
@@ -95,10 +94,10 @@ PipelineRegister #
 );
 
 // pipeline 1
-wire signed      [WF-1:0] w_adc1      [0:NC-1];
-wire signed      [WF-1:0] w_yc1       [0:NP-1];
-wire signed [NC*2*WF-1:0] w_adyc1_tmp [0:NP-1];
-wire signed   [NC*WF-1:0] w_adyc1     [0:NP-1];
+wire signed          [WF-1:0] w_adc1      [0:NC-1];
+wire signed          [WF-1:0] w_yc1       [0:NP-1];
+wire signed [NC*(2*WF-1)-1:0] w_adyc1_tmp [0:NP-1];
+wire signed       [NC*WF-1:0] w_adyc1     [0:NP-1];
 
 wire                      w_vld_as_pipe1;
 wire                      w_rdy_as_pipe1;
@@ -118,13 +117,17 @@ end
 
 for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_adyc1_i
     for (gj = 0; gj < NC; gj = gj + 1) begin : gen_w_adyc1_j
-        assign w_adyc1_tmp[gi][gj*2*WF +: 2*WF] = w_yc1[gi] * w_adc1[gj];
-        assign w_adyc1[gi][gj*WF +: WF] = w_adyc1_tmp[gi][gj*2*WF+WF +: WF];
+        assign w_adyc1_tmp[gi][gj*(2*WF-1) +: 2*WF-1] = w_yc1[gi] *w_adc1[gj];
+        assign w_adyc1[gi][gj*WF +: WF] = w_adyc1_tmp[gi][gj*(2*WF-1) + WF-1 +: WF];
     end
 end
 
-for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_dat_as_pipe1
-    assign w_dat_as_pipe1[gi*(NC*WF) +: NC*WF] = w_adyc1[gi];
+for (gi = 0; gi < NC; gi = gi + 1) begin  : gen_w_dat_as_pipe1_0
+    assign w_dat_as_pipe1[gi*WF +: WF] = w_adc1[gi]; 
+end
+
+for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_dat_as_pipe1_1
+    assign w_dat_as_pipe1[gi*(NC*WF) + NC*WF +: NC*WF] = w_adyc1[gi];
 end
 endgenerate
 
@@ -165,6 +168,9 @@ wire  [NC*NP*WF+NC*WF-1:0] w_dat_bm0_broad2;
 wire                       w_vld_bm1_broad2;
 wire                       w_rdy_bm1_broad2;
 wire        [NP*NC*WF-1:0] w_dat_bm1_broad2;
+wire                       w_vld_am_reg3;
+wire                       w_rdy_am_reg3;
+wire        [NP*NC*WF-1:0] w_dat_am_reg3;
 
 generate
 for (gi = 0; gi < NC; gi = gi + 1) begin : gen_w_adc2
@@ -172,7 +178,7 @@ for (gi = 0; gi < NC; gi = gi + 1) begin : gen_w_adc2
 end
 
 for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_adyc2
-    assign w_adyc2[gi] = w_dat_bs_pipe1[NC*WF + gi*WF +: WF];
+    assign w_adyc2[gi] = w_dat_bs_pipe1[gi*(NC*WF) + NC*WF +: NC*WF];
 end
 
 for (gi = 0; gi < NC; gi = gi + 1) begin : gen_w_bias
@@ -181,7 +187,7 @@ end
 
 for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_weight_i
     for (gj = 0; gj < NC; gj = gj + 1) begin : gen_w_weight_j
-        assign w_weight[gi*NC*WF + gj*WF +: WF] = r_weight[gi*NC*WF + (gj*WF) +: WF] - w_adyc2[gi][gj*WF +: WF];
+        assign w_weight[gi*NC*WF + gj*WF +: WF] = r_weight[gi*NC*WF + gj*WF +: WF] - w_adyc2[gi][gj*WF +: WF];
     end
 end
 
@@ -196,6 +202,7 @@ endgenerate
 assign w_vld_am_broad2 = r_vld_bias_weight;
 assign w_rdy_bs_pipe1 = w_rdy_am_broad2;
 
+
 //localparam  IDLE = 2'b00,
 //            FOR  = 2'b01,
 //            BACK = 2'b10;
@@ -205,10 +212,14 @@ localparam  RUN   = 2'b00,
 
 reg [1:0] r_stt;
 
+reg [NP*NC*WF-1:0] randw = 0;
+reg    [NC*WF-1:0] randb = 1;
+
+
 always @(posedge iCLK) begin
     if (iRST) begin
-        r_bias                  <= 0;
-        r_weight                <= 0;
+        r_bias                  <= $random(randw);
+        r_weight                <= $random(randb);
         r_vld_bias_weight       <= 0;
         r_stt                   <= INIT0;
     end
@@ -240,10 +251,10 @@ end
 //assign oData_BM_WeightBias  = (iMode == TRAIN) ? w_dat_bm0_broad2 : {w_weight_t, r_bias};
 assign w_rdy_bm0_broad2     = (iMode == TEST  || r_stt == INIT0) ? 1'b0                 : iReady_BM_WeightBias;
 assign oValid_BM_WeightBias = (iMode == TEST  || r_stt == INIT0) ? iReady_BM_WeightBias : w_vld_bm0_broad2;
-assign oData_BM_WeightBias  = (iMode == TEST  || r_stt == INIT0) ? {w_weight_t, r_bias} : w_dat_bm0_broad2;
-assign w_rdy_bm1_broad2     = (r_stt == INIT0 || r_stt == INIT1) ? 1'b0                 : iReady_BM_Weight;
-assign oValid_BM_Weight     = (r_stt == INIT0 || r_stt == INIT1) ? iReady_BM_Weight     : w_vld_bm1_broad2;
-assign oData_BM_Weight      = (r_stt == INIT0 || r_stt == INIT1) ? r_weight             : w_dat_bm1_broad2;
+assign oData_BM_WeightBias  = (iMode == TEST  || r_stt == INIT0) ? {r_weight, r_bias} : w_dat_bm0_broad2;
+assign w_rdy_bm1_broad2     = (r_stt == INIT0 || r_stt == INIT1) ? 1'b0                 : w_rdy_am_reg3;
+assign w_vld_am_reg3        = (r_stt == INIT0 || r_stt == INIT1) ? w_rdy_am_reg3        : w_vld_bm1_broad2;
+assign w_dat_am_reg3        = (r_stt == INIT0 || r_stt == INIT1) ? r_weight             : w_dat_bm1_broad2;
 
 Broadcaster #
 ( .WIDTH0       (NC*NP*WF+NC*WF)
@@ -252,7 +263,7 @@ Broadcaster #
 ) broadcaster2
 ( .iValid_AM    (w_vld_am_broad2)
 , .oReady_AM    (w_rdy_am_broad2)
-, .iData_AM     ({r_weight, {w_weight_t, r_bias}})
+, .iData_AM     ({r_weight, {r_weight, r_bias}})
 , .oValid_BM0   (w_vld_bm0_broad2)
 , .iReady_BM0   (w_rdy_bm0_broad2)
 , .oData_BM0    (w_dat_bm0_broad2)
@@ -262,5 +273,31 @@ Broadcaster #
 , .iRST         (iRST)
 , .iCLK         (iCLK)
 );
+
+Register #
+( .WIDTH(NP*NC*WF) 
+, .BURST(BURST)
+) register3
+( .iValid_AM(w_vld_am_reg3)       
+, .oReady_AM(w_rdy_am_reg3)      
+, .iData_AM (w_dat_am_reg3)
+, .oValid_BM(oValid_BM_Weight) 
+, .iReady_BM(iReady_BM_Weight) 
+, .oData_BM(oData_BM_Weight)
+, .iRST(iRST)            
+, .iCLK(iCLK)
+);
+
+/*
+generate
+    if (INIT_FILE == "")
+        for (gi = 0; gi < NP*NC*WF; gi = gi + 1)
+            initial
+                r_weight[gi] = 1 << gi*NP*NC*WF;
+    else
+        initial
+            $readmemb(INIT_FILE, r_weight, 0, NP*NC*WF - 1);
+endgenerate
+*/
 
 endmodule
