@@ -25,18 +25,105 @@ ClockDomain c();
 
 genvar gi, gj;
 
+reg  iStart;
+wire oEnd;
+
+wire                             wstti;
 wire                             wvldi;
 wire                             wrdyi;
 wire                [NI*WF-1:0] wdatai;
+wire                             wsttt;
 wire                             wvldt;
 wire                             wrdyt;
 wire                 [NO*WF-1:0] wdatat;
 wire [NO*($clog2(NH1)+1+WF)-1:0] wdatat_c;
+wire                             wendo;
 wire                             wvldo;
 wire                             wrdyo;
 wire [NO*($clog2(NH1)+1+WF)-1:0] wdatao;
 
+assign wstti = iStart;
+assign wsttt = iStart;
+assign oEnd  = wendo;
 
+//Sources
+StreamSource #
+( .SIZE(SIZE)
+, .WIDTH(NI*WF)
+, .INPUT_FILE(INPUT_FILE)
+, .BURST(BURST)
+) soi
+( .iStart(wstti)
+, .oValid_BM(wvldi)
+, .iReady_BM(wrdyi)
+, .oData_BM(wdatai)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
+StreamSource #
+( .SIZE(SIZE)
+, .WIDTH(NO*WF)
+, .INPUT_FILE(INPUT_FILE)
+, .BURST(BURST)
+) sot
+( .iStart(wsttt)
+, .oValid_BM(wvldt)
+, .iReady_BM(wrdyt)
+, .oData_BM(wdatat)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
+generate
+    for (gi = 0; gi < NO; gi = gi + 1)
+        assign wdatat_c[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF]
+            = {{$clog2(NH1)+1{1'b0}}, wdatat[gi*WF+:WF]};
+endgenerate
+
+//Network
+Network #
+( .NI(NI)
+, .NH0(NH0)
+, .NH1(NH1)
+, .NO(NO)
+, .WF(WF)
+, .BURST(BURST)
+, .INIT_FILE_H0(INIT_FILE_H0)
+, .INIT_FILE_H1(INIT_FILE_H1)
+, .INIT_FILE_O(INIT_FILE_O)
+) ne
+( .iMode(MODE)
+, .iLR(iLR)
+, .iValid_AM_Input(wvldi)
+, .oReady_AM_Input(wrdyi)
+, .iData_AM_Input(wdatai)
+, .oValid_BM_Output(wvldo)
+, .iReady_BM_Output(wrdyo)
+, .oData_BM_Output(wdatao)
+, .iValid_AS_Teacher(wvldt)
+, .oReady_AS_Teacher(wrdyt)
+, .iData_AS_Teacher(wdatat_c)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
+//Sink
+StreamSink #
+( .SIZE(SIZE)
+, .WIDTH(NO*($clog2(NH1)+1+WF))
+, .OUTPUT_FILE(OUTPUT_FILE)
+, .BURST(BURST)
+) sio
+( .oEnd(wendo)
+, .iValid_AM(wvldo)
+, .oReady_AM(wrdyo)
+, .iData_AM(wdatao)
+, .iRST(c.RST)
+, .iCLK(c.CLK)
+);
+
+//DebugNets
 wire                [WF-1:0] wstat_h0[0:NI-1];
 wire                [WF-1:0] wweit_h0[0:NI*NH0-1];
 wire                [WF-1:0] wbias_h0[0:NH0-1];
@@ -110,7 +197,6 @@ generate
     for (gi = 0; gi < NO; gi = gi + 1)
         assign wdelta_o[gi] = ne.ol.de.oData_BM_Delta0[gi*WF+:WF];
 
-
     for (gi = 0; gi < NO; gi = gi + 1) begin
         assign woutput[gi]
             = ne.ol.oData_BM_Output[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
@@ -119,78 +205,20 @@ generate
     end
 endgenerate
 
-StreamSource #
-( .SIZE(SIZE)
-, .WIDTH(NI*WF)
-, .INPUT_FILE(INPUT_FILE)
-, .BURST(BURST)
-) soi
-( .oValid_BM(wvldi)
-, .iReady_BM(wrdyi)
-, .oData_BM(wdatai)
-, .iRST(c.RST)
-, .iCLK(c.CLK)
-);
-
-StreamSource #
-( .SIZE(SIZE)
-, .WIDTH(NO*WF)
-, .INPUT_FILE(INPUT_FILE)
-, .BURST(BURST)
-) sot
-( .oValid_BM(wvldt)
-, .iReady_BM(wrdyt)
-, .oData_BM(wdatat)
-, .iRST(c.RST)
-, .iCLK(c.CLK)
-);
-
-generate
-    for (gi = 0; gi < NO; gi = gi + 1)
-        assign wdatat_c[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF]
-            = {{$clog2(NH1)+1{1'b0}}, wdatat[gi*WF+:WF]};
-endgenerate
-
-Network #
-( .NI(NI)
-, .NH0(NH0)
-, .NH1(NH1)
-, .NO(NO)
-, .WF(WF)
-, .BURST(BURST)
-, .INIT_FILE_H0(INIT_FILE_H0)
-, .INIT_FILE_H1(INIT_FILE_H1)
-, .INIT_FILE_O(INIT_FILE_O)
-) ne
-( .iMode(MODE)
-, .iLR(iLR)
-, .iValid_AM_Input(wvldi)
-, .oReady_AM_Input(wrdyi)
-, .iData_AM_Input(wdatai)
-, .oValid_BM_Output(wvldo)
-, .iReady_BM_Output(wrdyo)
-, .oData_BM_Output(wdatao)
-, .iValid_AS_Teacher(wvldt)
-, .oReady_AS_Teacher(wrdyt)
-, .iData_AS_Teacher(wdatat_c)
-, .iRST(c.RST)
-, .iCLK(c.CLK)
-);
-
-StreamSink #
-( .SIZE(SIZE)
-, .WIDTH(NO*($clog2(NH1)+1+WF))
-, .OUTPUT_FILE(OUTPUT_FILE)
-, .BURST(BURST)
-) sio
-( .iValid_AM(wvldo)
-, .oReady_AM(wrdyo)
-, .iData_AM(wdatao)
-, .iRST(c.RST)
-, .iCLK(c.CLK)
-);
-
 `DUMP_ALL("ne.vcd")
 `SET_LIMIT(c, 120)
+
+initial begin
+    @(c.eCLK) iStart = 1'b0;
+    @(c.eCLK) iStart = 1'b1;
+end
+
+initial begin
+    @(c.eCLK);
+
+    `WAIT_UNTIL(c, oEnd == 1'b1)
+
+    @(c.eCLK) $finish;
+end
 
 endmodule
