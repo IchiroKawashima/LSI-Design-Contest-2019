@@ -27,6 +27,7 @@ module BiasWeight #
 
 `DECLARE_MODE_PARAMETERS
 
+integer it;
 genvar gi, gj;
 
 wire [NP*NC*WF-1:0] w_init_weight;
@@ -36,16 +37,40 @@ reg        [WF-1:0] r_init_value[0:NC+NP*NC-1];
 // init file
 generate
     if (INIT_FILE == "")
-        for (gi = 0; gi < NC + NP * NC * WF; gi = gi + 1)
-            initial
-                r_init_value[gi] = {WF{1'b0}};
-    else
         initial
-            $readmemb(INIT_FILE, rinit_value, 0, NC + NP * NC * WF - 1);
+            for (it = 0; it < NC + NP * NC * WF; it = it + 1)
+                r_init_value[it] = {WF{1'b0}};
+    else begin
+        integer fd;
 
+        initial begin
+            fd = $fopen(INIT_FILE, "r");
+
+            if (fd == 0)
+                $display("successfully opend mem file: %s", INIT_FILE);
+            else
+                $display("failed to open mem file: %s", INIT_FILE);
+
+            for (it = 0; it < NC + NP * NC * WF; it = it + 1) begin: fetch
+                if ($feof(fd) != 0) begin
+                    $display("finished to read mem file: %s", INIT_FILE);
+                    disable fetch;
+                end
+
+                if ($fscanf(fd, "%b\n", r_init_value[it]) != 0) begin
+                    $display("failed to read mem file: %s", INIT_FILE);
+                end
+            end
+
+            $fclose(fd);
+        end
+    end
+endgenerate
+
+generate
     for (gi = 0; gi < NP; gi = gi + 1)
         for (gj = 0; gj < NC; gj = gj + 1)
-            assign w_init_weight[(gi*NC+gj+NC)*WF+:WF] = r_init_value[gi*NC+gj];
+            assign w_init_weight[(gi*NC+gj)*WF+:WF] = r_init_value[gi*NC+gj+NC];
 
     for (gi = 0; gi < NC; gi = gi + 1)
             assign w_init_bias[gi*WF+:WF] = r_init_value[gi];

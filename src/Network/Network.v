@@ -10,7 +10,7 @@ module Network #
 , parameter BURST        = "yes"
 )
 ( input                              iMode
-, input                              iLR
+, input                     [WF-1:0] iLR
 , input                              iValid_AM_Input
 , output                             oReady_AM_Input
 , input                  [NI*WF-1:0] iData_AM_Input

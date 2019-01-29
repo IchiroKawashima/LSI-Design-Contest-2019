@@ -3,19 +3,19 @@
 
 module NetworkTest #
 ( parameter SIZE         = 3
-, parameter INPUT_FILE   = ""
+, parameter INPUT_FILE   = "input.mem"
 , parameter TEACHER_FILE = ""
 , parameter OUTPUT_FILE  = ""
 , parameter MODE         = TRAIN
-, parameter LR           = 64
+, parameter LR           = {1'b0, 1'b1, {6{1'b0}}}
 , parameter NI           = 3
 , parameter NH0          = 2
 , parameter NH1          = 3
 , parameter NO           = 2
 , parameter WF           = 8
-, parameter INIT_FILE_H0 = ""
-, parameter INIT_FILE_H1 = ""
-, parameter INIT_FILE_O  = ""
+, parameter INIT_FILE_H0 = "lh0.mem"
+, parameter INIT_FILE_H1 = "lh1.mem"
+, parameter INIT_FILE_O  = "lo.mem"
 , parameter BURST        = "yes"
 );
 
@@ -35,8 +35,7 @@ wire                [NI*WF-1:0] wdatai;
 wire                             wsttt;
 wire                             wvldt;
 wire                             wrdyt;
-wire                 [NO*WF-1:0] wdatat;
-wire [NO*($clog2(NH1)+1+WF)-1:0] wdatat_c;
+wire [NO*($clog2(NH1)+1+WF)-1:0] wdatat;
 wire                             wendo;
 wire                             wvldo;
 wire                             wrdyo;
@@ -63,7 +62,7 @@ StreamSource #
 
 StreamSource #
 ( .SIZE(SIZE)
-, .WIDTH(NO*WF)
+, .WIDTH(NO*($clog2(NH1)+1+WF))
 , .INPUT_FILE(INPUT_FILE)
 , .BURST(BURST)
 ) sot
@@ -74,12 +73,6 @@ StreamSource #
 , .iRST(c.RST)
 , .iCLK(c.CLK)
 );
-
-generate
-    for (gi = 0; gi < NO; gi = gi + 1)
-        assign wdatat_c[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF]
-            = {{$clog2(NH1)+1{1'b0}}, wdatat[gi*WF+:WF]};
-endgenerate
 
 //Network
 Network #
@@ -94,7 +87,7 @@ Network #
 , .INIT_FILE_O(INIT_FILE_O)
 ) ne
 ( .iMode(MODE)
-, .iLR(iLR)
+, .iLR(LR)
 , .iValid_AM_Input(wvldi)
 , .oReady_AM_Input(wrdyi)
 , .iData_AM_Input(wdatai)
@@ -103,7 +96,7 @@ Network #
 , .oData_BM_Output(wdatao)
 , .iValid_AS_Teacher(wvldt)
 , .oReady_AS_Teacher(wrdyt)
-, .iData_AS_Teacher(wdatat_c)
+, .iData_AS_Teacher(wdatat)
 , .iRST(c.RST)
 , .iCLK(c.CLK)
 );
@@ -214,9 +207,7 @@ initial begin
 end
 
 initial begin
-    @(c.eCLK);
-
-    `WAIT_UNTIL(c, oEnd == 1'b1)
+    `WAIT_UNTIL(c, oEnd === 1'b1)
 
     @(c.eCLK) $finish;
 end

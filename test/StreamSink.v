@@ -7,7 +7,7 @@ module StreamSink #
 ( input              iValid_AM
 , output             oReady_AM
 , input  [WIDTH-1:0] iData_AM
-, output             oEND
+, output             oEnd
 , input              iRST
 , input              iCLK
 );
@@ -70,6 +70,6 @@ always @(posedge iCLK)
     else if (raddr == SIZE)
         ren <= 1'b0;
 
-assign oEND = !ren;
+assign oEnd = !ren;
 
 endmodule

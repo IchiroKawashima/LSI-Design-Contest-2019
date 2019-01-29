@@ -7,7 +7,7 @@ module HiddenLayer #
 , parameter BURST     = "yes"
 )
 ( input                 iMode
-, input                 iLR
+, input        [WF-1:0] iLR
 , input                 iValid_AM_State0
 , output                oReady_AM_State0
 , input     [NP*WF-1:0] iData_AM_State0
