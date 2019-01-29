@@ -7,6 +7,7 @@ module StreamSink #
 ( input              iValid_AM
 , output             oReady_AM
 , input  [WIDTH-1:0] iData_AM
+, output             oEND
 , input              iRST
 , input              iCLK
 );
@@ -18,6 +19,7 @@ wire                   wvld;
 wire       [WIDTH-1:0] wdata;
 reg [$clog2(SIZE)-1:0] raddr;
 reg        [WIDTH-1:0] rmem[0:SIZE-1];
+reg                    ren;
 
 generate
     if (OUTPUT_FILE == "")
@@ -33,6 +35,7 @@ generate
         end
 endgenerate
 
+//Register
 Register #
 ( .WIDTH(WIDTH)
 , .BURST(BURST)
@@ -47,6 +50,7 @@ Register #
 , .iCLK(iCLK)
 );
 
+//Address
 always @(posedge iCLK)
     if (iRST)
         raddr <= {$clog2(SIZE){1'b0}};
@@ -58,5 +62,14 @@ assign wrdy = wvld && raddr < SIZE;
 always @(posedge iCLK)
     if (wrdy)
         rmem[raddr] <= wdata;
+
+//Enable
+always @(posedge iCLK)
+    if (iRST)
+        ren <= 1'b1;
+    else if (raddr == SIZE)
+        ren <= 1'b0;
+
+assign oEND = !ren;
 
 endmodule
