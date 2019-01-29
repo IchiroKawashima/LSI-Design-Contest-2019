@@ -13,9 +13,9 @@ module NetworkTest #
 , parameter NH1          = 3
 , parameter NO           = 2
 , parameter WV           = 8
-, parameter INIT_FILE_H0 = "lh0.mem"
-, parameter INIT_FILE_H1 = "lh1.mem"
-, parameter INIT_FILE_O  = "lo.mem"
+, parameter SEED_H0      = 0032352685
+, parameter SEED_H1      = 6628063272
+, parameter SEED_O       = 3496660372
 , parameter BURST        = "yes"
 );
 
@@ -82,9 +82,9 @@ Network #
 , .NO(NO)
 , .WV(WV)
 , .BURST(BURST)
-, .INIT_FILE_H0(INIT_FILE_H0)
-, .INIT_FILE_H1(INIT_FILE_H1)
-, .INIT_FILE_O(INIT_FILE_O)
+, .SEED_H0(SEED_H0)
+, .SEED_H1(SEED_H1)
+, .SEED_O(SEED_O)
 ) ne
 ( .iMode(MODE)
 , .iLR(LR)

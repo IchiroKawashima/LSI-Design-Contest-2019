@@ -1,13 +1,13 @@
 module Network #
-( parameter NI           = 4
-, parameter NH0          = 5
-, parameter NH1          = 6
-, parameter NO           = 7
-, parameter WV           = 8
-, parameter INIT_FILE_H0 = ""
-, parameter INIT_FILE_H1 = ""
-, parameter INIT_FILE_O  = ""
-, parameter BURST        = "yes"
+( parameter NI      = 4
+, parameter NH0     = 5
+, parameter NH1     = 6
+, parameter NO      = 7
+, parameter WV      = 8
+, parameter SEED_H0 = 0032352685
+, parameter SEED_H1 = 6628063272
+, parameter SEED_O  = 3496660372
+, parameter BURST   = "yes"
 )
 ( input                              iMode
 , input                     [WV-1:0] iLR
@@ -93,7 +93,7 @@ HiddenLayer #
 , .NN(NH1)
 , .WV(WV)
 , .BURST(BURST)
-, .INIT_FILE(INIT_FILE_H0)
+, .SEED(SEED_H0)
 ) hl0
 ( .iMode(iMode)
 , .iLR(iLR)
@@ -131,7 +131,7 @@ HiddenLayer #
 , .NN(NO)
 , .WV(WV)
 , .BURST(BURST)
-, .INIT_FILE(INIT_FILE_H1)
+, .SEED(SEED_H1)
 ) hl1
 ( .iMode(iMode)
 , .iLR(iLR)
@@ -168,7 +168,7 @@ OutputLayer #
 , .NC(NO)
 , .WV(WV)
 , .BURST(BURST)
-, .INIT_FILE(INIT_FILE_O)
+, .SEED(SEED_O)
 ) ol
 ( .iMode(iMode)
 , .iLR(iLR)

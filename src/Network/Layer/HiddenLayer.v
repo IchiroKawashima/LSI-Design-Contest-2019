@@ -1,10 +1,10 @@
 module HiddenLayer #
-( parameter NP        = 8
-, parameter NC        = 7
-, parameter NN        = 6
-, parameter WV        = 5
-, parameter INIT_FILE = ""
-, parameter BURST     = "yes"
+( parameter NP    = 8
+, parameter NC    = 7
+, parameter NN    = 6
+, parameter WV    = 5
+, parameter SEED  = 123456789
+, parameter BURST = "yes"
 )
 ( input                 iMode
 , input        [WV-1:0] iLR
@@ -101,7 +101,7 @@ BiasWeight #
 , .NC(NC)
 , .WV(WV)
 , .BURST(BURST)
-, .INIT_FILE(INIT_FILE)
+, .SEED(SEED)
 ) bw
 ( .iMode(iMode)
 , .iLR(iLR)

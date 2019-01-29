@@ -1,11 +1,11 @@
 `include "Parameter.vh"
 
 module BiasWeight #
-( parameter NP        = 4
-, parameter NC        = 4
-, parameter WV        = 4
-, parameter INIT_FILE = ""
-, parameter BURST     = "yes"
+( parameter NP    = 4
+, parameter NC    = 4
+, parameter WV    = 4
+, parameter SEED  = 123456789
+, parameter BURST = "yes"
 )
 ( input                       iMode
 , input              [WV-1:0] iLR
@@ -27,53 +27,28 @@ module BiasWeight #
 
 `DECLARE_MODE_PARAMETERS
 
-integer it;
 genvar gi, gj;
 
-wire [NP*NC*WV-1:0] w_init_weight;
-wire    [NC*WV-1:0] w_init_bias;
-reg        [WV-1:0] r_init_value[0:NC+NP*NC-1];
-
 // init file
-generate
-    if (INIT_FILE == "")
-        initial
-            for (it = 0; it < NC + NP * NC * WV; it = it + 1)
-                r_init_value[it] = {WV{1'b0}};
-    else begin
-        integer fd;
+wire      [NP*NC*WV-1:0] w_init_weight;
+wire         [NC*WV-1:0] w_init_bias;
+wire [(NC*NP+NC)*32-1:0] w_x32_init;
 
-        initial begin
-            fd = $fopen(INIT_FILE, "r");
-
-            if (fd == 0)
-                $display("successfully opend mem file: %s", INIT_FILE);
-            else
-                $display("failed to open mem file: %s", INIT_FILE);
-
-            for (it = 0; it < NC + NP * NC * WV; it = it + 1) begin: fetch
-                if ($feof(fd) != 0) begin
-                    $display("finished to read mem file: %s", INIT_FILE);
-                    disable fetch;
-                end
-
-                if ($fscanf(fd, "%b\n", r_init_value[it]) != 0) begin
-                    $display("failed to read mem file: %s", INIT_FILE);
-                end
-            end
-
-            $fclose(fd);
-        end
-    end
-endgenerate
+Xor32Initializer #
+( .SIZE(NC*NP+NC)
+, .SEED0(SEED)
+) xor32Initializer
+( .oInit(w_x32_init)
+);
 
 generate
     for (gi = 0; gi < NP; gi = gi + 1)
         for (gj = 0; gj < NC; gj = gj + 1)
-            assign w_init_weight[(gi*NC+gj)*WV+:WV] = r_init_value[gi*NC+gj+NC];
+            assign w_init_weight[(gi*NC+gj)*WV+:WV]
+                = w_x32_init[(gi*NC+gj+NC)*32+:WV];
 
     for (gi = 0; gi < NC; gi = gi + 1)
-            assign w_init_bias[gi*WV+:WV] = r_init_value[gi];
+            assign w_init_bias[gi*WV+:WV] = w_x32_init[gi*32+:WV];
 endgenerate
 
 // combiner 0
