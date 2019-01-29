@@ -43,17 +43,17 @@ wire                [WF-1:0] wbias_h0[0:NH0-1];
 wire [($clog2(NI)+1+WF)-1:0] waccm_h0[0:NH0-1];
 wire                [WF-1:0] wdelta_h0[0:NH0-1];
 
-wire                [WF-1:0] wstat_h1[0:NH0-1];
-wire                [WF-1:0] wweit_h1[0:NH0*NH1-1];
-wire                [WF-1:0] wbias_h1[0:NH1-1];
+wire                 [WF-1:0] wstat_h1[0:NH0-1];
+wire                 [WF-1:0] wweit_h1[0:NH0*NH1-1];
+wire                 [WF-1:0] wbias_h1[0:NH1-1];
 wire [($clog2(NH0)+1+WF)-1:0] waccm_h1[0:NH1-1];
-wire                [WF-1:0] wdelta_h1[0:NH1-1];
+wire                 [WF-1:0] wdelta_h1[0:NH1-1];
 
-wire                [WF-1:0] wstat_o[0:NH1-1];
-wire                [WF-1:0] wweit_o[0:NH1*NO-1];
-wire                [WF-1:0] wbias_o[0:NO-1];
+wire                 [WF-1:0] wstat_o[0:NH1-1];
+wire                 [WF-1:0] wweit_o[0:NH1*NO-1];
+wire                 [WF-1:0] wbias_o[0:NO-1];
 wire [($clog2(NH1)+1+WF)-1:0] waccm_o[0:NO-1];
-wire                [WF-1:0] wdelta_o[0:NO-1];
+wire                 [WF-1:0] wdelta_o[0:NO-1];
 
 wire [$clog2(NH1)+1+WF-1:0] woutput[0:NO-1];
 wire [$clog2(NH1)+1+WF-1:0] wteacher[0:NO-1];
