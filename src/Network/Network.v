@@ -3,68 +3,68 @@ module Network #
 , parameter NH0          = 5
 , parameter NH1          = 6
 , parameter NO           = 7
-, parameter WF           = 8
+, parameter WV           = 8
 , parameter INIT_FILE_H0 = ""
 , parameter INIT_FILE_H1 = ""
 , parameter INIT_FILE_O  = ""
 , parameter BURST        = "yes"
 )
 ( input                              iMode
-, input                     [WF-1:0] iLR
+, input                     [WV-1:0] iLR
 , input                              iValid_AM_Input
 , output                             oReady_AM_Input
-, input                  [NI*WF-1:0] iData_AM_Input
+, input                  [NI*WV-1:0] iData_AM_Input
 , output                             oValid_BM_Output
 , input                              iReady_BM_Output
-, output  [NO*($clog2(NH1)+1+WF)-1:0] oData_BM_Output
+, output  [NO*($clog2(NH1)+1+WV)-1:0] oData_BM_Output
 , input                              iValid_AS_Teacher
 , output                             oReady_AS_Teacher
-, input  [NO*($clog2(NH1)+1+WF)-1:0] iData_AS_Teacher
+, input  [NO*($clog2(NH1)+1+WV)-1:0] iData_AS_Teacher
 , input                              iRST
 , input                              iCLK
 );
 
 wire                  wvld_y_i0;
 wire                  wrdy_y_i0;
-wire      [NI*WF-1:0] wdata_y_i0;
+wire      [NI*WV-1:0] wdata_y_i0;
 wire                  wvld_y_i1;
 wire                  wrdy_y_i1;
-wire      [NI*WF-1:0] wdata_y_i1;
+wire      [NI*WV-1:0] wdata_y_i1;
 wire                  wvld_y_h00;
 wire                  wrdy_y_h00;
-wire     [NH0*WF-1:0] wdata_y_h00;
+wire     [NH0*WV-1:0] wdata_y_h00;
 wire                  wvld_y_h01;
 wire                  wrdy_y_h01;
-wire     [NH0*WF-1:0] wdata_y_h01;
+wire     [NH0*WV-1:0] wdata_y_h01;
 wire                  wvld_y_h10;
 wire                  wrdy_y_h10;
-wire     [NH1*WF-1:0] wdata_y_h10;
+wire     [NH1*WV-1:0] wdata_y_h10;
 wire                  wvld_y_h11;
 wire                  wrdy_y_h11;
-wire     [NH1*WF-1:0] wdata_y_h11;
+wire     [NH1*WV-1:0] wdata_y_h11;
 wire                  wvld_wh0;
 wire                  wrdy_wh0;
-wire  [NI*NH0*WF-1:0] wdata_wh0;
+wire  [NI*NH0*WV-1:0] wdata_wh0;
 wire                  wvld_wh1;
 wire                  wrdy_wh1;
-wire [NH0*NH1*WF-1:0] wdata_wh1;
+wire [NH0*NH1*WV-1:0] wdata_wh1;
 wire                  wvld_wo;
 wire                  wrdy_wo;
-wire  [NH1*NO*WF-1:0] wdata_wo;
+wire  [NH1*NO*WV-1:0] wdata_wo;
 wire                  wvld_dh0;
 wire                  wrdy_dh0;
-wire     [NH0*WF-1:0] wdata_dh0;
+wire     [NH0*WV-1:0] wdata_dh0;
 wire                  wvld_dh1;
 wire                  wrdy_dh1;
-wire     [NH1*WF-1:0] wdata_dh1;
+wire     [NH1*WV-1:0] wdata_dh1;
 wire                  wvld_do;
 wire                  wrdy_do;
-wire      [NO*WF-1:0] wdata_do;
+wire      [NO*WV-1:0] wdata_do;
 
 InputLayer #
 ( .NC(NI)
 , .NN(NH0)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) il
 ( .iMode(iMode)
@@ -91,7 +91,7 @@ HiddenLayer #
 ( .NP(NI)
 , .NC(NH0)
 , .NN(NH1)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 , .INIT_FILE(INIT_FILE_H0)
 ) hl0
@@ -129,7 +129,7 @@ HiddenLayer #
 ( .NP(NH0)
 , .NC(NH1)
 , .NN(NO)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 , .INIT_FILE(INIT_FILE_H1)
 ) hl1
@@ -166,7 +166,7 @@ HiddenLayer #
 OutputLayer #
 ( .NP(NH1)
 , .NC(NO)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 , .INIT_FILE(INIT_FILE_O)
 ) ol

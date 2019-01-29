@@ -2,60 +2,60 @@ module HiddenLayer #
 ( parameter NP        = 8
 , parameter NC        = 7
 , parameter NN        = 6
-, parameter WF        = 5
+, parameter WV        = 5
 , parameter INIT_FILE = ""
 , parameter BURST     = "yes"
 )
 ( input                 iMode
-, input        [WF-1:0] iLR
+, input        [WV-1:0] iLR
 , input                 iValid_AM_State0
 , output                oReady_AM_State0
-, input     [NP*WF-1:0] iData_AM_State0
+, input     [NP*WV-1:0] iData_AM_State0
 , input                 iValid_AS_State1
 , output                oReady_AS_State1
-, input     [NP*WF-1:0] iData_AS_State1
+, input     [NP*WV-1:0] iData_AS_State1
 , output                oValid_BM_State0
 , input                 iReady_BM_State0
-, output    [NC*WF-1:0] oData_BM_State0
+, output    [NC*WV-1:0] oData_BM_State0
 , output                oValid_BM_State1
 , input                 iReady_BM_State1
-, output    [NC*WF-1:0] oData_BM_State1
+, output    [NC*WV-1:0] oData_BM_State1
 , input                 iValid_AM_Weight
 , output                oReady_AM_Weight
-, input  [NC*NN*WF-1:0] iData_AM_Weight
+, input  [NC*NN*WV-1:0] iData_AM_Weight
 , output                oValid_BM_Weight
 , input                 iReady_BM_Weight
-, output [NP*NC*WF-1:0] oData_BM_Weight
+, output [NP*NC*WV-1:0] oData_BM_Weight
 , input                 iValid_AM_Delta0
 , output                oReady_AM_Delta0
-, input     [NN*WF-1:0] iData_AM_Delta0
+, input     [NN*WV-1:0] iData_AM_Delta0
 , output                oValid_BM_Delta0
 , input                 iReady_BM_Delta0
-, output    [NC*WF-1:0] oData_BM_Delta0
+, output    [NC*WV-1:0] oData_BM_Delta0
 , input                 iRST
 , input                 iCLK
 );
 
 wire                            wvld_Accum0;
 wire                            wrdy_Accum0;
-wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum0;
+wire [NC*($clog2(NP)+1+WV)-1:0] wdata_Accum0;
 wire                            wvld_Accum1;
 wire                            wrdy_Accum1;
-wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum1;
+wire [NC*($clog2(NP)+1+WV)-1:0] wdata_Accum1;
 wire                            wvld_Accum2;
 wire                            wrdy_Accum2;
-wire   [NC*($clog2(NN)+WF)-1:0] wdata_Accum2;
+wire   [NC*($clog2(NN)+WV)-1:0] wdata_Accum2;
 wire                            wvld_WeightBias;
 wire                            wrdy_WeightBias;
-wire       [NC*NP*WF+NC*WF-1:0] wdata_WeightBias;
+wire       [NC*NP*WV+NC*WV-1:0] wdata_WeightBias;
 wire                            wvld_Delta1;
 wire                            wrdy_Delta1;
-wire                [NC*WF-1:0] wdata_Delta1;
+wire                [NC*WV-1:0] wdata_Delta1;
 
 ForwardMaccum #
 ( .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) fm
 ( .iMode(iMode)
@@ -79,7 +79,7 @@ Neuron #
 ( .HIDDEN("yes")
 , .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) ne
 ( .iMode(iMode)
@@ -99,7 +99,7 @@ Neuron #
 BiasWeight #
 ( .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 , .INIT_FILE(INIT_FILE)
 ) bw
@@ -126,7 +126,7 @@ Delta #
 , .NP(NP)
 , .NC(NC)
 , .NN(NN)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) de
 ( .iValid_AS_Accum1(wvld_Accum1)
@@ -148,7 +148,7 @@ Delta #
 BackwardMaccum #
 ( .NN(NN)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) bm
 ( .iValid_AM_Weight(iValid_AM_Weight)

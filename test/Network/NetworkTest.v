@@ -12,7 +12,7 @@ module NetworkTest #
 , parameter NH0          = 2
 , parameter NH1          = 3
 , parameter NO           = 2
-, parameter WF           = 8
+, parameter WV           = 8
 , parameter INIT_FILE_H0 = "lh0.mem"
 , parameter INIT_FILE_H1 = "lh1.mem"
 , parameter INIT_FILE_O  = "lo.mem"
@@ -31,15 +31,15 @@ wire oEnd;
 wire                             wstti;
 wire                             wvldi;
 wire                             wrdyi;
-wire                [NI*WF-1:0] wdatai;
+wire                [NI*WV-1:0] wdatai;
 wire                             wsttt;
 wire                             wvldt;
 wire                             wrdyt;
-wire [NO*($clog2(NH1)+1+WF)-1:0] wdatat;
+wire [NO*($clog2(NH1)+1+WV)-1:0] wdatat;
 wire                             wendo;
 wire                             wvldo;
 wire                             wrdyo;
-wire [NO*($clog2(NH1)+1+WF)-1:0] wdatao;
+wire [NO*($clog2(NH1)+1+WV)-1:0] wdatao;
 
 assign wstti = iStart;
 assign wsttt = iStart;
@@ -48,7 +48,7 @@ assign oEnd  = wendo;
 //Sources
 StreamSource #
 ( .SIZE(SIZE)
-, .WIDTH(NI*WF)
+, .WIDTH(NI*WV)
 , .INPUT_FILE(INPUT_FILE)
 , .BURST(BURST)
 ) soi
@@ -62,7 +62,7 @@ StreamSource #
 
 StreamSource #
 ( .SIZE(SIZE)
-, .WIDTH(NO*($clog2(NH1)+1+WF))
+, .WIDTH(NO*($clog2(NH1)+1+WV))
 , .INPUT_FILE(INPUT_FILE)
 , .BURST(BURST)
 ) sot
@@ -80,7 +80,7 @@ Network #
 , .NH0(NH0)
 , .NH1(NH1)
 , .NO(NO)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 , .INIT_FILE_H0(INIT_FILE_H0)
 , .INIT_FILE_H1(INIT_FILE_H1)
@@ -104,7 +104,7 @@ Network #
 //Sink
 StreamSink #
 ( .SIZE(SIZE)
-, .WIDTH(NO*($clog2(NH1)+1+WF))
+, .WIDTH(NO*($clog2(NH1)+1+WV))
 , .OUTPUT_FILE(OUTPUT_FILE)
 , .BURST(BURST)
 ) sio
@@ -117,84 +117,84 @@ StreamSink #
 );
 
 //DebugNets
-wire                [WF-1:0] wstat_h0[0:NI-1];
-wire                [WF-1:0] wweit_h0[0:NI*NH0-1];
-wire                [WF-1:0] wbias_h0[0:NH0-1];
-wire [($clog2(NI)+1+WF)-1:0] waccm_h0[0:NH0-1];
-wire                [WF-1:0] wdelta_h0[0:NH0-1];
+wire                [WV-1:0] wstat_h0[0:NI-1];
+wire                [WV-1:0] wweit_h0[0:NI*NH0-1];
+wire                [WV-1:0] wbias_h0[0:NH0-1];
+wire [($clog2(NI)+1+WV)-1:0] waccm_h0[0:NH0-1];
+wire                [WV-1:0] wdelta_h0[0:NH0-1];
 
-wire                 [WF-1:0] wstat_h1[0:NH0-1];
-wire                 [WF-1:0] wweit_h1[0:NH0*NH1-1];
-wire                 [WF-1:0] wbias_h1[0:NH1-1];
-wire [($clog2(NH0)+1+WF)-1:0] waccm_h1[0:NH1-1];
-wire                 [WF-1:0] wdelta_h1[0:NH1-1];
+wire                 [WV-1:0] wstat_h1[0:NH0-1];
+wire                 [WV-1:0] wweit_h1[0:NH0*NH1-1];
+wire                 [WV-1:0] wbias_h1[0:NH1-1];
+wire [($clog2(NH0)+1+WV)-1:0] waccm_h1[0:NH1-1];
+wire                 [WV-1:0] wdelta_h1[0:NH1-1];
 
-wire                 [WF-1:0] wstat_o[0:NH1-1];
-wire                 [WF-1:0] wweit_o[0:NH1*NO-1];
-wire                 [WF-1:0] wbias_o[0:NO-1];
-wire [($clog2(NH1)+1+WF)-1:0] waccm_o[0:NO-1];
-wire                 [WF-1:0] wdelta_o[0:NO-1];
+wire                 [WV-1:0] wstat_o[0:NH1-1];
+wire                 [WV-1:0] wweit_o[0:NH1*NO-1];
+wire                 [WV-1:0] wbias_o[0:NO-1];
+wire [($clog2(NH1)+1+WV)-1:0] waccm_o[0:NO-1];
+wire                 [WV-1:0] wdelta_o[0:NO-1];
 
-wire [$clog2(NH1)+1+WF-1:0] woutput[0:NO-1];
-wire [$clog2(NH1)+1+WF-1:0] wteacher[0:NO-1];
+wire [$clog2(NH1)+1+WV-1:0] woutput[0:NO-1];
+wire [$clog2(NH1)+1+WV-1:0] wteacher[0:NO-1];
 
 generate
     for (gi = 0; gi < NI; gi = gi + 1)
-        assign wstat_h0[gi] = ne.hl0.fm.iData_AM_State0[gi*WF+:WF];
+        assign wstat_h0[gi] = ne.hl0.fm.iData_AM_State0[gi*WV+:WV];
 
     for (gi = 0; gi < NI; gi = gi + 1)
         for (gj = 0; gj < NH0; gj = gj + 1)
             assign wweit_h0[gi*NH0+gj]
-                = ne.hl0.fm.iData_AM_WeightBias[(gi*NH0+gj)*WF+NH0*WF+:WF];
+                = ne.hl0.fm.iData_AM_WeightBias[(gi*NH0+gj)*WV+NH0*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
-        assign wbias_h0[gi] = ne.hl0.fm.iData_AM_WeightBias[gi*WF+:WF];
+        assign wbias_h0[gi] = ne.hl0.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
-        assign waccm_h0[gi] = ne.hl0.fm.oData_BM_Accum0[gi*WF+:WF];
+        assign waccm_h0[gi] = ne.hl0.fm.oData_BM_Accum0[gi*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
-        assign wdelta_h0[gi] = ne.hl0.de.oData_BM_Delta0[gi*WF+:WF];
+        assign wdelta_h0[gi] = ne.hl0.de.oData_BM_Delta0[gi*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
         for (gj = 0; gj < NH1; gj = gj + 1)
             assign wweit_h1[gi*NH1+gj]
-                = ne.hl1.fm.iData_AM_WeightBias[(gi*NH1+gj)*WF+NH1*WF+:WF];
+                = ne.hl1.fm.iData_AM_WeightBias[(gi*NH1+gj)*WV+NH1*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
-        assign wbias_h1[gi] = ne.hl1.fm.iData_AM_WeightBias[gi*WF+:WF];
+        assign wbias_h1[gi] = ne.hl1.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
-        assign waccm_h1[gi] = ne.hl1.fm.oData_BM_Accum0[gi*WF+:WF];
+        assign waccm_h1[gi] = ne.hl1.fm.oData_BM_Accum0[gi*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
-        assign wstat_h1[gi] = ne.hl1.fm.iData_AM_State0[gi*WF+:WF];
+        assign wstat_h1[gi] = ne.hl1.fm.iData_AM_State0[gi*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
-        assign wdelta_h1[gi] = ne.hl1.de.oData_BM_Delta0[gi*WF+:WF];
+        assign wdelta_h1[gi] = ne.hl1.de.oData_BM_Delta0[gi*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
         for (gj = 0; gj < NO; gj = gj + 1)
             assign wweit_o[gi*NO+gj]
-                = ne.ol.fm.iData_AM_WeightBias[(gi*NO+gj)*WF+NO*WF+:WF];
+                = ne.ol.fm.iData_AM_WeightBias[(gi*NO+gj)*WV+NO*WV+:WV];
 
     for (gi = 0; gi < NO; gi = gi + 1)
-        assign wbias_o[gi] = ne.ol.fm.iData_AM_WeightBias[gi*WF+:WF];
+        assign wbias_o[gi] = ne.ol.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NO; gi = gi + 1)
-        assign waccm_o[gi] = ne.ol.fm.oData_BM_Accum0[gi*WF+:WF];
+        assign waccm_o[gi] = ne.ol.fm.oData_BM_Accum0[gi*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
-        assign wstat_o[gi] = ne.ol.fm.iData_AM_State0[gi*WF+:WF];
+        assign wstat_o[gi] = ne.ol.fm.iData_AM_State0[gi*WV+:WV];
 
     for (gi = 0; gi < NO; gi = gi + 1)
-        assign wdelta_o[gi] = ne.ol.de.oData_BM_Delta0[gi*WF+:WF];
+        assign wdelta_o[gi] = ne.ol.de.oData_BM_Delta0[gi*WV+:WV];
 
     for (gi = 0; gi < NO; gi = gi + 1) begin
         assign woutput[gi]
-            = ne.ol.oData_BM_Output[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
+            = ne.ol.oData_BM_Output[gi*($clog2(NH1)+1+WV)+:$clog2(NH1)+1+WV];
         assign wteacher[gi]
-            = ne.ol.iData_AS_Teacher[gi*($clog2(NH1)+1+WF)+:$clog2(NH1)+1+WF];
+            = ne.ol.iData_AS_Teacher[gi*($clog2(NH1)+1+WV)+:$clog2(NH1)+1+WV];
     end
 endgenerate
 
