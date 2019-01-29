@@ -20,3 +20,7 @@
 !/include/**/*.vh
 !/src/**/*.v
 !/test/**/*.v
+
+# Report
+!/docs/**/*.md
+!/docs/images/*.svg
