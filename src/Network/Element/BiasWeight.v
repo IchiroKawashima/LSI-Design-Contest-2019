@@ -45,10 +45,10 @@ generate
 
     for (gi = 0; gi < NP; gi = gi + 1)
         for (gj = 0; gj < NC; gj = gj + 1)
-            assign w_init_weight[gi*NC+gj] = r_init_value[(gi*NC+gj+NC)*WF+:WF];
+            assign w_init_weight[(gi*NC+gj+NC)*WF+:WF] = r_init_value[gi*NC+gj];
 
     for (gi = 0; gi < NC; gi = gi + 1)
-            assign w_init_bias[gi] = r_init_value[gi*WF+:WF];
+            assign w_init_bias[gi*WF+:WF] = r_init_value[gi];
 endgenerate
 
 // combiner 0
@@ -235,8 +235,8 @@ reg [1:0] r_stt;
 
 always @(posedge iCLK) begin
     if (iRST) begin
-        r_bias                  <= w_init_bias
-        r_weight                <= w_init_weight
+        r_bias                  <= w_init_bias;
+        r_weight                <= w_init_weight;
         r_vld_bias_weight       <= 0;
         r_stt                   <= INIT0;
     end
