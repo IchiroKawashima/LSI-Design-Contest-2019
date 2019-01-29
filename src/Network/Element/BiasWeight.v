@@ -1,11 +1,11 @@
 `include "Parameter.vh"
 
 module BiasWeight #
-( parameter NP     = 4
-, parameter NC     = 4
-, parameter WF     = 4
-, parameter BURST  = "yes"
+( parameter NP        = 4
+, parameter NC        = 4
+, parameter WF        = 4
 , parameter INIT_FILE = ""
+, parameter BURST     = "yes"
 )
 ( input                       iMode
 , input              [WF-1:0] iLR
@@ -29,6 +29,27 @@ module BiasWeight #
 
 genvar gi, gj;
 
+wire [NP*NC*WF-1:0] w_init_weight;
+wire    [NC*WF-1:0] w_init_bias;
+reg        [WF-1:0] r_init_value[0:NC+NP*NC-1];
+
+// init file
+generate
+    if (INIT_FILE == "")
+        for (gi = 0; gi < NC + NP * NC * WF; gi = gi + 1)
+            initial
+                r_init_value[gi] = {WF{1'b0}};
+    else
+        initial
+            $readmemb(INIT_FILE, rinit_value, 0, NC + NP * NC * WF - 1);
+
+    for (gi = 0; gi < NP; gi = gi + 1)
+        for (gj = 0; gj < NC; gj = gj + 1)
+            assign w_init_weight[gi*NC+gj] = r_init_value[(gi*NC+gj+NC)*WF+:WF];
+
+    for (gi = 0; gi < NC; gi = gi + 1)
+            assign w_init_bias[gi] = r_init_value[gi*WF+:WF];
+endgenerate
 
 // combiner 0
 wire                   w_vld_bm_comb0;
@@ -212,14 +233,10 @@ localparam  RUN   = 2'b00,
 
 reg [1:0] r_stt;
 
-reg [NP*NC*WF-1:0] randw = 0;
-reg    [NC*WF-1:0] randb = 1;
-
-
 always @(posedge iCLK) begin
     if (iRST) begin
-        r_bias                  <= $random(randw);
-        r_weight                <= $random(randb);
+        r_bias                  <= w_init_bias
+        r_weight                <= w_init_weight
         r_vld_bias_weight       <= 0;
         r_stt                   <= INIT0;
     end
@@ -287,17 +304,5 @@ Register #
 , .iRST(iRST)            
 , .iCLK(iCLK)
 );
-
-/*
-generate
-    if (INIT_FILE == "")
-        for (gi = 0; gi < NP*NC*WF; gi = gi + 1)
-            initial
-                r_weight[gi] = 1 << gi*NP*NC*WF;
-    else
-        initial
-            $readmemb(INIT_FILE, r_weight, 0, NP*NC*WF - 1);
-endgenerate
-*/
 
 endmodule

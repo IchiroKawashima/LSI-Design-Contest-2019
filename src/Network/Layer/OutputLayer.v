@@ -1,8 +1,9 @@
 module OutputLayer #
-( parameter NP    = 7
-, parameter NC    = 6
-, parameter WF    = 5
-, parameter BURST = "yes"
+( parameter NP        = 7
+, parameter NC        = 6
+, parameter WF        = 5
+, parameter INIT_FILE = ""
+, parameter BURST     = "yes"
 )
 ( input                             iMode
 , input                             iLR
@@ -90,6 +91,7 @@ BiasWeight #
 , .NC(NC)
 , .WF(WF)
 , .BURST(BURST)
+, .INIT_FILE(INIT_FILE)
 ) bw
 ( .iMode(iMode)
 , .iLR(iLR)

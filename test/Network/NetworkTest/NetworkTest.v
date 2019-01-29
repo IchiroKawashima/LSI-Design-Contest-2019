@@ -13,6 +13,9 @@ module NetworkTest #
 , parameter NH1          = 3
 , parameter NO           = 2
 , parameter WF           = 8
+, parameter INIT_FILE_H0 = ""
+, parameter INIT_FILE_H1 = ""
+, parameter INIT_FILE_O  = ""
 , parameter BURST        = "yes"
 );
 
@@ -155,6 +158,9 @@ Network #
 , .NO(NO)
 , .WF(WF)
 , .BURST(BURST)
+, .INIT_FILE_H0(INIT_FILE_H0)
+, .INIT_FILE_H1(INIT_FILE_H1)
+, .INIT_FILE_O(INIT_FILE_O)
 ) ne
 ( .iMode(MODE)
 , .iLR(iLR)

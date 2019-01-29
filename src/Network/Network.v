@@ -1,10 +1,13 @@
 module Network #
-( parameter NI    = 4
-, parameter NH0   = 5
-, parameter NH1   = 6
-, parameter NO    = 7
-, parameter WF    = 8
-, parameter BURST = "yes"
+( parameter NI           = 4
+, parameter NH0          = 5
+, parameter NH1          = 6
+, parameter NO           = 7
+, parameter WF           = 8
+, parameter INIT_FILE_H0 = ""
+, parameter INIT_FILE_H1 = ""
+, parameter INIT_FILE_O  = ""
+, parameter BURST        = "yes"
 )
 ( input                              iMode
 , input                              iLR
@@ -90,6 +93,7 @@ HiddenLayer #
 , .NN(NH1)
 , .WF(WF)
 , .BURST(BURST)
+, .INIT_FILE(INIT_FILE_H0)
 ) hl0
 ( .iMode(iMode)
 , .iLR(iLR)
@@ -127,6 +131,7 @@ HiddenLayer #
 , .NN(NO)
 , .WF(WF)
 , .BURST(BURST)
+, .INIT_FILE(INIT_FILE_H1)
 ) hl1
 ( .iMode(iMode)
 , .iLR(iLR)
@@ -163,6 +168,7 @@ OutputLayer #
 , .NC(NO)
 , .WF(WF)
 , .BURST(BURST)
+, .INIT_FILE(INIT_FILE_O)
 ) ol
 ( .iMode(iMode)
 , .iLR(iLR)
