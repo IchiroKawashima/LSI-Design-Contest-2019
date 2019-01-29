@@ -33,20 +33,23 @@ wire                             wrdyo;
 wire [NO*($clog2(NH1)+1+WF)-1:0] wdatao;
 
 
-wire [WF-1:0] wstat_h0[0:NI-1];
-wire [WF-1:0] wweit_h0[0:NI*NH0-1];
-wire [WF-1:0] wbias_h0[0:NH0-1];
-wire [WF-1:0] wdelta_h0[0:NH0-1];
+wire                [WF-1:0] wstat_h0[0:NI-1];
+wire                [WF-1:0] wweit_h0[0:NI*NH0-1];
+wire                [WF-1:0] wbias_h0[0:NH0-1];
+wire [($clog2(NI)+1+WF)-1:0] waccm_h0[0:NH0-1];
+wire                [WF-1:0] wdelta_h0[0:NH0-1];
 
-wire [WF-1:0] wstat_h1[0:NH0-1];
-wire [WF-1:0] wweit_h1[0:NH0*NH1-1];
-wire [WF-1:0] wbias_h1[0:NH1-1];
-wire [WF-1:0] wdelta_h1[0:NH1-1];
+wire                [WF-1:0] wstat_h1[0:NH0-1];
+wire                [WF-1:0] wweit_h1[0:NH0*NH1-1];
+wire                [WF-1:0] wbias_h1[0:NH1-1];
+wire [($clog2(NH0)+1+WF)-1:0] waccm_h1[0:NH1-1];
+wire                [WF-1:0] wdelta_h1[0:NH1-1];
 
-wire [WF-1:0] wstat_o[0:NH1-1];
-wire [WF-1:0] wweit_o[0:NH1*NO-1];
-wire [WF-1:0] wbias_o[0:NO-1];
-wire [WF-1:0] wdelta_o[0:NO-1];
+wire                [WF-1:0] wstat_o[0:NH1-1];
+wire                [WF-1:0] wweit_o[0:NH1*NO-1];
+wire                [WF-1:0] wbias_o[0:NO-1];
+wire [($clog2(NH1)+1+WF)-1:0] waccm_o[0:NO-1];
+wire                [WF-1:0] wdelta_o[0:NO-1];
 
 wire [$clog2(NH1)+1+WF-1:0] woutput[0:NO-1];
 wire [$clog2(NH1)+1+WF-1:0] wteacher[0:NO-1];
@@ -64,6 +67,9 @@ generate
         assign wbias_h0[gi] = ne.hl0.fm.iData_AM_WeightBias[gi*WF+:WF];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
+        assign waccm_h0[gi] = ne.hl0.fm.oData_BM_Accum0[gi*WF+:WF];
+
+    for (gi = 0; gi < NH0; gi = gi + 1)
         assign wdelta_h0[gi] = ne.hl0.de.oData_BM_Delta0[gi*WF+:WF];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
@@ -73,6 +79,9 @@ generate
 
     for (gi = 0; gi < NH1; gi = gi + 1)
         assign wbias_h1[gi] = ne.hl1.fm.iData_AM_WeightBias[gi*WF+:WF];
+
+    for (gi = 0; gi < NH1; gi = gi + 1)
+        assign waccm_h1[gi] = ne.hl1.fm.oData_BM_Accum0[gi*WF+:WF];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
         assign wstat_h1[gi] = ne.hl1.fm.iData_AM_State0[gi*WF+:WF];
@@ -87,6 +96,9 @@ generate
 
     for (gi = 0; gi < NO; gi = gi + 1)
         assign wbias_o[gi] = ne.ol.fm.iData_AM_WeightBias[gi*WF+:WF];
+
+    for (gi = 0; gi < NO; gi = gi + 1)
+        assign waccm_o[gi] = ne.ol.fm.oData_BM_Accum0[gi*WF+:WF];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
         assign wstat_o[gi] = ne.ol.fm.iData_AM_State0[gi*WF+:WF];
