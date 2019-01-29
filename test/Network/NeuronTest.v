@@ -5,14 +5,14 @@ module NeuronTest;
 parameter HIDDEN = "yes";
 parameter NP     = 4;
 parameter NC     = 8;
-parameter WF     = 4;
+parameter WV     = 4;
 
-localparam WN = (HIDDEN == "yes") ? WF : $clog2(NP) + WF;
+localparam WN = (HIDDEN == "yes") ? WV : $clog2(NP) + WV;
 
 reg                          iMode;
 reg                          iValid_AM_Accum0;
 wire                         oReady_AM_Accum0;
-reg  [NC*($clog2(NP)+WF)-1:0] iData_AM_Accum0;
+reg  [NC*($clog2(NP)+WV)-1:0] iData_AM_Accum0;
 wire                         oValid_BM_State0;
 reg                          iReady_BM_State0;
 wire             [NC*WN-1:0] oData_BM_State0;
@@ -26,7 +26,7 @@ Neuron #
 ( .HIDDEN   (HIDDEN)
 , .NP       (NP)
 , .NC       (NC)
-, .WF       (WF)
+, .WV       (WV)
 ) neuron
 ( .iMode           (iMode)
 , .iValid_AM_Accum0(iValid_AM_Accum0)
@@ -64,7 +64,7 @@ initial begin
     iReady_BM_State0   = 1;
     iReady_BM_State1   = 1;
     for (i = 0; i < NC; i = i + 1)
-        iData_AM_Accum0[i*($clog2(NP)+WF) +: ($clog2(NP)+WF)] = -7 + 3*i;
+        iData_AM_Accum0[i*($clog2(NP)+WV) +: ($clog2(NP)+WV)] = -7 + 3*i;
 #(PERIOD * 10)
     iValid_AM_Accum0   = 0;
 #(PERIOD)

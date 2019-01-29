@@ -3,25 +3,25 @@
 module InputLayer #
 ( parameter NC    = 7
 , parameter NN    = 6
-, parameter WF    = 5
+, parameter WV    = 5
 , parameter BURST = "yes"
 )
 ( input                 iMode
 , input                 iValid_AM_Input
 , output                oReady_AM_Input
-, input     [NC*WF-1:0] iData_AM_Input
+, input     [NC*WV-1:0] iData_AM_Input
 , output                oValid_BM_State0
 , input                 iReady_BM_State0
-, output    [NC*WF-1:0] oData_BM_State0
+, output    [NC*WV-1:0] oData_BM_State0
 , output                oValid_BM_State1
 , input                 iReady_BM_State1
-, output    [NC*WF-1:0] oData_BM_State1
+, output    [NC*WV-1:0] oData_BM_State1
 , input                 iValid_AS_Weight
 , output                oReady_AS_Weight
-, input  [NC*NN*WF-1:0] iData_AS_Weight
+, input  [NC*NN*WV-1:0] iData_AS_Weight
 , input                 iValid_AS_Delta0
 , output                oReady_AS_Delta0
-, input     [NN*WF-1:0] iData_AS_Delta0
+, input     [NN*WV-1:0] iData_AS_Delta0
 , input                 iRST
 , input                 iCLK
 );
@@ -32,15 +32,15 @@ wire             wvld_s0a;
 wire             wrdy_s0a;
 wire             wvld_s0b;
 wire             wrdy_s0b;
-wire [NC*WF-1:0] wdata_s0;
+wire [NC*WV-1:0] wdata_s0;
 wire             wvld_s1;
 wire             wrdy_s1;
-wire [NC*WF-1:0] wdata_s1;
+wire [NC*WV-1:0] wdata_s1;
 wire             wvld;
 
 Broadcaster #
-( .WIDTH0(NC*WF)
-, .WIDTH1(NC*WF)
+( .WIDTH0(NC*WV)
+, .WIDTH1(NC*WV)
 , .BURST(BURST)
 ) broadcaster0
 ( .iValid_AM(iValid_AM_Input)
@@ -61,8 +61,8 @@ assign {wrdy_s0a, wvld_s0b} =
     (iMode == TEST ) ? {wvld_s0a, 1'b0    } : 2'bxx;
 
 Broadcaster #
-( .WIDTH0(NC*WF)
-, .WIDTH1(NC*WF)
+( .WIDTH0(NC*WV)
+, .WIDTH1(NC*WV)
 , .BURST(BURST)
 ) broadcaster1
 ( .iValid_AM(wvld_s0b)

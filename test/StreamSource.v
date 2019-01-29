@@ -4,7 +4,8 @@ module StreamSource #
 , parameter INPUT_FILE = ""
 , parameter BURST      = "yes"
 )
-( output             oValid_BM
+( input              iStart
+, output             oValid_BM
 , input              iReady_BM
 , output [WIDTH-1:0] oData_BM
 , input              iRST
@@ -18,6 +19,7 @@ wire                   wvld;
 wire       [WIDTH-1:0] wdata;
 reg [$clog2(SIZE)-1:0] raddr;
 reg        [WIDTH-1:0] rmem[0:SIZE-1];
+reg                    ren;
 
 generate
     if (INPUT_FILE == "")
@@ -29,15 +31,24 @@ generate
             $readmemb(INPUT_FILE, rmem, 0, SIZE - 1);
 endgenerate
 
+//Enable
+always @(posedge iCLK)
+    if (iRST)
+        ren <= 1'b0;
+    else if (iStart)
+        ren <= 1'b1;
+
+//Address
 always @(posedge iCLK)
     if (iRST)
         raddr <= {$clog2(SIZE){1'b0}};
-    else if (wvld)
+    else if (ren && wvld)
         raddr <= raddr + 1'b1;
 
 assign wvld  = wrdy && raddr < SIZE;
 assign wdata = rmem[raddr];
 
+//Register
 Register #
 ( .WIDTH(WIDTH)
 , .BURST(BURST)

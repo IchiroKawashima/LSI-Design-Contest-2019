@@ -13,8 +13,8 @@
 
 # Vivado
 !/project/*.xpr
-!/resource/wave/**/*.wcfg
-!/resource/mem/**/*.mem
+!/resources/waves/**/*.wcfg
+!/resources/mems/**/*.mem
 
 # Verilog
 !/include/**/*.vh

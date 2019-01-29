@@ -1,49 +1,51 @@
 module OutputLayer #
-( parameter NP    = 7
-, parameter NC    = 6
-, parameter WF    = 5
-, parameter BURST = "yes"
+( parameter NP        = 7
+, parameter NC        = 6
+, parameter WV        = 5
+, parameter INIT_FILE = ""
+, parameter BURST     = "yes"
 )
 ( input                             iMode
+, input                    [WV-1:0] iLR
 , input                             iValid_AM_State0
 , output                            oReady_AM_State0
-, input                 [NP*WF-1:0] iData_AM_State0
+, input                 [NP*WV-1:0] iData_AM_State0
 , input                             iValid_AS_State1
 , output                            oReady_AS_State1
-, input                 [NP*WF-1:0] iData_AS_State1
+, input                 [NP*WV-1:0] iData_AS_State1
 , output                            oValid_BM_Output
 , input                             iReady_BM_Output
-, output [NC*($clog2(NP)+1+WF)-1:0] oData_BM_Output
+, output [NC*($clog2(NP)+1+WV)-1:0] oData_BM_Output
 , output                            oValid_BM_Weight
 , input                             iReady_BM_Weight
-, output             [NP*NC*WF-1:0] oData_BM_Weight
+, output             [NP*NC*WV-1:0] oData_BM_Weight
 , output                            oValid_BM_Delta0
 , input                             iReady_BM_Delta0
-, output                [NC*WF-1:0] oData_BM_Delta0
+, output                [NC*WV-1:0] oData_BM_Delta0
 , input                             iValid_AS_Teacher
 , output                            oReady_AS_Teacher
-, input  [NC*($clog2(NP)+1+WF)-1:0] iData_AS_Teacher
+, input  [NC*($clog2(NP)+1+WV)-1:0] iData_AS_Teacher
 , input                             iRST
 , input                             iCLK
 );
 
 wire                            wvld_Accum0;
 wire                            wrdy_Accum0;
-wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum0;
+wire [NC*($clog2(NP)+1+WV)-1:0] wdata_Accum0;
 wire                            wvld_Accum1;
 wire                            wrdy_Accum1;
-wire [NC*($clog2(NP)+1+WF)-1:0] wdata_Accum1;
+wire [NC*($clog2(NP)+1+WV)-1:0] wdata_Accum1;
 wire                            wvld_WeightBias;
 wire                            wrdy_WeightBias;
-wire       [NC*NP*WF+NC*WF-1:0] wdata_WeightBias;
+wire       [NC*NP*WV+NC*WV-1:0] wdata_WeightBias;
 wire                            wvld_Delta1;
 wire                            wrdy_Delta1;
-wire                [NC*WF-1:0] wdata_Delta1;
+wire                [NC*WV-1:0] wdata_Delta1;
 
 ForwardMaccum #
 ( .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) fm
 ( .iMode(iMode)
@@ -67,7 +69,7 @@ Neuron #
 ( .HIDDEN("no")
 , .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) ne
 ( .iMode(iMode)
@@ -87,11 +89,12 @@ Neuron #
 BiasWeight #
 ( .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
+, .INIT_FILE(INIT_FILE)
 ) bw
 ( .iMode(iMode)
-, .iLR(8'b1000_0000)
+, .iLR(iLR)
 , .iValid_AS_State1(iValid_AS_State1)
 , .oReady_AS_State1(oReady_AS_State1)
 , .iData_AS_State1(iData_AS_State1)
@@ -112,7 +115,7 @@ Delta #
 ( .HIDDEN("no")
 , .NP(NP)
 , .NC(NC)
-, .WF(WF)
+, .WV(WV)
 , .BURST(BURST)
 ) de
 ( .iValid_AS_Accum1(wvld_Accum1)
