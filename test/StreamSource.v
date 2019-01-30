@@ -14,12 +14,12 @@ module StreamSource #
 
 integer i;
 
-wire                   wrdy;
-wire                   wvld;
-wire       [WIDTH-1:0] wdata;
-reg [$clog2(SIZE)-1:0] raddr;
-reg        [WIDTH-1:0] rmem[0:SIZE-1];
-reg                    ren;
+wire                    wrdy;
+wire                    wvld;
+wire        [WIDTH-1:0] wdata;
+reg  [$clog2(SIZE)-1:0] raddr;
+reg         [WIDTH-1:0] rmem[0:SIZE-1];
+reg                     ren;
 
 generate
     if (INPUT_FILE == "") begin
@@ -47,10 +47,10 @@ always @(posedge iCLK)
 always @(posedge iCLK)
     if (iRST)
         raddr <= {$clog2(SIZE){1'b0}};
-    else if (ren && wvld)
+    else if (wvld)
         raddr <= raddr + 1'b1;
 
-assign wvld  = wrdy && raddr < SIZE;
+assign wvld  = ren && wrdy && raddr < SIZE;
 assign wdata = rmem[raddr];
 
 //Register
