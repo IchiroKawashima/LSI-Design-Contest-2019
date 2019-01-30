@@ -34,6 +34,9 @@ wire      [NP*NC*WV-1:0] w_init_weight;
 wire         [NC*WV-1:0] w_init_bias;
 wire [(NC*NP+NC)*32-1:0] w_x32_init;
 
+localparam MAX  = {2'b00, {WV-1{1'b1}}},
+           MIN  = {2'b11, {WV-1{1'b0}}};
+
 Xor32Initializer #
 ( .SIZE(NC*NP+NC)
 , .SEED0(SEED)
@@ -170,16 +173,19 @@ PipelineRegister #
 );
 
 // Broadcaster 2
-wire signed       [WV-1:0] w_adc2  [0:NC-1];
-wire signed    [NC*WV-1:0] w_adyc2 [0:NP-1];
-wire signed    [NC*WV-1:0] w_bias;
-wire signed [NP*NC*WV-1:0] w_weight;
+wire signed            [WV-1:0] w_adc2  [0:NC-1];
+wire signed         [NC*WV-1:0] w_adyc2 [0:NP-1];
+wire signed     [NC*(WV+1)-1:0] w_bias;
+wire signed         [NC*WV-1:0] w_bias_clp;
 
-reg  signed    [NC*WV-1:0] r_bias;
-reg  signed [NP*NC*WV-1:0] r_weight;
-reg                        r_vld_bias_weight;
+wire signed      [NP*NC*WV-1:0] w_weight;
+wire signed  [NP*NC*(WV+1)-1:0] w_weight_clp;
 
-wire        [NC*NP*WV-1:0] w_weight_t;
+reg  signed         [NC*WV-1:0] r_bias;
+reg  signed      [NP*NC*WV-1:0] r_weight;
+reg                             r_vld_bias_weight;
+
+wire             [NC*NP*WV-1:0] w_weight_t;
 
 wire                       w_vld_am_broad2;
 wire                       w_rdy_am_broad2;
@@ -203,12 +209,18 @@ for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_adyc2
 end
 
 for (gi = 0; gi < NC; gi = gi + 1) begin : gen_w_bias
-    assign w_bias[gi*WV +: WV] = r_bias[gi*WV +: WV] - w_adc2[gi];
+    assign w_bias[gi*(WV+1) +: WV+1] = $signed(r_bias[gi*WV +: WV]) - $signed(w_adc2[gi]);
+    assign w_bias_clp[gi*WV +: WV] = ($signed(w_bias[gi*(WV+1)+:WV+1]) > $signed(MAX)) ? MAX[0+:WV] :
+                  ($signed(w_bias[gi*(WV+1)+:WV+1]) < $signed(MIN)) ? MIN[0+:WV] :
+                  w_bias[gi*(WV+1)+:WV+1];
 end
 
 for (gi = 0; gi < NP; gi = gi + 1) begin : gen_w_weight_i
     for (gj = 0; gj < NC; gj = gj + 1) begin : gen_w_weight_j
-        assign w_weight[gi*NC*WV + gj*WV +: WV] = r_weight[gi*NC*WV + gj*WV +: WV] - w_adyc2[gi][gj*WV +: WV];
+        assign w_weight[gi*NC*WV + gj*WV +: WV] = $signed(r_weight[gi*NC*WV + gj*WV +: WV]) - $signed(w_adyc2[gi][gj*WV +: WV]);
+        assign w_weight_clp[gi*NC*WV + gj*WV +: WV] = ($signed(w_weight[gi*NC*(WV+1) + gj*(WV+1) +: WV+1]) > $signed(MAX)) ? MAX[0+:WV] :
+                  ($signed(w_weight[gi*NC*(WV+1) + gj*(WV+1) +: WV+1]) < $signed(MIN)) ? MIN[0+:WV] :
+                  w_weight[gi*(WV+1)+:WV+1];
     end
 end
 
@@ -243,7 +255,7 @@ always @(posedge iCLK) begin
     else begin
         if (iMode == TRAIN) begin
             if (w_vld_bs_pipe1) begin
-                r_bias          <= w_bias;
+                r_bias          <= w_bias_clp;
                 r_weight        <= w_weight;
             end
             r_vld_bias_weight   <= w_vld_bs_pipe1;
