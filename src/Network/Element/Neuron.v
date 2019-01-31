@@ -25,7 +25,7 @@ localparam WN = (HIDDEN == "yes") ? WV : $clog2(NP) + 1 + WV;
 `DECLARE_MODE_PARAMETERS
 
 // pipeline register
-wire [NC*WN-1:0] w_lgc;
+
 //reg  [NC*WN-1:0] r_stl;
 //reg  r_vld;
 //wire w_rdy;
@@ -50,34 +50,31 @@ end
 
 // logic
 localparam MAX_YC = 2 ** (WV - 1) - 1;
-wire signed [($clog2(NP)+1+WV)-1:0] w_vc[0:NC-1];
-wire signed [($clog2(NP)+1+WV)-1:0] w_yc_pos[0:NC-1];
-wire signed              [WV-1:0] w_yc_clp[0:NC-1];
 
 genvar gi;
 generate
-    for (gi = 0; gi < NC; gi = gi + 1) begin : in
-        assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+1+WV) +: ($clog2(NP)+1+WV)];
-    end
-
-    // ReLU
-    for (gi = 0; gi < NC; gi = gi + 1) begin : relu
-        if (HIDDEN == "yes") begin
+    if (HIDDEN == "yes") begin
+        wire                    [NC*WN-1:0] w_lgc;
+        wire signed [($clog2(NP)+1+WV)-1:0] w_vc[0:NC-1];
+        wire signed [($clog2(NP)+1+WV)-1:0] w_yc_pos[0:NC-1];
+        wire signed                [WV-1:0] w_yc_clp[0:NC-1];
+        
+        for (gi = 0; gi < NC; gi = gi + 1) begin : in
+            assign w_vc[gi] = iData_AM_Accum0[gi*($clog2(NP)+1+WV) +: ($clog2(NP)+1+WV)];
+        end
+    
+        // ReLU
+        for (gi = 0; gi < NC; gi = gi + 1) begin : relu
             assign w_yc_pos[gi] = w_vc[gi][($clog2(NP)+1+WV)-1] ? 0: w_vc[gi];
             assign w_yc_clp[gi] = (w_yc_pos[gi] <= MAX_YC[WV:0]) ? w_yc_pos[gi][WV-1:0] : MAX_YC[WV:0];
         end
-        else
-            assign w_yc_clp[gi] = w_vc[gi][WV-1:0];
-    end
+    
+        // out
+        for (gi = 0; gi < NC; gi = gi + 1) begin : out
+            assign w_lgc[gi*WN +: WV] = w_yc_clp[gi];
+        end
 
-    // out
-    for (gi = 0; gi < NC; gi = gi + 1) begin : out
-        assign w_lgc[gi*WN +: (HIDDEN=="yes")?WV:$clog2(NP)+1+WV] = w_yc_clp[gi];
-    end
-endgenerate
-
-generate
-    if (HIDDEN == "yes") begin
+    
         wire w_vld_bm1;
         wire w_rdy_bm1;
 
@@ -109,7 +106,7 @@ generate
         ) register1
         ( .iValid_AM(iValid_AM_Accum0)
         , .oReady_AM(oReady_AM_Accum0)
-        , .iData_AM(w_lgc)
+        , .iData_AM(iData_AM_Accum0)
         , .oValid_BM(oValid_BM_State0)
         , .iReady_BM(iReady_BM_State0)
         , .oData_BM(oData_BM_State0)

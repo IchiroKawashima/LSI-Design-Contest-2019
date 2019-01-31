@@ -36,6 +36,7 @@ wire                            wrdy_a12;
 wire [NC*($clog2(NP)+1+WV)-1:0] wdata_a1;
 wire                [NC*WA-1:0] wdata_a2;
 wire                [NC*WA-1:0] wdata_a12;
+wire            [NC*(WA+1)-1:0] wdata_a12_of;
 wire                [NC*WV-1:0] wdata_sat;
 
 Combiner #
@@ -62,11 +63,17 @@ generate
                   || $signed(wdata_a1[gi*($clog2(NP)+1+WV)+:$clog2(NP)+1+WV])
                    < $signed(ZERO)
                    ) ? {WA{1'b0}} : wdata_a2[gi*WA+:WA];
-        else
-            assign wdata_a12[gi*WA+:WA]
+        else begin
+            assign wdata_a12_of[gi*(WA+1) +: WA+1]
                 = $signed(wdata_a1[gi*($clog2(NP)+1+WV)+:$clog2(NP)+1+WV])
                 - $signed(wdata_a2[gi*WA+:WA]);
-
+                
+            assign wdata_a12[gi*WA+:WA]
+                = ($signed(wdata_a12_of[gi*(WA+1) +: (WA+1)]) > $signed({1'b0, MAX})) ? MAX[0+:WA] :
+                  ($signed(wdata_a12_of[gi*(WA+1) +: (WA+1)]) < $signed({1'b1, MIN})) ? MIN[0+:WA] :
+                  wdata_a12_of[gi*(WA+1) +:WA];
+        end
+        
         assign wdata_sat[gi*WV+:WV]
             = ($signed(wdata_a12[gi*WA+:WA]) > $signed(MAX)) ? MAX[0+:WV] :
               ($signed(wdata_a12[gi*WA+:WA]) < $signed(MIN)) ? MIN[0+:WV] :
