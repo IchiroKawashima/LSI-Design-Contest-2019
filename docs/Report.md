@@ -61,9 +61,14 @@ MLPの重みとバイアスの更新は，各層の重み・バイアス回路�
 <div style="text-align: center;">図 2.1．Broadcaster・Combiner</div>
 
 #### 2.1.2. Pipeline Register
+図2.2にPipeline Registerの回路ブロック図を示す．
+
+モジュール内の処理をいくつかのステージに分割し，パイプライン処理を行わせるときに，Pipeline Registerが用いられる．
+Pipeline Registerは各ステージ間に配置されて，あるステージから次のステージへデータを受け渡す．
+出力側のReady信号がHIGHで，入力側のValid信号がHIGHになったときにデータが次のステージへ受け渡される．
 
 <div align="center"><img src="images/PipelineRegister.svg" width="75%"></div>
-<div style="text-align: center;">図 2.2．PipelineRegister</div>
+<div style="text-align: center;">図 2.2．Pipeline Register</div>
 
 ### 2.2. ニューラルネットワーク専用回路
 #### 2.2.1. 積和演算回路
@@ -148,3 +153,12 @@ https://github.com/IchiroKawashima/LSI-Design-Contest-2019/
 <div style="page-break-before:always"></div>
 
 ## 6. デザインが操作しているシミュレーション波形の表示
+
+### 6.1. Valid信号とReady信号
+図6.に，作成した回路を用いて，3回の順伝播処理を行い，2回の逆伝播処理を行なった時の論理シミュレーションの波形を示す．
+この波形では全てのモジュールのValid信号とReady信号を示している．
+上から順番に隠れ層0，隠れ層1，出力層のモジュール毎に並べてある．
+図の矢印に示すように，順伝播の計算時には，Valid信号とReady信号が同時にHIGHになっているタイミングが，入力層側から出力層側に伝播している様子が確認できる．また，逆伝播の計算時には，Valid信号とReady信号が同時にHIGHになっているタイミングが，出力層側から入力層側に伝播している様子が確認できる．
+
+<img src="images/ValidReady.png" width="100%">
+<div style="text-align: center;">図 6.．Valid信号とReady信号</div>
