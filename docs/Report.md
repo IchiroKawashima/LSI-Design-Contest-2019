@@ -58,20 +58,23 @@ MLPの重みとバイアスの更新は，各層の重み・バイアス回路�
 以下に，BroadcasterとCombinerの回路ブロック図を示す．
 
 <div align="center"><img src="images/StreamMasters.svg" width="75%"></div>
-<div style="text-align: center;">図．Broadcaster・Combiner</div>
+<div style="text-align: center;">図 2.1．Broadcaster・Combiner</div>
 
 #### 2.1.2. Pipeline Register
+
+<div align="center"><img src="images/PipelineRegister.svg" width="75%"></div>
+<div style="text-align: center;">図 2.2．PipelineRegister</div>
 
 ### 2.2. ニューラルネットワーク専用回路
 #### 2.2.1. 積和演算回路
 以下に，積和演算回路のブロック図を示す．
 
 <img src="images/Maccum.svg" width="100%">
-<div style="text-align: center;">図．積和演算回路</div>
+<div style="text-align: center;">図 2.3．積和演算回路</div>
 
 
 #### 2.2.2. 活性化関数回路
-以下に，活性化関数回路のブロック図を示す．
+図2.4に，活性化関数回路のブロック図を示す．
 
 活性化関数回路は，自身のレイヤーの積和演算回路から入力を受け付ける．
 活性化関数回路に入力された信号は，ニューロンの内部状態毎に分割され，各信号は図に示すReLUブロックへと入力される．
@@ -83,16 +86,16 @@ ReLUブロックは入力された信号を，0からMAX（出力信号のビッ
 Broadcasterによって，活性化関数回路の出力は，次のレイヤーの積和演算回路と，自身の重み・バイアス回路に入力される．
 
 <img src="images/Neuron.svg" width="100%">
-<div style="text-align: center;">図．活性化関数回路</div>
+<div style="text-align: center;">図 2.4．活性化関数回路</div>
 
 
 #### 2.2.3. 誤差伝播回路
 <img src="images/Delta.svg" width="100%">
-<div style="text-align: center;">図．誤差逆伝播回路</div>
+<div style="text-align: center;">図 2.5．誤差逆伝播回路</div>
 
 
 #### 2.2.4. 重み・バイアス回路
-以下に，重み・バイアス回路を示す．
+図2.6に，重み・バイアス回路を示す．
 
 重み・バイアス回路は，活性化関数回路と誤差逆伝播回路から入力を受け付ける．
 各信号は，まずCombinerに入力される．
@@ -113,7 +116,7 @@ Updateブロック内には，重みとバイアスの値を保存するレジ�
 Broadcasterによって，重みとバイアスが自身のレイヤーの積和演算回路へ入力され，重みが前のレイヤーの誤差逆伝播回路へ入力される．
 
 <img src="images/BiasWeight.svg" width="100%">
-<div style="text-align: center;">図．重み・バイアス回路</div>
+<div style="text-align: center;">図 2.6．重み・バイアス回路</div>
 
 <!--- break -->
 <div style="page-break-before:always"></div>
