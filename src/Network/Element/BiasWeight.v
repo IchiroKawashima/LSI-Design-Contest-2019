@@ -178,8 +178,8 @@ wire signed         [NC*WV-1:0] w_adyc2 [0:NP-1];
 wire signed     [NC*(WV+1)-1:0] w_bias;
 wire signed         [NC*WV-1:0] w_bias_clp;
 
-wire signed      [NP*NC*WV-1:0] w_weight;
-wire signed  [NP*NC*(WV+1)-1:0] w_weight_clp;
+wire signed  [NP*NC*(WV+1)-1:0] w_weight;
+wire signed      [NP*NC*WV-1:0] w_weight_clp;
 
 reg  signed         [NC*WV-1:0] r_bias;
 reg  signed      [NP*NC*WV-1:0] r_weight;
