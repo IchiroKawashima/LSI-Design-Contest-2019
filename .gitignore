@@ -8,6 +8,10 @@
 !*.gitkeep
 !*.md
 
+# Images
+!/images/**/*.svg
+!/images/**/*.png
+
 # VScode
 !/.vscode/*
 
@@ -20,8 +24,3 @@
 !/include/**/*.vh
 !/src/**/*.v
 !/test/**/*.v
-
-# Report
-!/docs/**/*.md
-!/docs/images/*.svg
-!/docs/images/*.png
