@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="159166833fs"></ZoomStartTime>
-      <ZoomEndTime time="1114167834fs"></ZoomEndTime>
-      <Cursor1Time time="955001000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="955001001fs"></ZoomEndTime>
+      <Cursor1Time time="162000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="225"></NameColumnWidth>
-      <ValueColumnWidth column_width="282"></ValueColumnWidth>
+      <NameColumnWidth column_width="201"></NameColumnWidth>
+      <ValueColumnWidth column_width="154"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="divider133" type="divider">
       <obj_property name="label">c</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -54,12 +54,8 @@
       <obj_property name="ObjectShortName">oEnd</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatai">
-      <obj_property name="ElementShortName">wdatai[23:0]</obj_property>
-      <obj_property name="ObjectShortName">wdatai[23:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/SEED">
-      <obj_property name="ElementShortName">SEED[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SEED[31:0]</obj_property>
+      <obj_property name="ElementShortName">wdatai[47:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatai[47:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/NetworkTest/soi/ren">
       <obj_property name="ElementShortName">ren</obj_property>
@@ -78,8 +74,8 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatai">
-      <obj_property name="ElementShortName">wdatai[23:0]</obj_property>
-      <obj_property name="ObjectShortName">wdatai[23:0]</obj_property>
+      <obj_property name="ElementShortName">wdatai[47:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatai[47:0]</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -96,8 +92,8 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatat">
-      <obj_property name="ElementShortName">wdatat[21:0]</obj_property>
-      <obj_property name="ObjectShortName">wdatat[21:0]</obj_property>
+      <obj_property name="ElementShortName">wdatat[37:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatat[37:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF0080</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -114,8 +110,8 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/NetworkTest/wdatao">
-      <obj_property name="ElementShortName">wdatao[21:0]</obj_property>
-      <obj_property name="ObjectShortName">wdatao[21:0]</obj_property>
+      <obj_property name="ElementShortName">wdatao[37:0]</obj_property>
+      <obj_property name="ObjectShortName">wdatao[37:0]</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -139,8 +135,8 @@
          <obj_property name="ObjectShortName">oReady_AM_Input</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AM_Input">
-         <obj_property name="ElementShortName">iData_AM_Input[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_Input[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_Input[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Input[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State0">
          <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
@@ -151,8 +147,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/il/oData_BM_State0">
-         <obj_property name="ElementShortName">oData_BM_State0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State0[23:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/il/oValid_BM_State1">
          <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
@@ -163,8 +159,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/il/oData_BM_State1">
-         <obj_property name="ElementShortName">oData_BM_State1[23:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State1[23:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State1[47:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Weight">
          <obj_property name="ElementShortName">iValid_AS_Weight</obj_property>
@@ -175,8 +171,8 @@
          <obj_property name="ObjectShortName">oReady_AS_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AS_Weight">
-         <obj_property name="ElementShortName">iData_AS_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/il/iValid_AS_Delta0">
          <obj_property name="ElementShortName">iValid_AS_Delta0</obj_property>
@@ -187,8 +183,8 @@
          <obj_property name="ObjectShortName">oReady_AS_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/il/iData_AS_Delta0">
-         <obj_property name="ElementShortName">iData_AS_Delta0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_Delta0[15:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_Delta0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Delta0[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="divider165" type="divider">
          <obj_property name="label">hl0</obj_property>
@@ -207,8 +203,8 @@
          <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_State0">
-         <obj_property name="ElementShortName">iData_AM_State0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_State0[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_State0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AS_State1">
          <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
@@ -219,8 +215,8 @@
          <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AS_State1">
-         <obj_property name="ElementShortName">iData_AS_State1[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_State1[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_State1[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_State0">
          <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
@@ -231,8 +227,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_State0">
-         <obj_property name="ElementShortName">oData_BM_State0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State0[15:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_State1">
          <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
@@ -243,8 +239,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_State1">
-         <obj_property name="ElementShortName">oData_BM_State1[15:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State1[15:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AM_Weight">
          <obj_property name="ElementShortName">iValid_AM_Weight</obj_property>
@@ -255,8 +251,8 @@
          <obj_property name="ObjectShortName">oReady_AM_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_Weight">
-         <obj_property name="ElementShortName">iData_AM_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_Weight">
          <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
@@ -267,8 +263,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_Weight">
-         <obj_property name="ElementShortName">oData_BM_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/iValid_AM_Delta0">
          <obj_property name="ElementShortName">iValid_AM_Delta0</obj_property>
@@ -279,8 +275,8 @@
          <obj_property name="ObjectShortName">oReady_AM_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/iData_AM_Delta0">
-         <obj_property name="ElementShortName">iData_AM_Delta0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_Delta0[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_Delta0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Delta0[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/oValid_BM_Delta0">
          <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
@@ -291,8 +287,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl0/oData_BM_Delta0">
-         <obj_property name="ElementShortName">oData_BM_Delta0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Delta0[15:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Delta0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="divider191" type="divider">
          <obj_property name="label">hl1</obj_property>
@@ -311,8 +307,8 @@
          <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_State0">
-         <obj_property name="ElementShortName">iData_AM_State0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_State0[15:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_State0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AS_State1">
          <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
@@ -323,8 +319,8 @@
          <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AS_State1">
-         <obj_property name="ElementShortName">iData_AS_State1[15:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_State1[15:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_State1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_State0">
          <obj_property name="ElementShortName">oValid_BM_State0</obj_property>
@@ -335,8 +331,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_State0">
-         <obj_property name="ElementShortName">oData_BM_State0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State0[23:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State0[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_State1">
          <obj_property name="ElementShortName">oValid_BM_State1</obj_property>
@@ -347,8 +343,8 @@
          <obj_property name="ObjectShortName">iReady_BM_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_State1">
-         <obj_property name="ElementShortName">oData_BM_State1[23:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_State1[23:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_State1[47:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_State1[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AM_Weight">
          <obj_property name="ElementShortName">iValid_AM_Weight</obj_property>
@@ -359,8 +355,8 @@
          <obj_property name="ObjectShortName">oReady_AM_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_Weight">
-         <obj_property name="ElementShortName">iData_AM_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_Weight">
          <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
@@ -371,8 +367,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_Weight">
-         <obj_property name="ElementShortName">oData_BM_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/iValid_AM_Delta0">
          <obj_property name="ElementShortName">iValid_AM_Delta0</obj_property>
@@ -383,8 +379,8 @@
          <obj_property name="ObjectShortName">oReady_AM_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/iData_AM_Delta0">
-         <obj_property name="ElementShortName">iData_AM_Delta0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_Delta0[15:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_Delta0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_Delta0[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/hl1/oValid_BM_Delta0">
          <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
@@ -395,8 +391,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/hl1/oData_BM_Delta0">
-         <obj_property name="ElementShortName">oData_BM_Delta0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Delta0[23:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Delta0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[47:0]</obj_property>
       </wvobject>
       <wvobject fp_name="divider217" type="divider">
          <obj_property name="label">ol</obj_property>
@@ -415,8 +411,8 @@
          <obj_property name="ObjectShortName">oReady_AM_State0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AM_State0">
-         <obj_property name="ElementShortName">iData_AM_State0[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AM_State0[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AM_State0[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AM_State0[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iValid_AS_State1">
          <obj_property name="ElementShortName">iValid_AS_State1</obj_property>
@@ -427,8 +423,8 @@
          <obj_property name="ObjectShortName">oReady_AS_State1</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AS_State1">
-         <obj_property name="ElementShortName">iData_AS_State1[23:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_State1[23:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_State1[47:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_State1[47:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Output">
          <obj_property name="ElementShortName">oValid_BM_Output</obj_property>
@@ -439,8 +435,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Output</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Output">
-         <obj_property name="ElementShortName">oData_BM_Output[21:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Output[21:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Output[37:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Output[37:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Weight">
          <obj_property name="ElementShortName">oValid_BM_Weight</obj_property>
@@ -451,8 +447,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Weight</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Weight">
-         <obj_property name="ElementShortName">oData_BM_Weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/ol/oValid_BM_Delta0">
          <obj_property name="ElementShortName">oValid_BM_Delta0</obj_property>
@@ -463,8 +459,8 @@
          <obj_property name="ObjectShortName">iReady_BM_Delta0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/oData_BM_Delta0">
-         <obj_property name="ElementShortName">oData_BM_Delta0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">oData_BM_Delta0[15:0]</obj_property>
+         <obj_property name="ElementShortName">oData_BM_Delta0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">oData_BM_Delta0[31:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/NetworkTest/ne/ol/iValid_AS_Teacher">
          <obj_property name="ElementShortName">iValid_AS_Teacher</obj_property>
@@ -475,8 +471,8 @@
          <obj_property name="ObjectShortName">oReady_AS_Teacher</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/iData_AS_Teacher">
-         <obj_property name="ElementShortName">iData_AS_Teacher[21:0]</obj_property>
-         <obj_property name="ObjectShortName">iData_AS_Teacher[21:0]</obj_property>
+         <obj_property name="ElementShortName">iData_AS_Teacher[37:0]</obj_property>
+         <obj_property name="ObjectShortName">iData_AS_Teacher[37:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group245">
@@ -610,20 +606,20 @@
             <obj_property name="ObjectShortName">w_rdy_bm_comb0</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm_comb0">
-            <obj_property name="ElementShortName">w_dat_bm_comb0[39:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_bm_comb0[39:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_bm_comb0[79:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm_comb0[79:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dc0">
-            <obj_property name="ElementShortName">w_dc0[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dc0[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">w_dc0[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dc0[0:1][15:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc0_tmp">
-            <obj_property name="ElementShortName">w_adc0_tmp[0:1][14:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adc0_tmp[0:1][14:0]</obj_property>
+            <obj_property name="ElementShortName">w_adc0_tmp[0:1][30:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc0_tmp[0:1][30:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc0">
-            <obj_property name="ElementShortName">w_adc0[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adc0[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">w_adc0[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc0[0:1][15:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_as_pipe0">
             <obj_property name="ElementShortName">w_vld_as_pipe0</obj_property>
@@ -634,8 +630,8 @@
             <obj_property name="ObjectShortName">w_rdy_as_pipe0</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_as_pipe0">
-            <obj_property name="ElementShortName">w_dat_as_pipe0[39:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_as_pipe0[39:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_as_pipe0[79:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_as_pipe0[79:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bs_pipe0">
             <obj_property name="ElementShortName">w_vld_bs_pipe0</obj_property>
@@ -646,24 +642,24 @@
             <obj_property name="ObjectShortName">w_rdy_bs_pipe0</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bs_pipe0">
-            <obj_property name="ElementShortName">w_dat_bs_pipe0[39:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_bs_pipe0[39:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_bs_pipe0[79:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bs_pipe0[79:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc1">
-            <obj_property name="ElementShortName">w_adc1[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adc1[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">w_adc1[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc1[0:1][15:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_yc1">
-            <obj_property name="ElementShortName">w_yc1[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">w_yc1[0:2][7:0]</obj_property>
+            <obj_property name="ElementShortName">w_yc1[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_yc1[0:2][15:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc1_tmp">
-            <obj_property name="ElementShortName">w_adyc1_tmp[0:2][29:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adyc1_tmp[0:2][29:0]</obj_property>
+            <obj_property name="ElementShortName">w_adyc1_tmp[0:2][61:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc1_tmp[0:2][61:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc1">
-            <obj_property name="ElementShortName">w_adyc1[0:2][15:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adyc1[0:2][15:0]</obj_property>
+            <obj_property name="ElementShortName">w_adyc1[0:2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc1[0:2][31:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_as_pipe1">
             <obj_property name="ElementShortName">w_vld_as_pipe1</obj_property>
@@ -674,8 +670,8 @@
             <obj_property name="ObjectShortName">w_rdy_as_pipe1</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_as_pipe1">
-            <obj_property name="ElementShortName">w_dat_as_pipe1[63:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_as_pipe1[63:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_as_pipe1[127:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_as_pipe1[127:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bs_pipe1">
             <obj_property name="ElementShortName">w_vld_bs_pipe1</obj_property>
@@ -686,40 +682,40 @@
             <obj_property name="ObjectShortName">w_rdy_bs_pipe1</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bs_pipe1">
-            <obj_property name="ElementShortName">w_dat_bs_pipe1[63:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_bs_pipe1[63:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_bs_pipe1[127:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bs_pipe1[127:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adc2">
-            <obj_property name="ElementShortName">w_adc2[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adc2[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">w_adc2[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adc2[0:1][15:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_adyc2">
-            <obj_property name="ElementShortName">w_adyc2[0:2][15:0]</obj_property>
-            <obj_property name="ObjectShortName">w_adyc2[0:2][15:0]</obj_property>
+            <obj_property name="ElementShortName">w_adyc2[0:2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_adyc2[0:2][31:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_bias">
-            <obj_property name="ElementShortName">w_bias[15:0]</obj_property>
-            <obj_property name="ObjectShortName">w_bias[15:0]</obj_property>
+            <obj_property name="ElementShortName">w_bias[31:0]</obj_property>
+            <obj_property name="ObjectShortName">w_bias[31:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_weight">
-            <obj_property name="ElementShortName">w_weight[47:0]</obj_property>
-            <obj_property name="ObjectShortName">w_weight[47:0]</obj_property>
+            <obj_property name="ElementShortName">w_weight[95:0]</obj_property>
+            <obj_property name="ObjectShortName">w_weight[95:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_bias">
-            <obj_property name="ElementShortName">r_bias[15:0]</obj_property>
-            <obj_property name="ObjectShortName">r_bias[15:0]</obj_property>
+            <obj_property name="ElementShortName">r_bias[31:0]</obj_property>
+            <obj_property name="ObjectShortName">r_bias[31:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_weight">
-            <obj_property name="ElementShortName">r_weight[47:0]</obj_property>
-            <obj_property name="ObjectShortName">r_weight[47:0]</obj_property>
+            <obj_property name="ElementShortName">r_weight[95:0]</obj_property>
+            <obj_property name="ObjectShortName">r_weight[95:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/r_vld_bias_weight">
             <obj_property name="ElementShortName">r_vld_bias_weight</obj_property>
             <obj_property name="ObjectShortName">r_vld_bias_weight</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_weight_t">
-            <obj_property name="ElementShortName">w_weight_t[47:0]</obj_property>
-            <obj_property name="ObjectShortName">w_weight_t[47:0]</obj_property>
+            <obj_property name="ElementShortName">w_weight_t[95:0]</obj_property>
+            <obj_property name="ObjectShortName">w_weight_t[95:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_am_broad2">
             <obj_property name="ElementShortName">w_vld_am_broad2</obj_property>
@@ -738,8 +734,8 @@
             <obj_property name="ObjectShortName">w_rdy_bm0_broad2</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm0_broad2">
-            <obj_property name="ElementShortName">w_dat_bm0_broad2[63:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_bm0_broad2[63:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_bm0_broad2[127:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm0_broad2[127:0]</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/NetworkTest/ne/hl0/bw/w_vld_bm1_broad2">
             <obj_property name="ElementShortName">w_vld_bm1_broad2</obj_property>
@@ -750,8 +746,8 @@
             <obj_property name="ObjectShortName">w_rdy_bm1_broad2</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/w_dat_bm1_broad2">
-            <obj_property name="ElementShortName">w_dat_bm1_broad2[47:0]</obj_property>
-            <obj_property name="ObjectShortName">w_dat_bm1_broad2[47:0]</obj_property>
+            <obj_property name="ElementShortName">w_dat_bm1_broad2[95:0]</obj_property>
+            <obj_property name="ObjectShortName">w_dat_bm1_broad2[95:0]</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/ne/hl0/bw/r_stt">
             <obj_property name="ElementShortName">r_stt[1:0]</obj_property>
@@ -763,8 +759,8 @@
       <obj_property name="label">calc</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject type="array" fp_name="/NetworkTest/wstat_h0">
-         <obj_property name="ElementShortName">wstat_h0[0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wstat_h0[0:2][7:0]</obj_property>
+         <obj_property name="ElementShortName">wstat_h0[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wstat_h0[0:2][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -775,8 +771,8 @@
          <obj_property name="Reversed">false</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wweit_h0">
-         <obj_property name="ElementShortName">wweit_h0[0:5][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wweit_h0[0:5][7:0]</obj_property>
+         <obj_property name="ElementShortName">wweit_h0[0:5][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wweit_h0[0:5][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -786,8 +782,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wbias_h0">
-         <obj_property name="ElementShortName">wbias_h0[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wbias_h0[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">wbias_h0[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wbias_h0[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -795,8 +791,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wdelta_h0">
-         <obj_property name="ElementShortName">wdelta_h0[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wdelta_h0[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">wdelta_h0[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wdelta_h0[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -804,8 +800,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wstat_h1">
-         <obj_property name="ElementShortName">wstat_h1[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wstat_h1[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">wstat_h1[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wstat_h1[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -813,8 +809,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wweit_h1">
-         <obj_property name="ElementShortName">wweit_h1[0:5][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wweit_h1[0:5][7:0]</obj_property>
+         <obj_property name="ElementShortName">wweit_h1[0:5][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wweit_h1[0:5][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -822,8 +818,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wbias_h1">
-         <obj_property name="ElementShortName">wbias_h1[0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wbias_h1[0:2][7:0]</obj_property>
+         <obj_property name="ElementShortName">wbias_h1[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wbias_h1[0:2][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -951,8 +947,8 @@
          </wvobject>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wdelta_h1">
-         <obj_property name="ElementShortName">wdelta_h1[0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wdelta_h1[0:2][7:0]</obj_property>
+         <obj_property name="ElementShortName">wdelta_h1[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wdelta_h1[0:2][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -962,8 +958,8 @@
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wstat_o">
-         <obj_property name="ElementShortName">wstat_o[0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wstat_o[0:2][7:0]</obj_property>
+         <obj_property name="ElementShortName">wstat_o[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wstat_o[0:2][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -971,8 +967,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wweit_o">
-         <obj_property name="ElementShortName">wweit_o[0:5][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wweit_o[0:5][7:0]</obj_property>
+         <obj_property name="ElementShortName">wweit_o[0:5][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wweit_o[0:5][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -980,8 +976,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wbias_o">
-         <obj_property name="ElementShortName">wbias_o[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wbias_o[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">wbias_o[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wbias_o[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -989,8 +985,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wdelta_o">
-         <obj_property name="ElementShortName">wdelta_o[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">wdelta_o[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">wdelta_o[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">wdelta_o[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -998,8 +994,8 @@
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/wteacher">
-         <obj_property name="ElementShortName">wteacher[0:1][10:0]</obj_property>
-         <obj_property name="ObjectShortName">wteacher[0:1][10:0]</obj_property>
+         <obj_property name="ElementShortName">wteacher[0:1][18:0]</obj_property>
+         <obj_property name="ObjectShortName">wteacher[0:1][18:0]</obj_property>
          <obj_property name="isExpanded"></obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
@@ -1007,8 +1003,8 @@
          <obj_property name="radix_otherWidth">0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/woutput">
-         <obj_property name="ElementShortName">woutput[0:1][10:0]</obj_property>
-         <obj_property name="ObjectShortName">woutput[0:1][10:0]</obj_property>
+         <obj_property name="ElementShortName">woutput[0:1][18:0]</obj_property>
+         <obj_property name="ObjectShortName">woutput[0:1][18:0]</obj_property>
          <obj_property name="isExpanded"></obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
@@ -1025,56 +1021,213 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/NetworkTest/wstat_h0">
+            <obj_property name="ElementShortName">wstat_h0[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wstat_h0[0:2][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="Radix">REALRADIX</obj_property>
+            <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
+            <obj_property name="radix_otherWidth">0</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h0[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h0[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h0[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+         </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wweit_h0">
-            <obj_property name="ElementShortName">wweit_h0[0:5][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wweit_h0[0:5][7:0]</obj_property>
+            <obj_property name="ElementShortName">wweit_h0[0:5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wweit_h0[0:5][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[3]">
+               <obj_property name="ElementShortName">[3][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[4]">
+               <obj_property name="ElementShortName">[4][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h0[5]">
+               <obj_property name="ElementShortName">[5][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wbias_h0">
-            <obj_property name="ElementShortName">wbias_h0[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wbias_h0[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">wbias_h0[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wbias_h0[0:1][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_h0[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_h0[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_h0">
-            <obj_property name="ElementShortName">waccm_h0[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_h0[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_h0[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_h0[0:1][18:0]</obj_property>
             <obj_property name="isExpanded"></obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/NetworkTest/wstat_h0">
-            <obj_property name="ElementShortName">wstat_h0[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wstat_h0[0:2][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#FFA500</obj_property>
-            <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
-            <obj_property name="isExpanded"></obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h0[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h0[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wstat_h1">
-            <obj_property name="ElementShortName">wstat_h1[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wstat_h1[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">wstat_h1[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wstat_h1[0:1][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#FFA500</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h1[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h1[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
       </wvobject>
       <wvobject type="group" fp_name="group604">
@@ -1082,62 +1235,233 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/NetworkTest/wstat_h1">
+            <obj_property name="ElementShortName">wstat_h1[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wstat_h1[0:1][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="Radix">REALRADIX</obj_property>
+            <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
+            <obj_property name="radix_otherWidth">0</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h1[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_h1[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+         </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wweit_h1">
-            <obj_property name="ElementShortName">wweit_h1[0:5][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wweit_h1[0:5][7:0]</obj_property>
+            <obj_property name="ElementShortName">wweit_h1[0:5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wweit_h1[0:5][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[3]">
+               <obj_property name="ElementShortName">[3][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[4]">
+               <obj_property name="ElementShortName">[4][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_h1[5]">
+               <obj_property name="ElementShortName">[5][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wbias_h1">
-            <obj_property name="ElementShortName">wbias_h1[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wbias_h1[0:2][7:0]</obj_property>
+            <obj_property name="ElementShortName">wbias_h1[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wbias_h1[0:2][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/NetworkTest/wstat_h1">
-            <obj_property name="ElementShortName">wstat_h1[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wstat_h1[0:1][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#FFA500</obj_property>
-            <obj_property name="UseCustomSignalColor">true</obj_property>
-            <obj_property name="Radix">REALRADIX</obj_property>
-            <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
-            <obj_property name="radix_otherWidth">0</obj_property>
-            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_h1[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_h1[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_h1[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_h1">
-            <obj_property name="ElementShortName">waccm_h1[0:2][9:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_h1[0:2][9:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_h1[0:2][17:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_h1[0:2][17:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
-            <obj_property name="CustomSignalColor">#008000</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[0]">
+               <obj_property name="ElementShortName">[0][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[1]">
+               <obj_property name="ElementShortName">[1][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[2]">
+               <obj_property name="ElementShortName">[2][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][17:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wstat_o">
-            <obj_property name="ElementShortName">wstat_o[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wstat_o[0:2][7:0]</obj_property>
+            <obj_property name="ElementShortName">wstat_o[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wstat_o[0:2][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#FFA500</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
       </wvobject>
       <wvobject type="group" fp_name="group605">
@@ -1145,60 +1469,213 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/NetworkTest/wstat_o">
+            <obj_property name="ElementShortName">wstat_o[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wstat_o[0:2][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FFA500</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="Radix">REALRADIX</obj_property>
+            <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
+            <obj_property name="radix_otherWidth">0</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wstat_o[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+         </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wweit_o">
-            <obj_property name="ElementShortName">wweit_o[0:5][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wweit_o[0:5][7:0]</obj_property>
+            <obj_property name="ElementShortName">wweit_o[0:5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wweit_o[0:5][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[3]">
+               <obj_property name="ElementShortName">[3][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[4]">
+               <obj_property name="ElementShortName">[4][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[5]">
+               <obj_property name="ElementShortName">[5][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wbias_o">
-            <obj_property name="ElementShortName">wbias_o[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wbias_o[0:1][7:0]</obj_property>
+            <obj_property name="ElementShortName">wbias_o[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wbias_o[0:1][15:0]</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/NetworkTest/wstat_o">
-            <obj_property name="ElementShortName">wstat_o[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wstat_o[0:2][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#FFA500</obj_property>
-            <obj_property name="UseCustomSignalColor">true</obj_property>
-            <obj_property name="Radix">REALRADIX</obj_property>
-            <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
-            <obj_property name="radix_otherWidth">0</obj_property>
-            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wbias_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_o">
-            <obj_property name="ElementShortName">waccm_o[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_o[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_o[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_o[0:1][18:0]</obj_property>
             <obj_property name="isExpanded"></obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_o[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_o[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/woutput">
-            <obj_property name="ElementShortName">woutput[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">woutput[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">woutput[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">woutput[0:1][18:0]</obj_property>
             <obj_property name="CustomSignalColor">#FFA500</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/woutput[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/woutput[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
          </wvobject>
       </wvobject>
       <wvobject type="group" fp_name="group609">
@@ -1206,49 +1683,132 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/NetworkTest/wteacher">
-            <obj_property name="ElementShortName">wteacher[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">wteacher[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">wteacher[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">wteacher[0:1][18:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
-            <obj_property name="CustomSignalColor">#808080</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wteacher[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wteacher[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/woutput">
-            <obj_property name="ElementShortName">woutput[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">woutput[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">woutput[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">woutput[0:1][18:0]</obj_property>
             <obj_property name="CustomSignalColor">#FFA500</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/woutput[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/woutput[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FFA500</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_o">
-            <obj_property name="ElementShortName">waccm_o[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_o[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_o[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_o[0:1][18:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_o[0]">
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_o[1]">
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wdelta_o">
-            <obj_property name="ElementShortName">wdelta_o[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wdelta_o[0:1][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#800080</obj_property>
+            <obj_property name="ElementShortName">wdelta_o[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wdelta_o[0:1][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
       </wvobject>
       <wvobject type="group" fp_name="group612">
@@ -1256,49 +1816,192 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/NetworkTest/wweit_o">
-            <obj_property name="ElementShortName">wweit_o[0:5][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wweit_o[0:5][7:0]</obj_property>
+            <obj_property name="ElementShortName">wweit_o[0:5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wweit_o[0:5][15:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[3]">
+               <obj_property name="ElementShortName">[3][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[4]">
+               <obj_property name="ElementShortName">[4][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wweit_o[5]">
+               <obj_property name="ElementShortName">[5][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wdelta_o">
-            <obj_property name="ElementShortName">wdelta_o[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wdelta_o[0:1][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#800080</obj_property>
+            <obj_property name="ElementShortName">wdelta_o[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wdelta_o[0:1][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_o[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_o[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_h1">
-            <obj_property name="ElementShortName">waccm_h1[0:2][9:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_h1[0:2][9:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_h1[0:2][17:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_h1[0:2][17:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[0]">
+               <obj_property name="ElementShortName">[0][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[1]">
+               <obj_property name="ElementShortName">[1][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/waccm_h1[2]">
+               <obj_property name="ElementShortName">[2][17:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][17:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wdelta_h1">
-            <obj_property name="ElementShortName">wdelta_h1[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wdelta_h1[0:2][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#800080</obj_property>
+            <obj_property name="ElementShortName">wdelta_h1[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wdelta_h1[0:2][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[0]">
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[1]">
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[2]">
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">REALRADIX</obj_property>
+               <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
+               <obj_property name="radix_otherWidth">0</obj_property>
+            </wvobject>
          </wvobject>
       </wvobject>
       <wvobject type="group" fp_name="group616">
@@ -1306,152 +2009,180 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">7</obj_property>
+         <obj_property name="radix_fractionWidth">15</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
          <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/NetworkTest/wweit_h1">
-            <obj_property name="ElementShortName">wweit_h1[0:5][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wweit_h1[0:5][7:0]</obj_property>
+            <obj_property name="ElementShortName">wweit_h1[0:5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wweit_h1[0:5][15:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="CustomSignalColor">#00FFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="isExpanded"></obj_property>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[0]">
-               <obj_property name="ElementShortName">[0][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[1]">
-               <obj_property name="ElementShortName">[1][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[2]">
-               <obj_property name="ElementShortName">[2][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[3]">
-               <obj_property name="ElementShortName">[3][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+               <obj_property name="ElementShortName">[3][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[4]">
-               <obj_property name="ElementShortName">[4][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[4][7:0]</obj_property>
+               <obj_property name="ElementShortName">[4][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wweit_h1[5]">
-               <obj_property name="ElementShortName">[5][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[5][7:0]</obj_property>
+               <obj_property name="ElementShortName">[5][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wdelta_h1">
-            <obj_property name="ElementShortName">wdelta_h1[0:2][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wdelta_h1[0:2][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#800080</obj_property>
+            <obj_property name="ElementShortName">wdelta_h1[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wdelta_h1[0:2][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
             <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[0]">
-               <obj_property name="ElementShortName">[0][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[1]">
-               <obj_property name="ElementShortName">[1][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wdelta_h1[2]">
-               <obj_property name="ElementShortName">[2][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+               <obj_property name="ElementShortName">[2][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/waccm_h0">
-            <obj_property name="ElementShortName">waccm_h0[0:1][10:0]</obj_property>
-            <obj_property name="ObjectShortName">waccm_h0[0:1][10:0]</obj_property>
+            <obj_property name="ElementShortName">waccm_h0[0:1][18:0]</obj_property>
+            <obj_property name="ObjectShortName">waccm_h0[0:1][18:0]</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
+            <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
             <wvobject type="array" fp_name="/NetworkTest/waccm_h0[0]">
-               <obj_property name="ElementShortName">[0][10:0]</obj_property>
-               <obj_property name="ObjectShortName">[0][10:0]</obj_property>
+               <obj_property name="ElementShortName">[0][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/waccm_h0[1]">
-               <obj_property name="ElementShortName">[1][10:0]</obj_property>
-               <obj_property name="ObjectShortName">[1][10:0]</obj_property>
+               <obj_property name="ElementShortName">[1][18:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][18:0]</obj_property>
+               <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
          </wvobject>
          <wvobject type="array" fp_name="/NetworkTest/wdelta_h0">
-            <obj_property name="ElementShortName">wdelta_h0[0:1][7:0]</obj_property>
-            <obj_property name="ObjectShortName">wdelta_h0[0:1][7:0]</obj_property>
-            <obj_property name="CustomSignalColor">#800080</obj_property>
+            <obj_property name="ElementShortName">wdelta_h0[0:1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">wdelta_h0[0:1][15:0]</obj_property>
+            <obj_property name="CustomSignalColor">#FF0080</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="Radix">REALRADIX</obj_property>
             <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-            <obj_property name="radix_fractionWidth">7</obj_property>
+            <obj_property name="radix_fractionWidth">15</obj_property>
             <obj_property name="radix_otherWidth">0</obj_property>
             <obj_property name="isExpanded"></obj_property>
             <wvobject type="array" fp_name="/NetworkTest/wdelta_h0[0]">
-               <obj_property name="ElementShortName">[0][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+               <obj_property name="ElementShortName">[0][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/NetworkTest/wdelta_h0[1]">
-               <obj_property name="ElementShortName">[1][7:0]</obj_property>
-               <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+               <obj_property name="ElementShortName">[1][15:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+               <obj_property name="CustomSignalColor">#FF0080</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="Radix">REALRADIX</obj_property>
                <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-               <obj_property name="radix_fractionWidth">7</obj_property>
+               <obj_property name="radix_fractionWidth">15</obj_property>
                <obj_property name="radix_otherWidth">0</obj_property>
             </wvobject>
          </wvobject>
@@ -1460,7 +2191,6 @@
    <wvobject type="group" fp_name="group414">
       <obj_property name="label">weight</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="vbus" fp_name="vbus638">
          <obj_property name="label">w23</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -1906,20 +2636,20 @@
       <obj_property name="label">bw</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_adc0">
-         <obj_property name="ElementShortName">w_adc0[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">w_adc0[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">w_adc0[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_adc0[0:1][15:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_adc1">
-         <obj_property name="ElementShortName">w_adc1[0:1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">w_adc1[0:1][7:0]</obj_property>
+         <obj_property name="ElementShortName">w_adc1[0:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_adc1[0:1][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_yc1">
-         <obj_property name="ElementShortName">w_yc1[0:2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">w_yc1[0:2][7:0]</obj_property>
+         <obj_property name="ElementShortName">w_yc1[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_yc1[0:2][15:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
@@ -2166,26 +2896,27 @@
          </wvobject>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/r_weight">
-         <obj_property name="ElementShortName">r_weight[47:0]</obj_property>
-         <obj_property name="ObjectShortName">r_weight[47:0]</obj_property>
+         <obj_property name="ElementShortName">r_weight[95:0]</obj_property>
+         <obj_property name="ObjectShortName">r_weight[95:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_adyc1">
-         <obj_property name="ElementShortName">w_adyc1[0:2][15:0]</obj_property>
-         <obj_property name="ObjectShortName">w_adyc1[0:2][15:0]</obj_property>
+         <obj_property name="ElementShortName">w_adyc1[0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_adyc1[0:2][31:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
          <obj_property name="radix_fractionWidth">7</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/NetworkTest/ne/ol/bw/w_adyc2">
-         <obj_property name="ElementShortName">w_adyc2[0:2][15:0]</obj_property>
-         <obj_property name="ObjectShortName">w_adyc2[0:2][15:0]</obj_property>
+         <obj_property name="ElementShortName">w_adyc2[0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_adyc2[0:2][31:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group1128">
       <obj_property name="label">vr</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="group" fp_name="group1133">
          <obj_property name="label">il</obj_property>
          <obj_property name="DisplayName">label</obj_property>

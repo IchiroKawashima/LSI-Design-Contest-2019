@@ -4,19 +4,19 @@
 module NetworkTest #
 ( parameter SIZE         = 3
 , parameter INPUT_FILE   = "input.mem"
-, parameter TEACHER_FILE = ""
+, parameter TEACHER_FILE = "teacher.mem"
 , parameter OUTPUT_FILE  = ""
-, parameter MODE         = TRAIN
+, parameter MODE         = TEST
 , parameter LR           = {1'b0, 1'b1, {6{1'b0}}}
 , parameter NI           = 3
 , parameter NH0          = 2
 , parameter NH1          = 3
 , parameter NO           = 2
-, parameter WV           = 8
+, parameter WV           = 16
 , parameter SEED_H0      = 0032352685
 , parameter SEED_H1      = 1628063272
 , parameter SEED_O       = 3496660372
-, parameter BURST        = "yes"
+, parameter BURST        = "no"
 );
 
 ClockDomain c();
@@ -151,7 +151,8 @@ generate
         assign wbias_h0[gi] = ne.hl0.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
-        assign waccm_h0[gi] = ne.hl0.fm.oData_BM_Accum0[gi*WV+:WV];
+        assign waccm_h0[gi]
+            = ne.hl0.fm.oData_BM_Accum0[gi*($clog2(NI)+1+WV)+:$clog2(NI)+1+WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
         assign wdelta_h0[gi] = ne.hl0.de.oData_BM_Delta0[gi*WV+:WV];
@@ -165,7 +166,8 @@ generate
         assign wbias_h1[gi] = ne.hl1.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
-        assign waccm_h1[gi] = ne.hl1.fm.oData_BM_Accum0[gi*WV+:WV];
+        assign waccm_h1[gi]
+            = ne.hl1.fm.oData_BM_Accum0[gi*($clog2(NH0)+1+WV)+:$clog2(NH0)+1+WV];
 
     for (gi = 0; gi < NH0; gi = gi + 1)
         assign wstat_h1[gi] = ne.hl1.fm.iData_AM_State0[gi*WV+:WV];
@@ -182,7 +184,8 @@ generate
         assign wbias_o[gi] = ne.ol.fm.iData_AM_WeightBias[gi*WV+:WV];
 
     for (gi = 0; gi < NO; gi = gi + 1)
-        assign waccm_o[gi] = ne.ol.fm.oData_BM_Accum0[gi*WV+:WV];
+        assign waccm_o[gi]
+            = ne.ol.fm.oData_BM_Accum0[gi*($clog2(NH1)+1+WV)+:$clog2(NH1)+1+WV];
 
     for (gi = 0; gi < NH1; gi = gi + 1)
         assign wstat_o[gi] = ne.ol.fm.iData_AM_State0[gi*WV+:WV];
