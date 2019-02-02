@@ -17,6 +17,7 @@
 
 # Vivado
 !/project/*.xpr
+!/constraint/*.xdc
 !/resources/waves/**/*.wcfg
 !/resources/mems/**/*.mem
 
